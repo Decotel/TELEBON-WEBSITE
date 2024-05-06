@@ -1,203 +1,158 @@
-import { HoverIcon1 } from './HoverIcon1'
-import { HoverIcon2 } from './HoverIcon2'
-import { HoverIcon3 } from './HoverIcon3'
-import { HoverIcon4 } from './HoverIcon4'
-import { HoverIcon5 } from './HoverIcon5'
-import { HoverIcon6 } from './HoverIcon6'
-import { LogoIcon } from './LogoIcon'
-import { ArrowRightOutline } from './ArrowRightOutline'
-import { LogoMark } from './LogoMark'
-import { Background } from './Background'
-import { CalendarOutline } from './CalendarOutline'
-import { SquareOutline } from './SquareOutline'
-import { StatisticsOutline } from './StatisticsOutline'
-import { Users3Outline } from './Users3Outline'
 import { WalletOutline } from './WalletOutline'
-import { Grid } from './Grid'
-import { Soon } from './Soon'
-import { Journal } from './Journal'
-import { Telegram } from './Telegram'
-import { LogoTextTop } from './LogoTextTop'
-import { EnterIcon } from './EnterIcon'
-import { LaptopIcon } from './LaptopIcon'
-import { RectangleSplit4UnevenOutline } from './RectangleSplit4UnevenOutline'
-import { MoneyCircleOutline } from './MoneyCircleOutline'
-import { DocumentTextOutline } from './DocumentTextOutline'
-import { TelegramIcon } from './TelegramIcon'
-import { BrushOutline } from './BrushOutline'
-import { AttractionsOutline } from './AttractionsOutline'
-import { AutoOutline } from './AutoOutline'
-import { BuildOutline } from './BuildOutline'
-import { GavelOutline } from './GavelOutline'
-import { HeartOutline } from './HeartOutline'
-import { SchoolOutline } from './SchoolOutline'
-import { SportsOutline } from './SportsOutline'
-import { ArrowForwardLeft } from './ArrowForwardLeft'
-import { ArrowForwardRight } from './ArrowForwardRight'
-import { UsersAuduo } from './UsersAuduo'
-import { Robot } from './Robot'
-import { ContactSupport } from './ContactSupport'
-import { SupportCall } from './SupportCall'
-import { SupportMail } from './SupportMail'
-import { SupportPhone } from './SupportPhone'
-import { SupportMailAddress } from './SupportMailAddress'
-import { SupportWorkingHours } from './SupportWorkingHours'
-import { SupportPhoneBold } from './SupportPhoneBold'
-import { SupportMailAddressSmall } from './SupportMailAddressSmall'
-import { DownloadApp } from './DownloadApp'
-import { HowToReg } from './HowToReg'
-import { AccountCircle } from './AccountCircle'
-import { ContactSupportSmall } from './ContactSupportSmall'
-import { CallImage } from './CallImage'
-import { CircleBolt } from './CircleBolt'
-import { Click } from './Click'
-import { Marketing } from './Marketing'
-import { HourGlass } from './HourGlass'
-import { Success } from './Success'
-import { ArrowLeft } from './ArrowLeft'
-import { CookieIcon } from './CookieIcon'
-import { ContentCopy } from './ContentCopy'
-import { Error } from './Error'
-import { Triangle } from './Triangle'
-import { TelegramLogo } from './TelegramLogo'
-import { VKLogo } from './VKLogo'
-import { DollarCircle } from './DollarCircle'
-import { SuccessOutline } from './SuccessOutline'
+import { ArrowList } from './ArrowList'
+import { RecordingTelegram } from './RecordingTelegram'
+import { img1 } from './main/img1'
+import { img2 } from './main/img2'
+import { img3 } from './main/img3'
+import { img4 } from './main/img4'
+import { img7 } from './main/img7'
+import { img6 } from './main/img6'
+import { img5 } from './main/img5'
+import { img8 } from './main/img8'
+import { img9 } from './main/img9'
+import { img10 } from './main/img10'
+import { img11 } from './main/img11'
+import { img12 } from './main/img12'
+import { img13 } from './main/img13'
+import { img14 } from './main/img14'
+import { img15 } from './main/img15'
+import { img16 } from './main/img16'
+import { img17 } from './main/img17'
+import { img18 } from './main/img18'
+import { img19 } from './main/img19'
+import { img20 } from './main/img20'
+import { img21 } from './main/img21'
+import { img22 } from './main/img22'
+import { img23 } from './main/img23'
+import { img24 } from './main/img24'
+import { img25 } from './main/img25'
+import { img26 } from './main/img26'
+import { img27 } from './main/img27'
+import { img28 } from './main/img28'
+import { img29 } from './main/img29'
+import { img30 } from './main/img30'
+import { img31 } from './main/img31'
+import { img32 } from './main/img32'
+import { img33 } from './main/img33'
+import { img34 } from './main/img34'
+import { img35 } from './main/img35'
+import { img36 } from './main/img36'
+import { img37 } from './main/img37'
+import { img38 } from './main/img38'
+import { img39 } from './main/img39'
+import { img40 } from './main/img40'
+import { img41 } from './main/img41'
+import { img42 } from './main/img42'
+import { img43 } from './main/img43'
+import { img44 } from './main/img44'
+import { img45 } from './main/img45'
+import { img46 } from './main/img46'
+import { Analytic } from './Analytic'
 
 export enum EIcons {
-	hover1,
-	hover2,
-	hover3,
-	hover4,
-	hover5,
-	hover6,
-	logoicon,
-	arrowrightoutline,
-	logomark,
-	background,
-	calendaroutline,
-	squareoutline,
-	statisticsoutline,
 	walletoutline,
-	users3outline,
-	grid,
-	soon,
-	journal,
-	telegram,
-	logotexttop,
-	entericon,
-	laptopicon,
-	rectanglesplit4unevenoutline,
-	moneycircleoutline,
-	documenttextoutline,
-	telegramicon,
-	brushoutline,
-	attractionsoutline,
-	autooutline,
-	buildoutline,
-	gaveloutline,
-	heartoutline,
-	sportsoutline,
-	schooloutline,
-	arrowforwardleft,
-	arrowforwardright,
-	usersauduo,
-	robot,
-	contactsupport,
-	supportcall,
-	supportmail,
-	supportphone,
-	supportmailaddress,
-	supportworkinghours,
-	supportphonebold,
-	supportmailaddresssmall,
-	downloadapp,
-	howtoreg,
-	accountcircle,
-	contactsupportsmall,
-	callimage,
-	circlebolt,
-	click,
-	marketing,
-	hourglass,
-	success,
-	arrowleft,
-	cookie,
-	contentcopy,
-	errorimage,
-	triangle,
-	telegramlogo,
-	vklogo,
-	dollarcircle,
-	successoutline,
+	arrowlist,
+	img1,
+	img2,
+	img3,
+	img4,
+	img5,
+	img6,
+	img7,
+	img8,
+	img9,
+	img10,
+	img11,
+	img12,
+	img13,
+	img14,
+	img15,
+	img16,
+	img17,
+	img18,
+	img19,
+	img20,
+	img21,
+	img22,
+	img23,
+	img24,
+	img25,
+	img26,
+	img27,
+	img28,
+	img29,
+	img30,
+	img31,
+	img32,
+	img33,
+	img34,
+	img35,
+	img36,
+	img37,
+	img38,
+	img39,
+	img40,
+	img41,
+	img42,
+	img43,
+	img44,
+	img45,
+	img46,
+	analytic,
+	recordingtelegram,
 }
 
 const ICONS: Record<EIcons, any> = {
-	[EIcons.hover1]: HoverIcon1,
-	[EIcons.hover2]: HoverIcon2,
-	[EIcons.hover3]: HoverIcon3,
-	[EIcons.hover4]: HoverIcon4,
-	[EIcons.hover5]: HoverIcon5,
-	[EIcons.hover6]: HoverIcon6,
-	[EIcons.logoicon]: LogoIcon,
-	[EIcons.arrowrightoutline]: ArrowRightOutline,
-	[EIcons.logomark]: LogoMark,
-	[EIcons.background]: Background,
-	[EIcons.calendaroutline]: CalendarOutline,
-	[EIcons.squareoutline]: SquareOutline,
-	[EIcons.statisticsoutline]: StatisticsOutline,
-	[EIcons.users3outline]: Users3Outline,
 	[EIcons.walletoutline]: WalletOutline,
-	[EIcons.grid]: Grid,
-	[EIcons.soon]: Soon,
-	[EIcons.journal]: Journal,
-	[EIcons.telegram]: Telegram,
-	[EIcons.logotexttop]: LogoTextTop,
-	[EIcons.entericon]: EnterIcon,
-	[EIcons.laptopicon]: LaptopIcon,
-	[EIcons.rectanglesplit4unevenoutline]: RectangleSplit4UnevenOutline,
-	[EIcons.moneycircleoutline]: MoneyCircleOutline,
-	[EIcons.documenttextoutline]: DocumentTextOutline,
-	[EIcons.telegramicon]: TelegramIcon,
-	[EIcons.brushoutline]: BrushOutline,
-	[EIcons.attractionsoutline]: AttractionsOutline,
-	[EIcons.autooutline]: AutoOutline,
-	[EIcons.buildoutline]: BuildOutline,
-	[EIcons.gaveloutline]: GavelOutline,
-	[EIcons.heartoutline]: HeartOutline,
-	[EIcons.schooloutline]: SchoolOutline,
-	[EIcons.sportsoutline]: SportsOutline,
-	[EIcons.arrowforwardleft]: ArrowForwardLeft,
-	[EIcons.arrowforwardright]: ArrowForwardRight,
-	[EIcons.usersauduo]: UsersAuduo,
-	[EIcons.robot]: Robot,
-	[EIcons.contactsupport]: ContactSupport,
-	[EIcons.supportcall]: SupportCall,
-	[EIcons.supportmail]: SupportMail,
-	[EIcons.supportphone]: SupportPhone,
-	[EIcons.supportphonebold]: SupportPhoneBold,
-	[EIcons.supportmailaddress]: SupportMailAddress,
-	[EIcons.supportmailaddresssmall]: SupportMailAddressSmall,
-	[EIcons.supportworkinghours]: SupportWorkingHours,
-	[EIcons.downloadapp]: DownloadApp,
-	[EIcons.howtoreg]: HowToReg,
-	[EIcons.accountcircle]: AccountCircle,
-	[EIcons.contactsupportsmall]: ContactSupportSmall,
-	[EIcons.callimage]: CallImage,
-	[EIcons.circlebolt]: CircleBolt,
-	[EIcons.click]: Click,
-	[EIcons.marketing]: Marketing,
-	[EIcons.hourglass]: HourGlass,
-	[EIcons.success]: Success,
-	[EIcons.arrowleft]: ArrowLeft,
-	[EIcons.cookie]: CookieIcon,
-	[EIcons.contentcopy]: ContentCopy,
-	[EIcons.errorimage]: Error,
-	[EIcons.triangle]: Triangle,
-	[EIcons.telegramlogo]: TelegramLogo,
-	[EIcons.vklogo]: VKLogo,
-	[EIcons.dollarcircle]: DollarCircle,
-	[EIcons.successoutline]: SuccessOutline,
+	[EIcons.arrowlist]: ArrowList,
+	[EIcons.img1]: img1,
+	[EIcons.img2]: img2,
+	[EIcons.img3]: img3,
+	[EIcons.img4]: img4,
+	[EIcons.img5]: img5,
+	[EIcons.img6]: img6,
+	[EIcons.img7]: img7,
+	[EIcons.img8]: img8,
+	[EIcons.img9]: img9,
+	[EIcons.img10]: img10,
+	[EIcons.img11]: img11,
+	[EIcons.img12]: img12,
+	[EIcons.img13]: img13,
+	[EIcons.img14]: img14,
+	[EIcons.img15]: img15,
+	[EIcons.img16]: img16,
+	[EIcons.img17]: img17,
+	[EIcons.img18]: img18,
+	[EIcons.img19]: img19,
+	[EIcons.img20]: img20,
+	[EIcons.img21]: img21,
+	[EIcons.img22]: img22,
+	[EIcons.img23]: img23,
+	[EIcons.img24]: img24,
+	[EIcons.img25]: img25,
+	[EIcons.img26]: img26,
+	[EIcons.img27]: img27,
+	[EIcons.img28]: img28,
+	[EIcons.img29]: img29,
+	[EIcons.img30]: img30,
+	[EIcons.img31]: img31,
+	[EIcons.img32]: img32,
+	[EIcons.img33]: img33,
+	[EIcons.img34]: img34,
+	[EIcons.img35]: img35,
+	[EIcons.img36]: img36,
+	[EIcons.img37]: img37,
+	[EIcons.img38]: img38,
+	[EIcons.img39]: img39,
+	[EIcons.img40]: img40,
+	[EIcons.img41]: img41,
+	[EIcons.img42]: img42,
+	[EIcons.img43]: img43,
+	[EIcons.img44]: img44,
+	[EIcons.img45]: img45,
+	[EIcons.img46]: img46,
+	[EIcons.analytic]: Analytic,
+	[EIcons.recordingtelegram]: RecordingTelegram,
 }
 
 interface IIconProps {

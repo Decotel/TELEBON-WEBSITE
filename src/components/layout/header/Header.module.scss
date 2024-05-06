@@ -21,11 +21,9 @@ $menuItems: 7;
 	left: 0;
 	z-index: 1000;
 	width: 100vw;
-	background-color: white;
-	box-shadow: 0px 4px 24px 0px #0000001f;
-	border-radius: 0 0 40px 40px;
+	background-color: #fafafccc;
 	.headerContent {
-		@apply max-w-[1480px] flex justify-between items-center;
+		@apply max-w-[64.24vw] flex justify-between items-center;
 		margin: 0 auto;
 
 		.navmenu {
@@ -33,7 +31,7 @@ $menuItems: 7;
 			flex-direction: row;
 			align-items: center;
 			font-weight: 600;
-			font-size: 18px;
+			font-size: 0.758vw;
 			line-height: 25px;
 			gap: 24px;
 
@@ -42,9 +40,14 @@ $menuItems: 7;
 				flex-direction: row;
 
 				.item {
-					padding: 10px 24px;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					gap: 0.2vw;
+					padding: 0.5vw 1.21vw;
 					height: fit-content;
-					color: #12092d;
+					color: #000000cc;
 					transition: color 0.3s ease;
 				}
 
@@ -53,22 +56,25 @@ $menuItems: 7;
 				}
 
 				.item:hover {
-					color: #12092d !important;
+					color: #000000cc !important;
+				}
+			}
+		}
+		a {
+			.logo {
+				display: flex;
+				align-items: center;
+				user-select: none;
+				pointer-events: none;
+				img {
+					width: 7.32vw;
+					height: 1.72vw;
 				}
 			}
 		}
 
-		.logo {
-			display: flex;
-			align-items: center;
-
-			a {
-				@apply flex h-[30px] gap-10 items-center relative w-fit;
-			}
-		}
-
 		ul {
-			@apply flex  gap-[8px] items-center py-[15px];
+			@apply flex  gap-[0.8vw] items-center py-[0.9vw];
 			li {
 				a {
 					transition: 0.5s ease;
@@ -78,12 +84,11 @@ $menuItems: 7;
 
 			.auth {
 				> a {
-					@apply flex justify-center items-center py-[8px] px-[24px] border leading-[24px] border-white rounded-full bg-white h-[54px];
+					@apply flex justify-center items-center px-[1.768vw] border border-white rounded-full bg-white h-[2.4vw];
 					color: #000000;
-					border-radius: 12px;
-					width: 120px;
+					border-radius: 0.4vw;
 					font-weight: 700;
-					font-size: 16px;
+					font-size: 0.758vw;
 					user-select: none;
 
 					&:hover {
@@ -98,8 +103,7 @@ $menuItems: 7;
 
 				&.reg {
 					a {
-						@apply text-white;
-						width: 216px;
+						@apply text-white px-[1.21vw];
 						background: #246bfd;
 
 						&:hover {
@@ -119,157 +123,6 @@ $menuItems: 7;
 			display: none;
 		}
 	}
-}
-
-@media (max-width: 1600px) {
-	.indent {
-		height: 30px;
-	}
-	.header {
-		.headerContent {
-			max-width: 1200px;
-
-			.navmenu {
-				font-size: 15px;
-				line-height: 20px;
-				gap: 12px;
-
-				.tabs {
-					.item {
-						padding: 8px 20px;
-					}
-				}
-			}
-
-			.logo {
-				img {
-					height: 45px;
-					width: 155px;
-				}
-			}
-
-			.logo {
-				height: 40px;
-			}
-
-			ul {
-				.auth {
-					> a {
-						height: 40px;
-						width: 100px;
-						font-size: 14px;
-					}
-
-					&.reg {
-						a {
-							height: 40px;
-							width: 196px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 1300px) {
-	.indent {
-		height: 20px;
-	}
-	.header {
-		.headerContent {
-			max-width: 900px;
-
-			.navmenu {
-				font-size: 11px;
-				line-height: 15px;
-				gap: 6px;
-
-				.tabs {
-					.item {
-						padding: 6px 16px;
-					}
-				}
-			}
-
-			.logo {
-				img {
-					height: 35px;
-					width: 135px;
-				}
-			}
-
-			ul {
-				.auth {
-					> a {
-						height: 30px;
-						width: 80px;
-						font-size: 9px;
-						border-radius: 8px;
-					}
-
-					&.reg {
-						a {
-							height: 30px;
-							width: 176px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 992px) {
-	.indent {
-		height: 10px;
-	}
-	.header {
-		.headerContent {
-			max-width: 600px;
-
-			.navmenu {
-				font-size: 7px;
-				line-height: 12px;
-				gap: 4px;
-
-				.tabs {
-					.item {
-						padding: 4px 12px;
-					}
-				}
-			}
-
-			.logo {
-				img {
-					height: 28px;
-					width: 105px;
-				}
-			}
-
-			ul {
-				.auth {
-					> a {
-						height: 30px;
-						width: 60px;
-						font-size: 9px;
-						border-radius: 8px;
-					}
-
-					&.reg {
-						a {
-							height: 30px;
-							width: 126px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-.menu {
-	display: none;
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import styles from './Header.module.scss'
 import cn from 'classnames'
 import Image from 'next/image'
@@ -6,6 +6,7 @@ import LogoImageNew from '../../../assets/icons/LogoImageNew.svg'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import useMatchMedia from '@/hooks/useMatchMedia'
+import { EIcons, Icon as IconInstance } from '../../../assets/icons/icon'
 
 const Header: FC = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -57,32 +58,38 @@ const Header: FC = () => {
 			<div className={isOpen ? styles.darken : undefined}>
 				<motion.nav
 					className={cn('wrapper', styles.header)}
-					//variants={{ visible: { y: 0 }, hidden: { y: '-100%' } }}
-					//animate={hidden ? 'hidden' : 'visible'}
-					//transition={{ duration: 0.35, ease: 'easeInOut' }}
+					variants={{
+						visible: { background: '#ffffff' },
+						hidden: { background: '#fafafccc' },
+					}}
+					animate={hidden ? 'hidden' : 'visible'}
+					transition={{ duration: 0.35, ease: 'easeInOut' }}
 				>
-					<motion.nav
-						variants={{ visible: { height: '100%' }, hidden: { height: '0' } }}
-						animate={hidden ? 'hidden' : 'visible'}
-						transition={{ duration: 0.1, ease: 'easeInOut' }}
-					>
-						<div className={styles.indent}></div>
-					</motion.nav>
+					{/*<motion.nav*/}
+					{/*	variants={{ visible: { height: '100%' }, hidden: { height: '0' } }}*/}
+					{/*	animate={hidden ? 'hidden' : 'visible'}*/}
+					{/*	transition={{ duration: 0.1, ease: 'easeInOut' }}*/}
+					{/*>*/}
+					{/*	<div className={styles.indent}></div>*/}
+					{/*</motion.nav>*/}
 					<div className={styles.headerContent} ref={menuRef}>
+						<Link href="/">
+							<div className={styles.logo} onClick={() => setIsOpen(false)}>
+								<Image src={LogoImageNew} alt="logotext" />
+							</div>
+						</Link>
 						<div className={styles.navmenu}>
-							<Link href="/">
-								<div className={styles.logo} onClick={() => setIsOpen(false)}>
-									<Image src={LogoImageNew} alt="logotext" />
-								</div>
-							</Link>
 							<div className={styles.tabs}>
-								{/*<Link href="/solution/journal">*/}
-								{/*	<div className={styles.item}>Возможности</div>*/}
-								{/*</Link>*/}
-								<Link href="/price">
+								<Link href="/">
+									<div className={styles.item}>
+										Возможности
+										<IconInstance name={EIcons.arrowlist} />
+									</div>
+								</Link>
+								<Link href="/">
 									<div className={styles.item}>Ценовая политика</div>
 								</Link>
-								<Link href="/telegram-bot">
+								<Link href="/">
 									<div className={styles.item}>Бот для онлайн-записи</div>
 								</Link>
 							</div>

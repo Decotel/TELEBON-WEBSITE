@@ -1,0 +1,123 @@
+.fuck {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #f5f5f7;
+	width: 100%;
+	padding-bottom: 10vw;
+	padding-top: 10vw;
+	border-radius: 2.08vw;
+	.main_container {
+		display: flex;
+		flex-direction: row;
+		gap: 4.17vw;
+		.left {
+			display: flex;
+			flex-direction: column;
+			gap: 2.08vw;
+			background: #ffffff;
+			border-radius: 0.94vw;
+			width: 47.14vw;
+			height: 29.69vw;
+			padding: 2.08vw 2.864vw 0 3.23vw;
+			.left_head {
+				display: flex;
+				flex-direction: column;
+				gap: 0.73vw;
+				h2 {
+					font-size: 1.77vw;
+					font-weight: 700;
+					line-height: 2.3vw;
+					text-align: center;
+					color: #1d1d1f;
+				}
+				p {
+					font-size: 1.46vw;
+					font-weight: 500;
+					line-height: 1.3vw;
+					letter-spacing: -0.374px;
+					text-align: center;
+					color: #1d1d1f;
+				}
+			}
+			.row {
+				display: flex;
+				flex-direction: row;
+				gap: 1.09vw;
+				.phone {
+					img {
+						width: 19.27vw;
+						height: 21.2vw;
+					}
+				}
+				.column {
+					display: flex;
+					flex-direction: column;
+					gap: 0.625vw;
+					align-items: center;
+					img {
+						width: 20.68vw;
+						height: 15.99vw;
+					}
+					button {
+						font-size: 0.73vw;
+						font-weight: 600;
+						line-height: 1.04vw;
+						letter-spacing: 0.021vw;
+						text-align: center;
+						width: 14.74vw;
+						height: 2.92vw;
+						background: #007aff;
+						color: white;
+						border-radius: 0.42vw;
+					}
+				}
+			}
+		}
+		.right {
+			display: flex;
+			flex-direction: column;
+			gap: 3.44vw;
+			width: 26.04vw;
+			.right_head {
+				display: flex;
+				flex-direction: column;
+				gap: 0.83vw;
+				padding: 0 0.78vw 0.89vw;
+				h3 {
+					font-size: 1.77vw;
+					font-weight: 700;
+					line-height: 2.3vw;
+					text-align: left;
+					color: #000000cc;
+					letter-spacing: -0.031vw;
+				}
+				p {
+					font-size: 0.94vw;
+					font-weight: 400;
+					line-height: 1.46vw;
+					letter-spacing: -0.021vw;
+					text-align: left;
+					color: #535764;
+				}
+				span {
+					font-size: 0.78vw;
+					font-weight: 600;
+					line-height: 1.04vw;
+					letter-spacing: 0.021vw;
+					text-align: left;
+					color: #0066cc;
+				}
+			}
+			svg {
+				width: 4.25vw;
+				height: 3.51vw;
+				margin-left: 2.08vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+}

@@ -1,214 +1,265 @@
+$animationDelayFactor: 0.2;
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-30%);
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 .fuck {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	margin: 252px 0 140px;
+	margin-top: 4.7vw;
+	height: 29.5vw;
+	position: relative;
 }
-.main_container {
+
+.row {
 	display: flex;
 	flex-direction: row;
-	gap: 32px;
-	align-items: center;
-	img {
-		pointer-events: none;
-	}
-	.left {
-		width: 735px;
-		gap: 48px;
+	gap: 1.15vw;
+	position: absolute;
+	align-self: center;
+	.column {
 		display: flex;
 		flex-direction: column;
-		height: auto;
-		align-items: start;
-
-		.head {
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-			h1 {
-				font-size: 64px;
-				line-height: 80px;
-				text-align: left;
-				font-weight: 700;
-			}
-			span {
-				color: #16161666;
-			}
+		gap: 1.15vw;
+		svg {
+			opacity: 0;
+			animation: fadeIn 1.5s ease-out forwards;
+			width: 5vw;
+			height: 5vw;
 		}
-		.additionalText {
-			p {
-				font-size: 24px;
-				font-weight: 700;
-				line-height: 33px;
-				letter-spacing: 0;
-				text-align: left;
-				color: #00000099;
-			}
-		}
-	}
-	.right {
-		user-select: none;
-		width: 690px;
-		display: flex;
-		flex-direction: row;
-		gap: 16px;
-		position: relative;
-		.phone_image {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 90px;
-			height: 90px;
-			z-index: 3;
-			transition: 0.5s ease;
-			@apply hover:text-text;
-			position: fixed;
-			bottom: 8vh;
-			right: 8vw;
-			color: #ff7043;
-			cursor: pointer;
-			&:hover {
-				color: #dd6039;
-			}
-		}
-	}
-}
-
-//@media (max-width: 1600px) {
-//	.main_container {
-//		gap: 16px;
-//		.left {
-//			width: 503px;
-//			gap: 32px;
-//			.head {
-//				h1 {
-//					font-size: 40px;
-//					line-height: 56px;
-//				}
-//			}
-//			.additionalText {
-//				p {
-//					font-size: 16px;
-//					line-height: 21px;
-//				}
-//			}
-//		}
-//		.right {
-//			width: 473px;
-//			.phone_image {
-//				bottom: -115px;
-//				right: -10px;
-//				svg {
-//					width: 60px;
-//					height: 60px;
-//				}
-//			}
-//		}
-//	}
-//}
-
-@media (max-width: 1600px) {
-	.fuck {
-		margin: 188px 0 100px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 599px;
-			gap: 32px;
-			.head {
-				h1 {
-					font-size: 52px;
-					line-height: 60px;
-				}
-			}
-			.additionalText {
-				p {
-					font-size: 18px;
-					line-height: 25px;
+		&:nth-child(1) {
+			margin-top: 2.78vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 1s * $animationDelayFactor;
 				}
 			}
 		}
-		.right {
-			width: 569px;
-			.phone_image {
-				width: 86px;
-				height: 86px;
-				svg {
-					width: 75px;
-					height: 75px;
+		&:nth-child(2) {
+			margin-top: 0;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 1s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 2s * $animationDelayFactor;
 				}
 			}
 		}
-	}
-}
-
-@media (max-width: 1300px) {
-	.fuck {
-		margin: 138px 0 70px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 449px;
-			gap: 24px;
-			.head {
-				h1 {
-					font-size: 39px;
-					line-height: 45px;
+		&:nth-child(3) {
+			margin-top: 2.58vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 2s * $animationDelayFactor;
 				}
-			}
-			.additionalText {
-				p {
-					font-size: 14px;
-					line-height: 20px;
+				&:nth-child(2) {
+					animation-delay: 3s * $animationDelayFactor;
 				}
 			}
 		}
-		.right {
-			width: 419px;
-			.phone_image {
-				width: 66px;
-				height: 66px;
-				svg {
-					width: 60px;
-					height: 60px;
+		&:nth-child(4) {
+			margin-top: 5vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 3s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 4s * $animationDelayFactor;
 				}
 			}
 		}
-	}
-}
-
-@media (max-width: 992px) {
-	.fuck {
-		margin: 108px 0 50px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 299px;
-			gap: 18px;
-			.head {
-				h1 {
-					font-size: 26px;
-					line-height: 35px;
+		&:nth-child(5) {
+			margin-top: 1.11vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 3s * $animationDelayFactor;
 				}
-			}
-			.additionalText {
-				p {
-					font-size: 9px;
-					line-height: 13px;
+				&:nth-child(2) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 5s * $animationDelayFactor;
 				}
 			}
 		}
-		.right {
-			width: 269px;
-			.phone_image {
-				width: 51px;
-				height: 51px;
-				svg {
-					width: 45px;
-					height: 45px;
+		&:nth-child(6) {
+			margin-top: 4.64vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(7) {
+			margin-top: 0.61vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+				&:nth-child(4) {
+					animation-delay: 7s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(8) {
+			margin-top: 4.09vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 7s * $animationDelayFactor;
+				}
+				&:nth-child(4) {
+					animation-delay: 8s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(9) {
+			margin-top: 0;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 7s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 8s * $animationDelayFactor;
+				}
+				&:nth-child(4) {
+					animation-delay: 9s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(10) {
+			margin-top: 4.09vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 7s * $animationDelayFactor;
+				}
+				&:nth-child(4) {
+					animation-delay: 8s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(11) {
+			margin-top: 0.61vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+				&:nth-child(4) {
+					animation-delay: 7s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(12) {
+			margin-top: 4.64vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 6s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(13) {
+			margin-top: 1.11vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 3s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+				&:nth-child(3) {
+					animation-delay: 5s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(14) {
+			margin-top: 5vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 3s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 4s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(15) {
+			margin-top: 2.58vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 2s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 3s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(16) {
+			margin-top: 0;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 1s * $animationDelayFactor;
+				}
+				&:nth-child(2) {
+					animation-delay: 2s * $animationDelayFactor;
+				}
+			}
+		}
+		&:nth-child(17) {
+			margin-top: 2.78vw;
+			svg {
+				&:nth-child(1) {
+					animation-delay: 1s * $animationDelayFactor;
 				}
 			}
 		}
@@ -216,40 +267,4 @@
 }
 
 @media (max-width: 768px) {
-	.fuck {
-		margin: 24.5vw 0 2.4vw;
-	}
-	.main_container {
-		flex-direction: column;
-		gap: 12.8vw;
-		.left {
-			width: 100%;
-			gap: 4vw;
-			.head {
-				h1 {
-					font-size: 6.8vw;
-					font-weight: 700;
-					line-height: 7.9vw;
-					text-align: left;
-				}
-			}
-			.additionalText {
-				p {
-					font-size: 4vw;
-					font-weight: 700;
-					line-height: 4.8vw;
-					text-align: left;
-					color: #00000099;
-				}
-			}
-		}
-		.right {
-			width: 88vw;
-			flex-direction: column;
-			gap: 4vw;
-			.phone_image {
-				display: none;
-			}
-		}
-	}
 }

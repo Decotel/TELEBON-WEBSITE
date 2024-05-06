@@ -1,68 +1,92 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useRef } from 'react'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
-import Image from 'next/image'
-import HeroChatImage from '../../../../assets/icons/HeroChatImage.png'
-import HeroChatImageMobile from '../../../../assets/icons/HeroChatImageMobile.png'
-import HeroPhoneImage from '../../../../assets/icons/HeroPhoneImage.png'
-import Link from 'next/link'
 import { EIcons, Icon as IconInstance } from '../../../../assets/icons/icon'
-import useMatchMedia from '@/hooks/useMatchMedia'
-import CommonButton from '@/ui/button/CommonButton'
-import themelight from '../../../../styles/colors'
 
-interface HeroProps {
-	nextBlockRef: React.RefObject<HTMLDivElement>
-}
-
-const Hero: FC<HeroProps> = ({ nextBlockRef }) => {
-	// const scrollToComponent = () => {
-	// 	if (nextBlockRef.current) {
-	// 		const windowHeight = window.innerHeight
-	// 		const { top, height } = nextBlockRef.current.getBoundingClientRect()
-	// 		const scrollPosition =
-	// 			top + window.scrollY - (windowHeight / 2 - height / 2)
-	// 		window.scrollTo({ top: scrollPosition, behavior: 'smooth' })
-	// 	}
-	// }
+const Hero: FC = () => {
 	return (
-		<div
-			className={cn(styles.fuck, 'wrapper')}
-			itemScope
-			itemType="http://schema.org/SoftwareApplication"
-		>
-			<div className={styles.main_container}>
-				<div className={cn(styles.left)}>
-					<div className={styles.head}>
-						<h1 itemProp="name">
-							Новый сервис с <span>возможностью записи клиентов</span> в
-							Telegram
-						</h1>
-					</div>
-					<div className={styles.additionalText}>
-						<p itemProp="description">
-							Увеличьте количество записей и автоматизируйте работу клиентской
-							базы
-						</p>
-					</div>
-					<noindex>
-						<CommonButton
-							href="https://lk.telebon.ru/registration"
-							color={'primary'}
-							size={'s'}
-							target={'_blank'}
-						>
-							Попробовать
-						</CommonButton>
-					</noindex>
+		<div className={cn(styles.fuck, 'wrapper')}>
+			<div className={styles.row}>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img1} />
 				</div>
-				<div className={styles.right}>
-					<div>
-						<Image src={HeroPhoneImage} alt={'Телеграм бот'} />
-					</div>
-					{/*<div className={styles.phone_image} onClick={scrollToComponent}>*/}
-					{/*	<IconInstance name={EIcons.callimage} />*/}
-					{/*</div>*/}
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img2} />
+					<IconInstance name={EIcons.img3} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img4} />
+					<IconInstance name={EIcons.img5} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img6} />
+					<IconInstance name={EIcons.img7} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img8} />
+					<IconInstance name={EIcons.img9} />
+					<IconInstance name={EIcons.img10} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img11} />
+					<IconInstance name={EIcons.img12} />
+					<IconInstance name={EIcons.img13} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img14} />
+					<IconInstance name={EIcons.img15} />
+					<IconInstance name={EIcons.img16} />
+					<IconInstance name={EIcons.img17} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img18} />
+					<IconInstance name={EIcons.img19} />
+					<IconInstance name={EIcons.img20} />
+					<IconInstance name={EIcons.img28} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img21} />
+					<IconInstance name={EIcons.img22} />
+					<IconInstance name={EIcons.img23} />
+					<IconInstance name={EIcons.img26} />
+					<div style={{ width: '5vw', height: '5vw' }}></div>
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img24} />
+					<IconInstance name={EIcons.img25} />
+					<IconInstance name={EIcons.img27} />
+					<IconInstance name={EIcons.img32} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img29} />
+					<IconInstance name={EIcons.img30} />
+					<IconInstance name={EIcons.img31} />
+					<IconInstance name={EIcons.img33} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img34} />
+					<IconInstance name={EIcons.img35} />
+					<IconInstance name={EIcons.img36} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img37} />
+					<IconInstance name={EIcons.img38} />
+					<IconInstance name={EIcons.img39} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img40} />
+					<IconInstance name={EIcons.img41} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img42} />
+					<IconInstance name={EIcons.img43} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img44} />
+					<IconInstance name={EIcons.img45} />
+				</div>
+				<div className={styles.column}>
+					<IconInstance name={EIcons.img46} />
 				</div>
 			</div>
 		</div>

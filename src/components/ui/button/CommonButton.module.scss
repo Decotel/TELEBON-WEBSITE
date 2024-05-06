@@ -126,6 +126,32 @@ $line-height: 33px;
 			border-radius: 5.3vw;
 			font-size: 4vw;
 		}
+	} @else if $size == fill {
+		width: 100%;
+		height: 80px;
+		border-radius: 24px;
+		font-size: 24px;
+		@media (max-width: 1600px) {
+			height: 60px;
+			border-radius: 18px;
+			font-size: 18px;
+		}
+		@media (max-width: 1300px) {
+			height: 50px;
+			border-radius: 15px;
+			font-size: 14px;
+		}
+		@media (max-width: 992px) {
+			height: 40px;
+			border-radius: 11px;
+			font-size: 11px;
+		}
+		@media (max-width: 768px) {
+			width: 92vw;
+			height: 14.4vw;
+			border-radius: 5.3vw;
+			font-size: 4vw;
+		}
 	}
 }
 
@@ -198,6 +224,9 @@ $line-height: 33px;
 	}
 	&.l {
 		@include button-size(l);
+	}
+	&.fill {
+		@include button-size(fill);
 	}
 	&.orange {
 		@include button-color(orange);

@@ -5,7 +5,7 @@ import styles from './CommonButton.module.scss'
 interface ButtonProps {
 	href?: string
 	color?: 'primary' | 'orange' | 'gray' | 'gray02' | 'ghost' | 'black'
-	size?: 'l' | 'm' | 's' | 'xs'
+	size?: 'l' | 'm' | 's' | 'xs' | 'fill'
 	children: React.ReactNode
 	className?: string
 	disabled?: boolean
@@ -29,12 +29,12 @@ const CommonButton: FC<ButtonProps> = ({
 			{href ? (
 				<Link href={href} target={target}>
 					<button className={classNames} type={type} disabled={disabled}>
-						{children}
+						<noindex>{children}</noindex>
 					</button>
 				</Link>
 			) : (
 				<button className={classNames} type={type} disabled={disabled}>
-					{children}
+					<noindex>{children}</noindex>
 				</button>
 			)}
 		</>
