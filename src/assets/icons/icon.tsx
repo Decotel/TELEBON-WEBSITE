@@ -1,6 +1,6 @@
 import { WalletOutline } from './WalletOutline'
 import { ArrowList } from './ArrowList'
-import { RecordingTelegram } from './RecordingTelegram'
+import { RecordingTelegram } from './recording/RecordingTelegram'
 import { img1 } from './main/img1'
 import { img2 } from './main/img2'
 import { img3 } from './main/img3'
@@ -48,6 +48,17 @@ import { img44 } from './main/img44'
 import { img45 } from './main/img45'
 import { img46 } from './main/img46'
 import { Analytic } from './Analytic'
+import { BellRinging } from './recording/BellRinging'
+import { CoinBroken } from './recording/CoinBroken'
+import { ColorSwatch } from './recording/ColorSwatch'
+import { Cursor } from './recording/Cursor'
+import { FileQuestion } from './recording/FileQuestion'
+import { Gift } from './recording/Gift'
+import { MessageChat } from './recording/MessageChat'
+import { Settings } from './recording/Settings'
+import { UserProfileStar } from './recording/UserProfileStar'
+import { ButtonArrowRight } from './ButtonArrowRight'
+import { Brush } from './slider/Brush'
 
 export enum EIcons {
 	walletoutline,
@@ -100,6 +111,17 @@ export enum EIcons {
 	img46,
 	analytic,
 	recordingtelegram,
+	bellringing,
+	coinbroken,
+	colorswatch,
+	cursor,
+	filequestion,
+	gift,
+	messagechat,
+	settings,
+	userprofilestar,
+	buttonarrowright,
+	brush,
 }
 
 const ICONS: Record<EIcons, any> = {
@@ -153,6 +175,17 @@ const ICONS: Record<EIcons, any> = {
 	[EIcons.img46]: img46,
 	[EIcons.analytic]: Analytic,
 	[EIcons.recordingtelegram]: RecordingTelegram,
+	[EIcons.bellringing]: BellRinging,
+	[EIcons.coinbroken]: CoinBroken,
+	[EIcons.colorswatch]: ColorSwatch,
+	[EIcons.cursor]: Cursor,
+	[EIcons.filequestion]: FileQuestion,
+	[EIcons.gift]: Gift,
+	[EIcons.messagechat]: MessageChat,
+	[EIcons.settings]: Settings,
+	[EIcons.userprofilestar]: UserProfileStar,
+	[EIcons.buttonarrowright]: ButtonArrowRight,
+	[EIcons.brush]: Brush,
 }
 
 interface IIconProps {

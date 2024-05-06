@@ -5,6 +5,7 @@ import styles from './Home.module.scss'
 import Description from '@/screens/main/description/Description'
 import DescriptionA from '@/screens/main/descriptiona/DescriptionA'
 import Recording from '@/screens/main/recording/Recording'
+import SliderBlock from '@/screens/main/slider/SliderBlock'
 
 const Home: FC = () => {
 	const nextBlockRef = useRef<HTMLDivElement>(null)
@@ -15,10 +16,10 @@ const Home: FC = () => {
 			image="logo_preview.png"
 		>
 			<div className={styles.wrapper}>
-				<Hero />
-				<DescriptionA />
 				<Description />
+				<DescriptionA />
 				<Recording />
+				<SliderBlock />
 			</div>
 		</Meta>
 	)

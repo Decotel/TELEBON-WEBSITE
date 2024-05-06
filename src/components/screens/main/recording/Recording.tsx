@@ -1,10 +1,11 @@
 import React, { FC, useState } from 'react'
 import styles from './Recording.module.scss'
 import cn from 'classnames'
-import RecordingPhone from '../../../../assets/icons/RecordingPhone.png'
-import RecordingTelegram from '../../../../assets/icons/RecordingTelegram.png'
+import RecordingPhone from '../../../../assets/icons/recording/RecordingPhone.png'
+import RecordingTelegram from '../../../../assets/icons/recording/RecordingTelegram.png'
 import Image from 'next/image'
 import { EIcons, Icon as IconInstance } from '../../../../assets/icons/icon'
+import Cards from '@/screens/main/recording/cards/Cards'
 
 const Recording: FC = () => {
 	return (
@@ -39,6 +40,7 @@ const Recording: FC = () => {
 					</div>
 				</div>
 			</div>
+			<Cards />
 		</div>
 	)
 }

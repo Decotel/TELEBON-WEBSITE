@@ -1,0 +1,67 @@
+.base {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #f5f5f7;
+	width: 100%;
+	.main_container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 3.1vw;
+		.card {
+			display: flex;
+			flex-direction: column;
+			width: 23.69vw;
+			height: 15.05vw;
+			border-radius: 1.04vw;
+			background: #ffffff;
+			padding: 1.3vw 3.7vw 1.3vw 1.3vw;
+			.title {
+				h4 {
+					font-size: 0.885vw;
+					font-weight: 600;
+					line-height: 1.04vw;
+					letter-spacing: 0.004em;
+					text-align: left;
+					color: #29a9ea;
+					margin-bottom: 0.39vw;
+				}
+			}
+			.description {
+				p {
+					font-size: 0.78vw;
+					font-weight: 400;
+					line-height: 1.04vw;
+					text-align: left;
+					color: #161616b2;
+					margin-bottom: 0.99vw;
+				}
+			}
+			.column {
+				display: flex;
+				flex-direction: column;
+				gap: 0.65vw;
+				.row {
+					display: flex;
+					flex-direction: row;
+					gap: 0.42vw;
+					align-items: center;
+					p {
+						color: #161616b2;
+						font-weight: 600;
+						margin-bottom: 0;
+					}
+					svg {
+						width: 1.25vw;
+						height: 1.25vw;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+}

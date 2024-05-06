@@ -1,0 +1,41 @@
+.base {
+	margin: 0 2.08vw 0 0;
+	user-select: none;
+	pointer-events: none;
+	.card {
+		width: 14.06vw;
+		height: 14.06vw;
+		background: #ffffff;
+		border-radius: 1.04vw;
+		box-shadow: 0 0.42vw 0.94vw 0 #cfcfcf1a;
+		padding: 2.08vw 1.56vw 1.04vw;
+		.icon {
+			width: 2.81vw;
+			height: 2.81vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #f9f8f8;
+			border-radius: 0.625vw;
+			margin-bottom: 1.56vw;
+			svg {
+				width: 2.81vw;
+				height: 2.81vw;
+			}
+		}
+		.image {
+			svg {
+				width: 9.9vw;
+				height: 3.65vw;
+			}
+		}
+		p {
+			font-size: 1.04vw;
+			font-weight: 600;
+			line-height: 1.25vw;
+			text-align: left;
+			color: #262626;
+			margin-bottom: 0.42vw;
+		}
+	}
+}
