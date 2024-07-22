@@ -1,255 +1,295 @@
-.fuck {
+.body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	margin: 252px 0 140px;
+	width: 100vw;
+	height: 59.8958vw;
+	position: relative;
+	overflow: visible;
 }
-.main_container {
-	display: flex;
-	flex-direction: row;
-	gap: 32px;
-	align-items: center;
-	img {
-		pointer-events: none;
-	}
-	.left {
-		width: 735px;
-		gap: 48px;
-		display: flex;
-		flex-direction: column;
-		height: auto;
-		align-items: start;
 
-		.head {
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-			h1 {
-				font-size: 64px;
-				line-height: 80px;
-				text-align: left;
-				font-weight: 700;
-			}
-			span {
-				color: #16161666;
-			}
-		}
-		.additionalText {
-			p {
-				font-size: 24px;
-				font-weight: 700;
-				line-height: 33px;
-				letter-spacing: 0;
-				text-align: left;
-				color: #00000099;
-			}
-		}
-	}
-	.right {
-		user-select: none;
-		width: 690px;
+.gradient {
+	position: absolute;
+	width: 100vw;
+	height: 38.8021vw;
+	top: 0;
+	left: 0;
+	background: linear-gradient(180deg, #2a2c32 5%, #f9c9c4 100%);
+	z-index: 1;
+}
+
+.background {
+	position: absolute;
+	width: 90.625vw;
+	height: 43.75vw;
+	background: url('../../../../assets/icons/main/hero/HeroBackground.png')
+		no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 4.6875vw;
+	z-index: 2;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	z-index: 3;
+	width: 100%;
+	height: 62.5vw;
+
+	.row {
 		display: flex;
 		flex-direction: row;
-		gap: 16px;
-		position: relative;
-		.phone_image {
+		gap: 6.5625vw;
+		padding: 7.8vw 0 0 0;
+		width: fit-content;
+		height: 32.8125vw;
+
+		.column {
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 90px;
-			height: 90px;
-			z-index: 3;
-			transition: 0.5s ease;
-			@apply hover:text-text;
-			position: fixed;
-			bottom: 8vh;
-			right: 8vw;
-			color: #ff7043;
-			cursor: pointer;
-			&:hover {
-				color: #dd6039;
-			}
-		}
-	}
-}
+			flex-direction: column;
+			gap: 2.5vw;
 
-//@media (max-width: 1600px) {
-//	.main_container {
-//		gap: 16px;
-//		.left {
-//			width: 503px;
-//			gap: 32px;
-//			.head {
-//				h1 {
-//					font-size: 40px;
-//					line-height: 56px;
-//				}
-//			}
-//			.additionalText {
-//				p {
-//					font-size: 16px;
-//					line-height: 21px;
-//				}
-//			}
-//		}
-//		.right {
-//			width: 473px;
-//			.phone_image {
-//				bottom: -115px;
-//				right: -10px;
-//				svg {
-//					width: 60px;
-//					height: 60px;
-//				}
-//			}
-//		}
-//	}
-//}
+			.text {
+				width: 32.8125vw;
+				display: flex;
+				flex-direction: column;
+				gap: 2.5vw;
+				padding-top: 2.083vw;
 
-@media (max-width: 1600px) {
-	.fuck {
-		margin: 188px 0 100px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 599px;
-			gap: 32px;
-			.head {
 				h1 {
-					font-size: 52px;
-					line-height: 60px;
+					font-size: 3.0208vw;
+					font-weight: 700;
+					line-height: 3.33vw;
+					text-align: left;
+					color: #ffffff;
 				}
-			}
-			.additionalText {
-				p {
-					font-size: 18px;
-					line-height: 25px;
-				}
-			}
-		}
-		.right {
-			width: 569px;
-			.phone_image {
-				width: 86px;
-				height: 86px;
-				svg {
-					width: 75px;
-					height: 75px;
-				}
-			}
-		}
-	}
-}
 
-@media (max-width: 1300px) {
-	.fuck {
-		margin: 138px 0 70px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 449px;
-			gap: 24px;
-			.head {
-				h1 {
-					font-size: 39px;
-					line-height: 45px;
-				}
-			}
-			.additionalText {
 				p {
-					font-size: 14px;
-					line-height: 20px;
+					font-size: 0.833vw;
+					font-weight: 400;
+					line-height: 1.33vw;
+					text-align: left;
+					color: #ffffff;
 				}
-			}
-		}
-		.right {
-			width: 419px;
-			.phone_image {
-				width: 66px;
-				height: 66px;
-				svg {
-					width: 60px;
-					height: 60px;
-				}
-			}
-		}
-	}
-}
 
-@media (max-width: 992px) {
-	.fuck {
-		margin: 108px 0 50px;
-	}
-	.main_container {
-		gap: 16px;
-		.left {
-			width: 299px;
-			gap: 18px;
-			.head {
-				h1 {
-					font-size: 26px;
-					line-height: 35px;
+				span {
+					font-weight: 700;
 				}
 			}
-			.additionalText {
-				p {
-					font-size: 9px;
-					line-height: 13px;
-				}
+
+			button {
+				background: #ffffff;
+				color: #2a2c32;
+				padding: 1.0417vw 2.1875vw;
+				font-size: 0.833vw;
+				font-weight: 600;
+				line-height: 1.1458vw;
+				text-align: center;
+				width: fit-content;
+				border-radius: 0.4167vw;
 			}
 		}
-		.right {
-			width: 269px;
-			.phone_image {
-				width: 51px;
-				height: 51px;
-				svg {
-					width: 45px;
-					height: 45px;
-				}
-			}
+		img {
+			width: 23.8542vw;
+			height: 34.0104vw;
+			padding-top: 1.25vw;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+
+	.sponsors {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 2.5vw;
+		margin-top: 13.125vw;
+		border-bottom: 0.0521vw solid #eeeeee;
+		img {
+			width: 50vw;
+			height: fit-content;
+			pointer-events: none;
+			user-select: none;
 		}
 	}
 }
 
 @media (max-width: 768px) {
-	.fuck {
-		margin: 24.5vw 0 2.4vw;
-	}
-	.main_container {
-		flex-direction: column;
-		gap: 12.8vw;
-		.left {
-			width: 100%;
-			gap: 6.4vw;
-			.head {
-				gap: 4.26vw;
-				h1 {
-					font-size: 7.46vw;
-					font-weight: 700;
-					line-height: 9.6vw;
-					text-align: left;
-				}
+	.download_link {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background: #ffffff;
+		width: 100vw;
+		height: 16.2vw;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 11;
+		.row {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		button {
+			background: #2a2c32;
+			color: #ffffff;
+			padding: 0 8vw;
+			font-size: 4.1026vw;
+			font-weight: 600;
+			line-height: 5.641vw;
+			text-align: center;
+			width: fit-content;
+			border-radius: 2.0513vw;
+			height: 10vw;
+			margin-right: 4vw;
+		}
+		.text {
+			display: flex;
+			flex-direction: column;
+			margin-left: 4vw;
+			p {
+				text-align: left;
+				font-weight: 700;
+				font-size: 3.5897vw;
+				line-height: 4.1026vw;
 			}
-			.additionalText {
-				p {
-					font-size: 4.26vw;
-					font-weight: 700;
-					line-height: 5.86vw;
-					text-align: left;
-					color: #00000099;
-				}
+			span {
+				text-align: left;
+				font-weight: 400;
+				font-size: 3.5897vw;
+				line-height: 4.1026vw;
 			}
 		}
-		.right {
-			width: 88vw;
+		svg {
+			width: 3vw;
+			height: 3vw;
+			margin: 4vw;
+		}
+		img {
+			width: 12vw;
+			height: 12vw;
+			border-radius: 2.0513vw;
+		}
+	}
+	.body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 320.6061vw;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.gradient {
+		position: absolute;
+		width: 100vw;
+		height: 233.8462vw;
+		top: 0;
+		left: 0;
+		background: linear-gradient(180deg, #2a2c32 65%, #f9c9c4 100%);
+		z-index: 1;
+	}
+
+	.background {
+		position: absolute;
+		width: 90vw;
+		height: 254.3589vw;
+		background: url('../../../../assets/icons/main/hero/HeroBackgroundMobile.png')
+			no-repeat;
+		background-size: cover;
+		top: 0;
+		left: 5vw;
+		z-index: 2;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		z-index: 3;
+		width: 100%;
+		height: 320.6061vw;
+
+		.row {
+			display: flex;
 			flex-direction: column;
-			gap: 4vw;
-			.phone_image {
-				display: none;
+			gap: 4.1026vw;
+			padding: 0;
+			margin: 0 auto;
+			width: 85.5897vw;
+			height: 87.6923vw;
+			.column {
+				display: flex;
+				flex-direction: column;
+				gap: 4.1026vw;
+				.text {
+					width: 88vw;
+					display: flex;
+					flex-direction: column;
+					gap: 4.1026vw;
+					padding-top: 2.083vw;
+					h1 {
+						font-size: 9.2308vw;
+						font-weight: 700;
+						line-height: 11.2821vw;
+						text-align: center;
+						color: #ffffff;
+					}
+
+					p {
+						font-size: 4.1026vw;
+						font-weight: 400;
+						line-height: 6.5641vw;
+						text-align: center;
+						color: #ffffff;
+					}
+
+					span {
+						font-weight: 700;
+					}
+				}
+
+				button {
+					background: #ffffff;
+					color: #2a2c32;
+					padding: 3.5897vw 17.3077vw;
+					font-size: 4.1026vw;
+					font-weight: 600;
+					line-height: 5.641vw;
+					text-align: center;
+					width: fit-content;
+					border-radius: 2.0513vw;
+					align-self: center;
+				}
+			}
+
+			img {
+				width: 70.7692vw;
+				height: 100.5128vw;
+				margin-left: 7vw;
+			}
+		}
+
+		.sponsors {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 0;
+			margin-top: 148.9744vw;
+			border-bottom: 0.2564vw solid #eeeeee;
+			img {
+				width: 100vw;
+				height: 42.5641vw;
 			}
 		}
 	}

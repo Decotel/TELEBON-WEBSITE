@@ -1,0 +1,110 @@
+.base {
+    margin: 0 2.08vw 0 0;
+    user-select: none;
+    pointer-events: none;
+
+    .card {
+        width: 58.33vw;
+        height: 24.4792vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            background: #2A2C32;
+            color: #FFFFFF;
+            padding: 1.0417vw 2.1875vw;
+            font-size: 0.833vw;
+            font-weight: 600;
+            line-height: 1.1458vw;
+            text-align: center;
+            width: fit-content;
+            border-radius: 0.4167vw;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: 19.0625vw;
+            gap: 0.5208vw;
+            p {
+                font-size: 1.7708vw;
+                font-weight: 700;
+                line-height: 2.0833vw;
+                text-align: left;
+                color: #2A2C32;
+            }
+            span {
+                font-size: 0.833vw;
+                font-weight: 400;
+                line-height: 1.3333vw;
+                text-align: left;
+                color: #2A2C32;
+            }
+        }
+        img {
+            width: 30vw;
+            height: 24.4792vw;
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .base {
+        margin: 0 2.08vw 0 0;
+        user-select: none;
+        pointer-events: none;
+        .card {
+            width: 80vw;
+            height: 145.3846vw;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+            button {
+                background: #2A2C32;
+                color: #FFFFFF;
+                padding: 3.5897vw 10.6282vw;
+                font-size: 4.1026vw;
+                font-weight: 600;
+                line-height: 5.641vw;
+                text-align: center;
+                width: fit-content;
+                border-radius: 2.0513vw;
+                margin-top: 3.8462vw;
+            }
+            .text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 74.8718vw;
+                gap: 5.1282vw;
+                p {
+                    font-size: 6.1538vw;
+                    font-weight: 700;
+                    line-height: 7.1795vw;
+                    text-align: left;
+                    color: #2A2C32;
+                }
+                span {
+                    font-size: 4.1026vw;
+                    font-weight: 400;
+                    line-height: 6.5641vw;
+                    text-align: left;
+                    color: #2A2C32;
+                }
+            }
+            img {
+                width: 80vw;
+                height: 65.3846vw;
+                pointer-events: none;
+                user-select: none;
+                border-radius: 3.0769vw 3.0769vw 0 0;
+            }
+        }
+    }
+}

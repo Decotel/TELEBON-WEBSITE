@@ -4,8 +4,8 @@ import styles from './CommonButton.module.scss'
 
 interface ButtonProps {
 	href?: string
-	color?: 'primary' | 'orange' | 'gray' | 'gray02' | 'ghost' | 'black'
-	size?: 'l' | 'm' | 's' | 'xs' | 'fill'
+	color?: 'primary' | 'orange' | 'gray' | 'gray02' | 'ghost' | 'black' | 'white'
+	size?: 'l' | 'm' | 's' | 'xs' | 'fill' | 'base'
 	children: React.ReactNode
 	className?: string
 	disabled?: boolean
@@ -15,8 +15,8 @@ interface ButtonProps {
 
 const CommonButton: FC<ButtonProps> = ({
 	href,
-	color = 'primary',
-	size = 'm',
+	color = 'black',
+	size = 'base',
 	children,
 	disabled,
 	type = 'button',

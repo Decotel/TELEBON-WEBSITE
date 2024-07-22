@@ -1,6 +1,5 @@
-import React from 'react'
-import HomePrice from '@/screens/price/home/HomePrice'
+import Home from '@/screens/price/home/Home'
 
 export default function PricePage() {
-	return <HomePrice />
+	return <Home />
 }

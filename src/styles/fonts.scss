@@ -1,43 +1,63 @@
 @font-face {
-	font-family: 'Onest';
+	font-family: 'Poppins';
 	src:
-		local('Onest'),
-		url('../assets/fonts/onest-medium.ttf') format('truetype');
+		local('Poppins'),
+		url('../assets/fonts/poppins-thin.ttf') format('truetype');
+	font-weight: 100;
+}
+@font-face {
+	font-family: 'Poppins';
+	src:
+		local('Poppins'),
+		url('../assets/fonts/poppins-extralight.ttf') format('truetype');
+	font-weight: 200;
+}
+@font-face {
+	font-family: 'Poppins';
+	src:
+		local('Poppins'),
+		url('../assets/fonts/poppins-light.ttf') format('truetype');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Poppins';
+	src:
+		local('Poppins'),
+		url('../assets/fonts/poppins-regular.ttf') format('truetype');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Poppins';
+	src:
+		local('Poppins'),
+		url('../assets/fonts/poppins-medium.ttf') format('truetype');
 	font-weight: 500;
 }
 @font-face {
-	font-family: 'Onest';
+	font-family: 'Poppins';
 	src:
-		local('Onest'),
-		url('../assets/fonts/onest-semibold.ttf') format('truetype');
+		local('Poppins'),
+		url('../assets/fonts/poppins-semibold.ttf') format('truetype');
 	font-weight: 600;
 }
 @font-face {
-	font-family: 'Onest';
+	font-family: 'Poppins';
 	src:
-		local('Onest'),
-		url('../assets/fonts/onest-bold.ttf') format('truetype');
+		local('Poppins'),
+		url('../assets/fonts/poppins-bold.ttf') format('truetype');
 	font-weight: 700;
 }
-
 @font-face {
-	font-family: 'Manrope';
+	font-family: 'Poppins';
 	src:
-		local('Manrope'),
-		url('../assets/fonts/manrope-medium.ttf') format('truetype');
-	font-weight: 500;
+		local('Poppins'),
+		url('../assets/fonts/poppins-extrabold.ttf') format('truetype');
+	font-weight: 800;
 }
 @font-face {
-	font-family: 'Manrope';
+	font-family: 'Poppins';
 	src:
-		local('Manrope'),
-		url('../assets/fonts/manrope-semibold.ttf') format('truetype');
-	font-weight: 600;
-}
-@font-face {
-	font-family: 'Manrope';
-	src:
-		local('Manrope'),
-		url('../assets/fonts/manrope-bold.ttf') format('truetype');
-	font-weight: 700;
+		local('Poppins'),
+		url('../assets/fonts/poppins-black.ttf') format('truetype');
+	font-weight: 900;
 }

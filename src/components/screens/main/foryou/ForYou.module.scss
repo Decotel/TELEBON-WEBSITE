@@ -1,0 +1,188 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    margin: 3.33vw 0;
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7.5vw 7.083vw;
+        width: 83.33vw;
+        height: fit-content;
+        background: linear-gradient(180deg, #0BA3AD 0%, #2A2C32 77%);
+        border-radius: 0.625vw;
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h3 {
+                font-size: 1.7708vw;
+                font-weight: 700;
+                line-height: 2.0833vw;
+                text-align: left;
+                color: #FFFFFF;
+            }
+        }
+
+        img {
+            width: 51.40625vw;
+            height: 12.7083vw;
+            user-select: none;
+            pointer-events: none;
+            margin-right: 1.0417vw;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1.0417vw;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1.0417vw;
+        }
+        .small_card {
+            padding: 0.8854vw 3.3854vw 0.8854vw 0.8854vw;
+            border: 0.0521vw solid #ffffff;
+            border-radius: 5.2083vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            background: transparent;
+            transition: background 1.5s;
+            img {
+                width: 5.625vw;
+                height: 4.0625vw;
+            }
+            p {
+                font-size: 1.0417vw;
+                font-weight: 700;
+                line-height: 1.3021vw;
+                text-align: left;
+                color: #FFFFFF;
+                transition: color 1.5s;
+            }
+            &:hover {
+                background: #FFFFFF;
+                p{
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: fit-content;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 143.0769vw;
+        margin: 12.3077vw 0;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20.5128vw 0;
+            width: 100vw;
+            height: 143.0769vw;
+            border-radius: 0;
+            margin-top: 7.6923vw;
+            .text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3 {
+                    font-size: 6.1538vw;
+                    line-height: 7.1795vw;
+                }
+            }
+
+            img {
+                width: 100vw;
+                height: 82.0513vw;
+                user-select: none;
+                pointer-events: none;
+                margin-right: 1.0417vw;
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 2.5641vw;
+            }
+            .column{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5.1282vw;
+            }
+            .small_card {
+                padding: 1.2821vw 6.1538vw 1.2821vw 1.2821vw;
+                border: 0.2564vw solid #ffffff;
+                border-radius: 25.641vw;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                background: transparent;
+                transition: background 1.5s;
+                img {
+                    width: 17.8974vw;
+                    height: 12.8205vw;
+                    margin-left: -2vw;
+                }
+                p {
+                    font-size: 4.1026vw;
+                    font-weight: 700;
+                    line-height: 6.4103vw;
+                    text-align: left;
+                    color: #FFFFFF;
+                    transition: color 1.5s;
+                }
+            }
+        }
+    }
+}

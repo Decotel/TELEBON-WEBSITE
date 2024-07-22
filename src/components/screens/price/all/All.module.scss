@@ -1,0 +1,212 @@
+.body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 83.3333vw;
+	height: fit-content;
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(180deg, #2a2c32 65%, #0ba3ad 100%);
+	border-radius: 0.625vw;
+	margin: 8.0208vw auto 0;
+	button {
+		background: #ffffff;
+		color: #2a2c32;
+		padding: 1.0417vw 2.1875vw;
+		font-size: 0.833vw;
+		font-weight: 600;
+		line-height: 1.1458vw;
+		text-align: center;
+		width: fit-content;
+		border-radius: 0.4167vw;
+		margin: 3.3333vw 0 2.6042vw;
+	}
+}
+.gradient {
+	width: 54.6875vw;
+	height: 15.5729vw;
+	background: linear-gradient(90deg, #2a2c32 0%, rgba(0, 0, 0, 0) 100%);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.up {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 0.1042vw solid #90909080;
+	img {
+		width: 44.6875vw;
+		height: 15.5729vw;
+	}
+	h3 {
+		font-size: 1.7708vw;
+		line-height: 2.0833vw;
+		font-weight: 700;
+		color: #ffffff;
+		text-align: left;
+		padding: 9.3229vw 0 0 12.5vw;
+	}
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: fit-content;
+	padding: 0.8854vw 7.03125vw 8.5417vw;
+	p {
+		font-size: 0.7292vw;
+		font-weight: 400;
+		line-height: 1.0417vw;
+		text-align: center;
+		color: #ffffff;
+	}
+	.row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 11.109375vw;
+		height: 7.03125vw;
+		width: 69.2708vw;
+		border-bottom: 0.0521vw solid #90909080;
+	}
+	.card {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		width: 11.9792vw;
+		gap: 1.5625vw;
+		p {
+			font-size: 0.8333vw;
+			font-weight: 700;
+			line-height: 0.9896vw;
+			text-align: left;
+			color: #ffffff;
+			white-space: nowrap;
+		}
+		svg {
+			min-width: 1.6146vw;
+			width: 1.6146vw;
+			height: 1.6146vw;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		width: 89.7436vw;
+		height: 454.6154vw;
+		position: relative;
+		overflow: hidden;
+		gap: 4.1026vw;
+		background: linear-gradient(180deg, #2a2c32 65%, #0ba3ad 100%);
+		margin: 0 auto 11.6538vw;
+		padding: 0;
+		border-radius: 3.0769vw;
+		button {
+			background: #ffffff;
+			color: #2a2c32;
+			padding: 3.5897vw 10.8974vw;
+			font-size: 4.1026vw;
+			font-weight: 600;
+			line-height: 5.641vw;
+			text-align: center;
+			width: fit-content;
+			border-radius: 2.0513vw;
+			align-self: center;
+			margin: 16.4103vw 0 12.8205vw;
+		}
+	}
+	.gradient {
+		width: 89.7436vw;
+		height: 76.4103vw;
+		background: linear-gradient(0deg, #2a2c32 50%, rgba(0, 0, 0, 0) 100%);
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+	}
+	.up {
+		width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 0.5128vw solid #90909080;
+		height: 76.6667vw;
+		img {
+			width: 89.7436vw;
+			height: 45.9974vw;
+		}
+		h3 {
+			font-size: 6.1538vw;
+			line-height: 7.1795vw;
+			font-weight: 700;
+			color: #ffffff;
+			text-align: left;
+			z-index: 2;
+			padding: 0 0 10.2564vw;
+		}
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: fit-content;
+		padding: 0;
+		p {
+			font-size: 3.5897vw;
+			font-weight: 400;
+			line-height: 5.1282vw;
+			text-align: left;
+			color: #ffffff;
+			width: 79.4872vw;
+		}
+		.row {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 0;
+			height: fit-content;
+			width: fit-content;
+			border-bottom: none;
+		}
+		.card {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			width: 79.4872vw;
+			height: 23.5897vw;
+			gap: 7.6923vw;
+			border-bottom: 0.2564vw solid #90909080;
+			p {
+				font-size: 4.1026vw;
+				font-weight: 700;
+				line-height: 4.8718vw;
+				text-align: left;
+				color: #ffffff;
+				white-space: nowrap;
+			}
+			svg {
+				min-width: 7.9487vw;
+				width: 7.9487vw;
+				height: 7.9487vw;
+			}
+		}
+	}
+}

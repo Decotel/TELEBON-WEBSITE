@@ -9,29 +9,29 @@ import { accessColor } from '@/config/constants'
 const HeadProvider: FC<IType> = ({ children }) => {
 	return (
 		<>
-			<NextProgressBar
-				color={accessColor}
-				startPosition={0.3}
-				stopDelayMs={200}
-				height={3}
-			/>
+			{/*<NextProgressBar*/}
+			{/*	color={accessColor}*/}
+			{/*	startPosition={0.3}*/}
+			{/*	stopDelayMs={200}*/}
+			{/*	height={3}*/}
+			{/*/>*/}
 
 			<Head>
-				{/* <!-- Top.Mail.Ru counter -->  */}
+				{/* <!-- Top.Mail.Ru counter --> */}
 				<noscript>6zk0syi22z79zb81</noscript>
 				<script
 					type="text/javascript"
 					dangerouslySetInnerHTML={{
 						__html: `
-              var _tmr = window._tmr || (window._tmr = []);
-              _tmr.push({id: "3478248", type: "pageView", start: (new Date()).getTime()});
-              (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-                if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-              })(document, window, "tmr-code");
+							var _tmr = window._tmr || (window._tmr = []);
+							_tmr.push({id: "3518034", type: "pageView", start: (new Date()).getTime()});
+							(function (d, w, id) {
+							if (d.getElementById(id)) return;
+							var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+							ts.src = "https://top-fwz1.mail.ru/js/code.js";
+							var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+							if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+							})(document, window, "tmr-code");
             `,
 					}}
 				/>
@@ -45,36 +45,6 @@ const HeadProvider: FC<IType> = ({ children }) => {
 					</div>
 				</noscript>
 				{/* <!-- /Top.Mail.Ru counter --> */}
-				{/*<!-- Yandex.Metrika counter -->*/}
-				<script
-					type="text/javascript"
-					dangerouslySetInnerHTML={{
-						__html: `
-					(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-					m[i].l=1*new Date();
-					for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-					k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-					(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-					ym(96922814, "init", {
-					clickmap:true,
-					trackLinks:true,
-					accurateTrackBounce:true,
-					webvisor:true
-				});
-        `,
-					}}
-				/>
-				<noscript>
-					<div>
-						<img
-							src="https://mc.yandex.ru/watch/96922814"
-							style={{ position: 'absolute', left: '-9999px' }}
-							alt=""
-						/>
-					</div>
-				</noscript>
-				{/*<!-- Yandex.Metrika counter -->*/}
 				<meta charSet="UTF-8" />
 				<meta
 					name="viewport"

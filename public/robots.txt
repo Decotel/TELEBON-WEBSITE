@@ -1,13 +1,11 @@
 User-agent: *
 Disallow: /.next/
-Disallow: /_next/
 Disallow: /api/
 Allow: /public/
+Allow: /aboutus
 Allow: /price
-Allow: /telegram-bot
 Disallow: /node_modules/
 Disallow: /baza-znaniy
 Disallow: /info
-Disallow: /404
 Host: telebon.ru
 Sitemap: https://telebon.ru/sitemap.xml

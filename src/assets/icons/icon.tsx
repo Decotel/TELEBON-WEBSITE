@@ -1,212 +1,110 @@
-import { HoverIcon1 } from './HoverIcon1'
-import { HoverIcon2 } from './HoverIcon2'
-import { HoverIcon3 } from './HoverIcon3'
-import { HoverIcon4 } from './HoverIcon4'
-import { HoverIcon5 } from './HoverIcon5'
-import { HoverIcon6 } from './HoverIcon6'
-import { LogoIcon } from './LogoIcon'
-import { ArrowRightOutline } from './ArrowRightOutline'
-import { LogoMark } from './LogoMark'
-import { Background } from './Background'
-import { CalendarOutline } from './CalendarOutline'
-import { SquareOutline } from './SquareOutline'
-import { StatisticsOutline } from './StatisticsOutline'
-import { Users3Outline } from './Users3Outline'
 import { WalletOutline } from './WalletOutline'
-import { Grid } from './Grid'
-import { Soon } from './Soon'
-import { Journal } from './Journal'
-import { Telegram } from './Telegram'
-import { LogoTextTop } from './LogoTextTop'
-import { EnterIcon } from './EnterIcon'
-import { LaptopIcon } from './LaptopIcon'
-import { RectangleSplit4UnevenOutline } from './RectangleSplit4UnevenOutline'
-import { MoneyCircleOutline } from './MoneyCircleOutline'
-import { DocumentTextOutline } from './DocumentTextOutline'
-import { TelegramIcon } from './TelegramIcon'
-import { BrushOutline } from './BrushOutline'
-import { AttractionsOutline } from './AttractionsOutline'
-import { AutoOutline } from './AutoOutline'
-import { BuildOutline } from './BuildOutline'
-import { GavelOutline } from './GavelOutline'
-import { HeartOutline } from './HeartOutline'
-import { SchoolOutline } from './SchoolOutline'
-import { SportsOutline } from './SportsOutline'
-import { ArrowForwardLeft } from './ArrowForwardLeft'
-import { ArrowForwardRight } from './ArrowForwardRight'
-import { UsersAuduo } from './UsersAuduo'
-import { Robot } from './Robot'
-import { ContactSupport } from './ContactSupport'
-import { SupportCall } from './SupportCall'
-import { SupportMail } from './SupportMail'
-import { SupportPhone } from './SupportPhone'
-import { SupportMailAddress } from './SupportMailAddress'
-import { SupportWorkingHours } from './SupportWorkingHours'
-import { SupportPhoneBold } from './SupportPhoneBold'
-import { SupportMailAddressSmall } from './SupportMailAddressSmall'
-import { DownloadApp } from './DownloadApp'
-import { HowToReg } from './HowToReg'
-import { AccountCircle } from './AccountCircle'
-import { ContactSupportSmall } from './ContactSupportSmall'
-import { CallImage } from './CallImage'
-import { CircleBolt } from './CircleBolt'
-import { Click } from './Click'
-import { Marketing } from './Marketing'
-import { HourGlass } from './HourGlass'
+import { ArrowList } from './ArrowList'
+import { Analytic } from './Analytic'
+import { ButtonArrowRight } from './ButtonArrowRight'
+import { RightArrow } from './RightArrow'
+import { Close } from './Close'
 import { Success } from './Success'
-import { ArrowLeft } from './ArrowLeft'
-import { CookieIcon } from './CookieIcon'
-import { ContentCopy } from './ContentCopy'
-import { Error } from './Error'
+import { ButtonIcon } from './ButtonIcon'
+import { ButtonArrowLeftWhite } from './ButtonArrowLeftWhite'
+import { GooglePlayIcon } from './GooglePlayIcon'
+import { AppStoreIcon } from './AppStoreIcon'
+import { ButtonArrowRightWhite } from './ButtonArrowRightWhite'
+import { ButtonArrowRightBlack } from './main/functions/ButtonArrowRightBlack'
+import { UserIcon } from './UserIcon'
+import { X } from './X'
+import { FooterLogomark } from './main/footeri/FooterLogomark'
+import { FooterAppStore } from './main/footeri/FooterAppStore'
+import { FooterEmail } from './main/footeri/FooterEmail'
+import { FooterGooglePlay } from './main/footeri/FooterGooglePlay'
+import { FooterPhone } from './main/footeri/FooterPhone'
+import { FooterRuStore } from './main/footeri/FooterRuStore'
+import { FooterWhatsUp } from './main/footeri/FooterWhatsUp'
+import { FooterWhatsUpIcon } from './main/footeri/FooterWhatsUpIcon'
+import { FooterVKIcon } from './main/footeri/FooterVKIcon'
+import { FooterTelegramIcon } from './main/footeri/FooterTelegramIcon'
+import { FooterMail } from './main/footeri/FooterMail'
+import { FooterPhoneNumber } from './main/footeri/FooterPhoneNumber'
+import { FooterVK } from './main/footeri/FooterVK'
+import { FooterTG } from './main/footeri/FooterTG'
 import { Triangle } from './Triangle'
-import { TelegramLogo } from './TelegramLogo'
-import { VKLogo } from './VKLogo'
-import { DollarCircle } from './DollarCircle'
-import { SuccessOutline } from './SuccessOutline'
-import { RoubleCircle } from './RoubleCircle'
-import { RuStoreV1 } from './RuStoreV1'
-import { RuStoreV2 } from './RuStoreV2'
+import { MapPoint } from './aboutus/map/MapPoint'
+import { ListMark } from './aboutus/list/ListMark'
+import { AssistantPlus } from './aboutus/hero/AssistantPlus'
+import { Scissors } from './price/all/Scissors'
 
 export enum EIcons {
-	hover1,
-	hover2,
-	hover3,
-	hover4,
-	hover5,
-	hover6,
-	logoicon,
-	arrowrightoutline,
-	logomark,
-	background,
-	calendaroutline,
-	squareoutline,
-	statisticsoutline,
 	walletoutline,
-	users3outline,
-	grid,
-	soon,
-	journal,
-	telegram,
-	logotexttop,
-	entericon,
-	laptopicon,
-	rectanglesplit4unevenoutline,
-	moneycircleoutline,
-	documenttextoutline,
-	telegramicon,
-	brushoutline,
-	attractionsoutline,
-	autooutline,
-	buildoutline,
-	gaveloutline,
-	heartoutline,
-	sportsoutline,
-	schooloutline,
-	arrowforwardleft,
-	arrowforwardright,
-	usersauduo,
-	robot,
-	contactsupport,
-	supportcall,
-	supportmail,
-	supportphone,
-	supportmailaddress,
-	supportworkinghours,
-	supportphonebold,
-	supportmailaddresssmall,
-	downloadapp,
-	howtoreg,
-	accountcircle,
-	contactsupportsmall,
-	callimage,
-	circlebolt,
-	click,
-	marketing,
-	hourglass,
+	arrowlist,
+	analytic,
+	buttonarrowright,
+	buttonarrowrightwhite,
+	buttonarrowleftwhite,
+	rightarrow,
+	close,
 	success,
-	arrowleft,
-	cookie,
-	contentcopy,
-	errorimage,
+	buttonicon,
+	googleplayicon,
+	appstoreicon,
+	buttonarrowrightblack,
+	usericon,
+	x,
+	footerlogomark,
+	footerappstore,
+	footergoogleplay,
+	footeremail,
+	footerphone,
+	footerrustore,
+	footerwhatsup,
+	footervkicon,
+	footerwhatsupicon,
+	footertelegramicon,
+	footermail,
+	footerphonenumber,
+	footervk,
+	footertg,
 	triangle,
-	telegramlogo,
-	vklogo,
-	dollarcircle,
-	successoutline,
-	roublecircle,
-	rustore1,
-	rustore2,
+	mappoint,
+	listmark,
+	assistantplus,
+	scissors,
 }
 
 const ICONS: Record<EIcons, any> = {
-	[EIcons.hover1]: HoverIcon1,
-	[EIcons.hover2]: HoverIcon2,
-	[EIcons.hover3]: HoverIcon3,
-	[EIcons.hover4]: HoverIcon4,
-	[EIcons.hover5]: HoverIcon5,
-	[EIcons.hover6]: HoverIcon6,
-	[EIcons.logoicon]: LogoIcon,
-	[EIcons.arrowrightoutline]: ArrowRightOutline,
-	[EIcons.logomark]: LogoMark,
-	[EIcons.background]: Background,
-	[EIcons.calendaroutline]: CalendarOutline,
-	[EIcons.squareoutline]: SquareOutline,
-	[EIcons.statisticsoutline]: StatisticsOutline,
-	[EIcons.users3outline]: Users3Outline,
 	[EIcons.walletoutline]: WalletOutline,
-	[EIcons.grid]: Grid,
-	[EIcons.soon]: Soon,
-	[EIcons.journal]: Journal,
-	[EIcons.telegram]: Telegram,
-	[EIcons.logotexttop]: LogoTextTop,
-	[EIcons.entericon]: EnterIcon,
-	[EIcons.laptopicon]: LaptopIcon,
-	[EIcons.rectanglesplit4unevenoutline]: RectangleSplit4UnevenOutline,
-	[EIcons.moneycircleoutline]: MoneyCircleOutline,
-	[EIcons.documenttextoutline]: DocumentTextOutline,
-	[EIcons.telegramicon]: TelegramIcon,
-	[EIcons.brushoutline]: BrushOutline,
-	[EIcons.attractionsoutline]: AttractionsOutline,
-	[EIcons.autooutline]: AutoOutline,
-	[EIcons.buildoutline]: BuildOutline,
-	[EIcons.gaveloutline]: GavelOutline,
-	[EIcons.heartoutline]: HeartOutline,
-	[EIcons.schooloutline]: SchoolOutline,
-	[EIcons.sportsoutline]: SportsOutline,
-	[EIcons.arrowforwardleft]: ArrowForwardLeft,
-	[EIcons.arrowforwardright]: ArrowForwardRight,
-	[EIcons.usersauduo]: UsersAuduo,
-	[EIcons.robot]: Robot,
-	[EIcons.contactsupport]: ContactSupport,
-	[EIcons.supportcall]: SupportCall,
-	[EIcons.supportmail]: SupportMail,
-	[EIcons.supportphone]: SupportPhone,
-	[EIcons.supportphonebold]: SupportPhoneBold,
-	[EIcons.supportmailaddress]: SupportMailAddress,
-	[EIcons.supportmailaddresssmall]: SupportMailAddressSmall,
-	[EIcons.supportworkinghours]: SupportWorkingHours,
-	[EIcons.downloadapp]: DownloadApp,
-	[EIcons.howtoreg]: HowToReg,
-	[EIcons.accountcircle]: AccountCircle,
-	[EIcons.contactsupportsmall]: ContactSupportSmall,
-	[EIcons.callimage]: CallImage,
-	[EIcons.circlebolt]: CircleBolt,
-	[EIcons.click]: Click,
-	[EIcons.marketing]: Marketing,
-	[EIcons.hourglass]: HourGlass,
+	[EIcons.arrowlist]: ArrowList,
+	[EIcons.analytic]: Analytic,
+	[EIcons.buttonarrowright]: ButtonArrowRight,
+	[EIcons.buttonarrowrightwhite]: ButtonArrowRightWhite,
+	[EIcons.buttonarrowleftwhite]: ButtonArrowLeftWhite,
+	[EIcons.rightarrow]: RightArrow,
+	[EIcons.close]: Close,
 	[EIcons.success]: Success,
-	[EIcons.arrowleft]: ArrowLeft,
-	[EIcons.cookie]: CookieIcon,
-	[EIcons.contentcopy]: ContentCopy,
-	[EIcons.errorimage]: Error,
+	[EIcons.buttonicon]: ButtonIcon,
+	[EIcons.googleplayicon]: GooglePlayIcon,
+	[EIcons.appstoreicon]: AppStoreIcon,
+	[EIcons.buttonarrowrightblack]: ButtonArrowRightBlack,
+	[EIcons.usericon]: UserIcon,
+	[EIcons.x]: X,
+	[EIcons.footerlogomark]: FooterLogomark,
+	[EIcons.footerappstore]: FooterAppStore,
+	[EIcons.footeremail]: FooterEmail,
+	[EIcons.footergoogleplay]: FooterGooglePlay,
+	[EIcons.footerphone]: FooterPhone,
+	[EIcons.footerrustore]: FooterRuStore,
+	[EIcons.footerwhatsup]: FooterWhatsUp,
+	[EIcons.footerwhatsupicon]: FooterWhatsUpIcon,
+	[EIcons.footervkicon]: FooterVKIcon,
+	[EIcons.footertelegramicon]: FooterTelegramIcon,
+	[EIcons.footermail]: FooterMail,
+	[EIcons.footerphonenumber]: FooterPhoneNumber,
+	[EIcons.footervk]: FooterVK,
+	[EIcons.footertg]: FooterTG,
 	[EIcons.triangle]: Triangle,
-	[EIcons.telegramlogo]: TelegramLogo,
-	[EIcons.vklogo]: VKLogo,
-	[EIcons.dollarcircle]: DollarCircle,
-	[EIcons.successoutline]: SuccessOutline,
-	[EIcons.roublecircle]: RoubleCircle,
-	[EIcons.rustore1]: RuStoreV1,
-	[EIcons.rustore2]: RuStoreV2,
+	[EIcons.mappoint]: MapPoint,
+	[EIcons.listmark]: ListMark,
+	[EIcons.assistantplus]: AssistantPlus,
+	[EIcons.scissors]: Scissors,
 }
 
 interface IIconProps {

@@ -1,0 +1,138 @@
+.body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: fit-content;
+	position: relative;
+	overflow: hidden;
+	margin: 7.5vw 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: fit-content;
+
+	.card {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 69.2708vw;
+		height: fit-content;
+		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			width: 36.4583vw;
+			gap: 2.0833vw;
+			h3 {
+				font-size: 1.7708vw;
+				font-weight: 700;
+				line-height: 2.0833vw;
+				text-align: left;
+				color: #333333;
+			}
+			p {
+				font-size: 0.8333vw;
+				font-weight: 400;
+				line-height: 1.3333vw;
+				text-align: left;
+				color: #2a2c32;
+			}
+			button {
+				background: #2a2c32;
+				color: #ffffff;
+				padding: 1.0417vw 2.1875vw;
+				font-size: 0.833vw;
+				font-weight: 600;
+				line-height: 1.1458vw;
+				text-align: center;
+				width: fit-content;
+				border-radius: 0.4167vw;
+			}
+		}
+		img {
+			width: 35.15625vw;
+			height: 39.1667vw;
+			user-select: none;
+			pointer-events: none;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: fit-content;
+		position: relative;
+		overflow: hidden;
+		margin: 12.3077vw 0;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		height: fit-content;
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			width: 100vw;
+			height: 192.8205vw;
+			.text {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				width: 89.7436vw;
+				gap: 10.2564vw;
+				h3 {
+					font-size: 6.1538vw;
+					font-weight: 700;
+					line-height: 7.1795vw;
+					text-align: left;
+					color: #333333;
+				}
+				p {
+					font-size: 4.1026vw;
+					font-weight: 400;
+					line-height: 6.5641vw;
+					text-align: left;
+					color: #2a2c32;
+					width: 92.8205vw;
+				}
+				button {
+					background: #2a2c32;
+					color: #ffffff;
+					padding: 3.5897vw 17.3077vw;
+					font-size: 4.1026vw;
+					font-weight: 600;
+					line-height: 5.641vw;
+					text-align: center;
+					width: fit-content;
+					border-radius: 2.0513vw;
+					align-self: center;
+				}
+			}
+			img {
+				width: 89.7436vw;
+				height: 100vw;
+				user-select: none;
+				pointer-events: none;
+			}
+		}
+	}
+}

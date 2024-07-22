@@ -1,50 +1,21 @@
 import React, { FC, useEffect, useState } from 'react'
 import styles from './Footer.module.scss'
-import Link from 'next/link'
-import LogoImageNew from '../../../assets/icons/LogoImageNew.svg'
+import { EIcons, Icon, Icon as IconInstance } from '../../../assets/icons/icon'
 import Image from 'next/image'
-import { EIcons, Icon as IconInstance } from '../../../assets/icons/icon'
-import ModalCopy from '@/ui/modal/ModalCopy/ModalCopy'
+import Link from 'next/link'
+import ModalSupport from '@/ui/modal/ModalSupport/ModalSupport'
+import FooterImageLeft from '../../../assets/icons/main/footeri/FooterImageLeft.png'
+import FooterImageRight from '../../../assets/icons/main/footeri/FooterImageRight.png'
+import { motion } from 'framer-motion'
 import useMatchMedia from '@/hooks/useMatchMedia'
-import { useRouter } from 'next/router'
-import cn from 'classnames'
+import LogoImageNewWhite from '../../../assets/icons/LogoImageNewWhite.svg'
 
 const Footer: FC = () => {
-	const [showCookieBanner, setShowCookieBanner] = useState<boolean>(false)
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [hidden, setHidden] = useState<boolean>(false)
+	const [scrollStarted, setScrollStarted] = useState<boolean>(false)
 	const [copiedSuccess, setCopiedSuccess] = useState(false)
-	const [showAppUnavailableModal, setShowAppUnavailableModal] = useState(false)
 	const isMobile = useMatchMedia('768')
-	const router = useRouter()
-	const is404Page = router.pathname === `/404`
-
-	useEffect(() => {
-		const hasAcceptedCookies = document.cookie.includes(
-			'hasAcceptedCookies=true',
-		)
-		if (hasAcceptedCookies) {
-			setShowCookieBanner(false)
-		} else {
-			setShowCookieBanner(true)
-		}
-		const handleClickOutside = (event: MouseEvent) => {
-			const modal = document.querySelector('.appUnavailableModal')
-			if (modal && !modal.contains(event.target as Node)) {
-				setShowAppUnavailableModal(false)
-			}
-		}
-
-		document.addEventListener('mousedown', handleClickOutside)
-
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside)
-		}
-	}, [])
-
-	const handleAcceptCookies = () => {
-		document.cookie =
-			'hasAcceptedCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
-		setShowCookieBanner(false)
-	}
 
 	const unsecuredCopyToClipboard = (text: string) => {
 		const textArea = document.createElement('textarea')
@@ -87,277 +58,280 @@ const Footer: FC = () => {
 		}
 	}
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (
+				window.scrollY <
+					document.documentElement.scrollHeight - window.innerHeight &&
+				!scrollStarted
+			) {
+				setScrollStarted(true)
+				setHidden(true)
+			} else if (
+				window.scrollY ===
+					document.documentElement.scrollHeight - window.innerHeight &&
+				scrollStarted
+			) {
+				setScrollStarted(false)
+				setHidden(false)
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [scrollStarted])
+
 	return (
-		<noindex>
-			<div
-				className={styles.footer}
-				style={{ display: is404Page ? `none` : `flex` }}
-			>
-				<div className={styles.container}>
-					<div className={styles.aboveline}>
+		<div className={styles.footer}>
+			<div className={styles.main_container}>
+				{isMobile ? null : (
+					<div className={styles.common}>
+						<IconInstance name={EIcons.footerlogomark} />
 						{isMobile ? (
-							<div className={styles.left}>
-								<div className={styles.textcontent}>
-									<div className={styles.text}>
-										<Link href="https://lk.telebon.ru/auth" target={'_blank'}>
-											<p className={styles.authtext}>Войти</p>
-										</Link>
-										<Link
-											href="https://lk.telebon.ru/registration"
-											target={'_blank'}
-										>
-											<p className={styles.authtext}>Регистрация</p>
-										</Link>
-										<Link href="/info/licence">
-											<p>Лицензионный договор-оферта</p>
-										</Link>
-										<Link href="/info/privacy-policy">
-											<p>Политика конфиденциальности</p>
-										</Link>
-										<Link href="/info/agreement">
-											<p>Пользовательское соглашение</p>
-										</Link>
-										<Link
-											href="https://t.me/+Z4n8gxkEgQZmYjMy"
-											target={'_blank'}
-										>
-											<p>
-												<span>Чат тех. поддержки</span>
-												<IconInstance name={EIcons.contactsupportsmall} />
-											</p>
-										</Link>
-									</div>
-									{/*<Link href="/baza-znaniy">*/}
-									{/*	<p>База знаний</p>*/}
-									{/*</Link>*/}
-								</div>
-							</div>
+							<p className={styles.title}>Telebon</p>
 						) : (
-							<div className={styles.left}>
-								<div className={styles.logo}>
-									<Link href="/">
-										<Image src={LogoImageNew} alt="LogoImage" />
-									</Link>
-								</div>
-								<div className={styles.textcontent}>
-									<div className={styles.text}>
-										<Link
-											href="https://lk.telebon.ru/registration"
-											target={'_blank'}
-										>
-											<p>
-												<IconInstance name={EIcons.howtoreg} />
-												<span>Зарегистрироваться</span>
-											</p>
-										</Link>
-										<Link href="/info/licence">
-											<p>Лицензионный договор-оферта</p>
-										</Link>
-									</div>
-									<div className={styles.text}>
-										<Link href="https://lk.telebon.ru/auth" target={'_blank'}>
-											<p>
-												<IconInstance name={EIcons.accountcircle} />
-												<span>Личный кабинет</span>
-											</p>
-										</Link>
-										<Link href="/info/privacy-policy">
-											<p>Политика конфиденциальности</p>
-										</Link>
-									</div>
-									<div className={styles.text}>
-										<Link
-											href="https://t.me/+Z4n8gxkEgQZmYjMy"
-											target={'_blank'}
-										>
-											<p>
-												<IconInstance name={EIcons.contactsupportsmall} />
-												<span>Чат технической поддержки</span>
-											</p>
-										</Link>
-										<Link href="/info/agreement">
-											<p>Пользовательское соглашение</p>
-										</Link>
-									</div>
-
-									{/*<Link href="/baza-znaniy">*/}
-									{/*	<p>База знаний</p>*/}
-									{/*</Link>*/}
-								</div>
-							</div>
+							<p className={styles.title}>Присоединяйтесь</p>
 						)}
-
-						<div className={styles.right}>
-							<div
-								className={styles.copyboard}
-								onClick={() => {
-									copyToClipboard('hello@telebon.ru')
-								}}
-							>
-								<div className={styles.email}>
-									<IconInstance name={EIcons.supportmailaddresssmall} />
-								</div>
-							</div>
-							<div className={styles.copyboard} onClick={handlePhoneClick}>
-								<div className={styles.phone}>
-									<IconInstance name={EIcons.supportphonebold} />
-								</div>
-							</div>
-							{isMobile ? (
-								<div
-									className={cn(
-										styles.button,
-										showAppUnavailableModal && styles.active,
-									)}
-									onClick={() =>
-										setShowAppUnavailableModal(!showAppUnavailableModal)
-									}
-								>
-									<IconInstance name={EIcons.downloadapp} />
-									{showAppUnavailableModal && (
-										<div
-											className={cn(styles.appUnavailableModal, styles.active)}
-										>
-											<div className={styles.triangle}>
-												<IconInstance name={EIcons.triangle} />
-											</div>
-											<div className={styles.box}>
-												<IconInstance name={EIcons.errorimage} />
-												<div className={styles.text_app}>
-													<p>
-														Приложение проходит проверку в AppStore и Google
-														play (Для Android доступно скачивание с{' '}
-														<Link
-															href={
-																'https://apps.rustore.ru/app/ru.lk.telebon.twa?ysclid=lvdj286i8m397367225'
-															}
-														>
-															<span>RuStore</span>
-														</Link>
-														). Для установки на устройства Apple напишите в{' '}
-														<Link href={'https://t.me/+Z4n8gxkEgQZmYjMy'}>
-															<span>чат службы поддержки</span>
-														</Link>
-													</p>
-												</div>
-											</div>
-										</div>
-									)}
-								</div>
-							) : (
-								<div
-									className={cn(
-										styles.button,
-										showAppUnavailableModal && styles.active,
-									)}
-									onMouseEnter={() => setShowAppUnavailableModal(true)}
-									onMouseLeave={() => setShowAppUnavailableModal(false)}
-								>
-									<IconInstance name={EIcons.downloadapp} />
-									{showAppUnavailableModal && (
-										<div
-											className={cn(styles.appUnavailableModal, styles.active)}
-										>
-											<div className={styles.triangle}>
-												<IconInstance name={EIcons.triangle} />
-											</div>
-											<div className={styles.box}>
-												<IconInstance name={EIcons.errorimage} />
-												<div className={styles.text_app}>
-													<p>
-														Приложение проходит проверку в AppStore и Google
-														play (Для Android доступно скачивание с{' '}
-														<Link
-															href={
-																'https://apps.rustore.ru/app/ru.lk.telebon.twa?ysclid=lvdj286i8m397367225'
-															}
-														>
-															<span>RuStore</span>
-														</Link>
-														). Для установки на устройства Apple напишите в{' '}
-														<Link href={'https://t.me/+Z4n8gxkEgQZmYjMy'}>
-															<span>чат службы поддержки</span>
-														</Link>
-													</p>
-												</div>
-											</div>
-										</div>
-									)}
-								</div>
-							)}
-							{isMobile ? (
-								<div className={styles.rustore}>
-									<Link
-										href={
-											'https://apps.rustore.ru/app/ru.lk.telebon.twa?ysclid=lvdj286i8m397367225'
-										}
-										target={'_blank'}
-									>
-										<IconInstance name={EIcons.rustore2} />
-									</Link>
-								</div>
-							) : null}
-							{isMobile ? (
-								<div className={styles.logo}>
-									<Link href="/">
-										<Image src={LogoImageNew} alt="LogoImage" />
-									</Link>
-								</div>
-							) : null}
-						</div>
-					</div>
-					<div className={styles.line}></div>
-					<div className={styles.underline}>
-						<div className={styles.underline_social}>
-							<div className={styles.text}>
-								<p>©️ 2024</p>
-							</div>
-							<Link href={'https://t.me/telebon_channel'} target={'_blank'}>
-								<IconInstance name={EIcons.telegramlogo} />
-							</Link>
-							<Link href={'https://vk.com/teleboncrm'} target={'_blank'}>
-								<IconInstance name={EIcons.vklogo} />
-							</Link>
-						</div>
-						{isMobile ? null : (
-							<div className={styles.rustore}>
+						{isMobile ? (
+							<p>Присоединяйтесь</p>
+						) : (
+							<p>
+								Промокод бонус:{' '}
 								<Link
-									href={
-										'https://apps.rustore.ru/app/ru.lk.telebon.twa?ysclid=lvdj286i8m397367225'
-									}
+									href={'https://lk.telebon.ru/registration'}
 									target={'_blank'}
 								>
-									<IconInstance name={EIcons.rustore1} />
+									START
+								</Link>
+							</p>
+						)}
+						{isMobile ? (
+							<div className={styles.buttons}>
+								<button>
+									<Icon name={EIcons.buttonicon} />
+									Зарегистрироваться
+								</button>
+								<button>Войти</button>
+							</div>
+						) : (
+							<div className={styles.buttons}>
+								<Link
+									href={'https://apps.apple.com/ru/app/telebon/id6502614961'}
+									target={'_blank'}
+								>
+									<IconInstance name={EIcons.footerappstore} />
+								</Link>
+								<Link href={'/'}>
+									<IconInstance name={EIcons.footergoogleplay} />
 								</Link>
 							</div>
 						)}
 					</div>
-					<ModalCopy
-						isOpen={copiedSuccess}
-						onClose={() => setCopiedSuccess(false)}
-					/>
-				</div>
-				{showCookieBanner && (
-					<noindex>
-						<div className={styles.cookieContainer}>
-							<div className={styles.title}>
-								<IconInstance name={EIcons.cookie} />
-								<p>Мы используем файлы cookie</p>
-							</div>
-							<p>
-								Продолжая использовать наш сайт, вы даете{' '}
-								<Link href="/info/cookie">
-									<span>согласие на использование файлов «cookie»</span>
-								</Link>
-								. Если вы не хотите, чтобы ваши данные обрабатывались, измените
-								настройки браузера.
-							</p>
-							<button onClick={handleAcceptCookies}>Принять</button>
-						</div>
-					</noindex>
 				)}
+				{isMobile ? (
+					<div className={styles.links}>
+						<Image src={LogoImageNewWhite} alt="logotext" />
+						{/*<div className={styles.card}>*/}
+						{/*	<IconInstance name={EIcons.rightarrow} />*/}
+						{/*	<p>Возможности</p>*/}
+						{/*</div>*/}
+						<Link href={'/price'}>
+							<div className={styles.card}>
+								<IconInstance name={EIcons.rightarrow} />
+								<p>Тарифы</p>
+							</div>
+						</Link>
+						{/*<div className={styles.card}>*/}
+						{/*	<IconInstance name={EIcons.rightarrow} />*/}
+						{/*	<p>Бот для записи</p>*/}
+						{/*</div>*/}
+						<Link href={'/document'}>
+							<div className={styles.card}>
+								<IconInstance name={EIcons.rightarrow} />
+								<p>Лицензионный договор</p>
+							</div>
+						</Link>
+						<Link href={'/document'}>
+							<div className={styles.card}>
+								<IconInstance name={EIcons.rightarrow} />
+								<p>Соглашение</p>
+							</div>
+						</Link>
+						<Link href={'/document'}>
+							<div className={styles.card}>
+								<IconInstance name={EIcons.rightarrow} />
+								<p>Конфиденциальность</p>
+							</div>
+						</Link>
+						<div className={styles.contact}>
+							<p className={styles.title}>КОНТАКТЫ</p>
+							<div className={styles.main}>
+								<div className={styles.card} onClick={handlePhoneClick}>
+									<IconInstance name={EIcons.footerphone} />
+									<IconInstance name={EIcons.footerphonenumber} />
+								</div>
+								<div
+									className={styles.card}
+									onClick={() => {
+										copyToClipboard('hello@telebon.ru')
+									}}
+								>
+									<IconInstance name={EIcons.footermail} />
+									<IconInstance name={EIcons.footeremail} />
+								</div>
+								<Link href={'https://wa.me/79956780440'} target={'_blank'}>
+									<div className={styles.card}>
+										<IconInstance name={EIcons.footerwhatsupicon} />
+										{/*<IconInstance name={EIcons.footerwhatsup} />*/}
+										Написать в WhatsApp
+									</div>
+								</Link>
+							</div>
+						</div>
+						<div className={styles.line}></div>
+					</div>
+				) : (
+					<div className={styles.links}>
+						<div className={styles.row}>
+							<div className={styles.contact}>
+								<p className={styles.title}>КОНТАКТЫ</p>
+								<div className={styles.main}>
+									<div className={styles.card} onClick={handlePhoneClick}>
+										<IconInstance name={EIcons.footerphone} />
+										<IconInstance name={EIcons.footerphonenumber} />
+									</div>
+									<div
+										className={styles.card}
+										onClick={() => {
+											copyToClipboard('hello@telebon.ru')
+										}}
+									>
+										<IconInstance name={EIcons.footermail} />
+										<IconInstance name={EIcons.footeremail} />
+									</div>
+									<Link href={'https://wa.me/79956780440'} target={'_blank'}>
+										<div className={styles.card}>
+											<IconInstance name={EIcons.footerwhatsupicon} />
+											<IconInstance name={EIcons.footerwhatsup} />
+										</div>
+									</Link>
+								</div>
+							</div>
+							<div
+								style={{
+									display: 'flex',
+									flexDirection: 'row',
+									gap: '3.125vw',
+								}}
+							>
+								<div className={styles.column}>
+									<p className={styles.title}>КАРТА САЙТА</p>
+									<div className={styles.line}></div>
+									<Link href={'/price'}>
+										<p>Тарифы</p>
+									</Link>
+									{/*<Link href={'/'}>*/}
+									{/*	<p>Бот для записи</p>*/}
+									{/*</Link>*/}
+								</div>
+								<div className={styles.column}>
+									<p className={styles.title}>ДОКУМЕНТЫ</p>
+									<div className={styles.line}></div>
+									<Link href={'/document'}>
+										<p>Пользовательское соглашение</p>
+									</Link>
+									<Link href={'/document'}>
+										<p>Лицензионный договор</p>
+									</Link>
+									<Link href={'/document'}>
+										<p>Конфиденциальность</p>
+									</Link>
+									{/*<div className={styles.social}>*/}
+									{/*	<IconInstance name={EIcons.footertelegramicon} />*/}
+									{/*	<IconInstance name={EIcons.footervkicon} />*/}
+									{/*</div>*/}
+								</div>
+							</div>
+						</div>
+					</div>
+				)}
+
+				<div className={styles.present}>
+					<div className={styles.box}>
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							<p className={styles.title}>Презентация Telebon</p>
+							<p>Покажем систему в деле, ответим на все интересующие вопросы</p>
+						</div>
+						{isMobile ? (
+							<button onClick={() => setIsModalOpen(true)}>
+								Отправить запрос
+							</button>
+						) : (
+							<button onClick={() => setIsModalOpen(true)}>
+								Запросить презентацию
+							</button>
+						)}
+					</div>
+				</div>
+				<div className={styles.bottom}>
+					<p>© ООО Группа Компаний «Белый Медведь»</p>
+					{isMobile ? null : (
+						<div
+							style={{
+								width: '0.1042vw',
+								height: '0.1042vw',
+								borderRadius: '100%',
+								background: '#647084',
+							}}
+						></div>
+					)}
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							gap: isMobile ? '2.0513vw' : '0.625vw',
+						}}
+					>
+						<span>4345410051</span>
+						{isMobile ? (
+							<div
+								style={{
+									width: '0.1042vw',
+									height: '0.1042vw',
+									borderRadius: '100%',
+									background: '#647084',
+								}}
+							></div>
+						) : null}
+						<span>1154345004582</span>
+					</div>
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'row',
+							gap: isMobile ? '4.1026vw' : '0.833vw',
+						}}
+					>
+						<Link href={'https://vk.com/teleboncrm'} target={'_blank'}>
+							<IconInstance name={EIcons.footervk} />
+						</Link>
+						<Link href={'https://t.me/telebon_channel'} target={'_blank'}>
+							<IconInstance name={EIcons.footertg} />
+						</Link>
+					</div>
+				</div>
 			</div>
-		</noindex>
+			{isModalOpen ? (
+				<ModalSupport
+					isOpen={isModalOpen}
+					setIsModalOpen={setIsModalOpen}
+					onClose={() => setIsModalOpen(false)}
+				/>
+			) : null}
+		</div>
 	)
 }
 

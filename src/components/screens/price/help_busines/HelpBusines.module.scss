@@ -1,0 +1,150 @@
+.body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: fit-content;
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: fit-content;
+	margin: 7.5vw 0;
+	.card {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.9792vw 6.5625vw 1.9792vw 7.083vw;
+		width: 83.33vw;
+		height: fit-content;
+		background: url('../../../../assets/icons/main/help_busines/HelpBusinesBackground.png')
+			no-repeat;
+		background-size: cover;
+		border-radius: 0.625vw;
+		position: relative;
+		.phone {
+			position: absolute;
+			top: -1.2917vw;
+			right: 34.5833vw;
+			img {
+				width: 14.1667vw;
+				height: 28.5885vw;
+			}
+		}
+		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			gap: 2.0833vw;
+			width: 20.0521vw;
+			h3 {
+				font-size: 1.7708vw;
+				font-weight: 700;
+				line-height: 2.0833vw;
+				text-align: left;
+				color: #ffffff;
+			}
+			button {
+				background: #ffffff;
+				color: #2a2c32;
+				padding: 1.0417vw 2.1875vw;
+				font-size: 0.833vw;
+				font-weight: 600;
+				line-height: 1.1458vw;
+				text-align: center;
+				width: fit-content;
+				border-radius: 0.4167vw;
+			}
+		}
+		img {
+			width: 28.3646vw;
+			height: 21.875vw;
+			user-select: none;
+			pointer-events: none;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: fit-content;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		height: fit-content;
+		margin: 0 0 12.3077vw;
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 12.3077vw 5.0436vw 5.641vw 5.0436vw;
+			width: 100vw;
+			height: 126.0487vw;
+			background: url('../../../../assets/icons/main/help_busines/HelpBusinesBackgroundMobile.png')
+				no-repeat;
+			background-size: cover;
+			border-radius: 0;
+			position: relative;
+			.phone {
+				position: absolute;
+				top: 60.5897vw;
+				right: 10.2564vw;
+				img {
+					width: 32.8205vw;
+					height: 67.6923vw;
+				}
+			}
+			.text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 10.2564vw;
+				width: 89.7436vw;
+				h3 {
+					font-size: 6.1538vw;
+					line-height: 7.1795vw;
+					text-align: center;
+				}
+				button {
+					background: #ffffff;
+					color: #2a2c32;
+					padding: 3.5897vw 10.6282vw;
+					font-size: 4.1026vw;
+					font-weight: 600;
+					line-height: 5.641vw;
+					text-align: center;
+					width: fit-content;
+					border-radius: 2.0513vw;
+					align-self: center;
+				}
+			}
+			img {
+				width: 76.4103vw;
+				height: 58.8692vw;
+				user-select: none;
+				pointer-events: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,165 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    gap: 3.3333vw;
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h3 {
+            font-size: 1.7708vw;
+            font-weight: 700;
+            line-height: 2.0833vw;
+            text-align: center;
+            color: #2A2C32;
+        }
+    }
+    .map {
+        width: 83.3333vw;
+        height: 38.0208vw;
+        background: url('../../../../assets/icons/aboutus/map/MapBackground.png') no-repeat;
+        background-size: cover;
+        border-radius: 0.625vw;
+        position: relative;
+        .point {
+            border: 1px solid #90909080;
+            background: #2A2C32;
+            height: 2.7604vw;
+            width: 12.7083vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8854vw 1.6146vw 0.8854vw 0;
+            border-radius: 5.2083vw;
+            position: absolute;
+            top: 15.2083vw;
+            left: 18.0208vw;
+            svg {
+                margin-left: -0.3125vw;
+                width: 3.6458vw;
+                height: 3.90625vw;
+            }
+            p {
+                font-size: 0.8333vw;
+                font-weight: 600;
+                line-height: 0.9896vw;
+                text-align: left;
+                color: #FFFFFF;
+            }
+            &:nth-child(2) {
+                padding-right: 1.3021vw;
+                top: 27.65625vw;
+                left: 8.3333vw;
+            }
+            &:nth-child(3) {
+                padding-right: 1.09375vw;
+                width: 15.4167vw;
+                top: 23.8542vw;
+                left: 47.0833vw;
+            }
+            &:nth-child(4) {
+                padding-right: 4.1667vw;
+                width: 15.4167vw;
+                top: 11.40625vw;
+                left: 59.5833vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: fit-content;
+        position: relative;
+        overflow: hidden;
+        margin-top: 12.3077vw;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        gap: 8.3333vw;
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3 {
+                font-size: 6.1538vw;
+                font-weight: 700;
+                line-height: 7.1795vw;
+                text-align: center;
+                color: #2A2C32;
+            }
+        }
+        .map {
+            width: 89.7436vw;
+            height: 105.1282vw;
+            background: url('../../../../assets/icons/aboutus/map/MapBackgroundMobile.png') no-repeat;
+            background-size: cover;
+            border-radius: 3.0769vw;
+            position: relative;
+            .point {
+                border: none;
+                background: transparent;
+                width: 17.9487vw;
+                height: 19.2308vw;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0;
+                border-radius: 0;
+                position: absolute;
+                top: 6.1538vw;
+                left: 55.3846vw;
+                svg {
+                    margin-left: 0;
+                    width: 17.9487vw;
+                    height: 19.2308vw;
+                }
+                &:nth-child(2) {
+                    padding-right: 0;
+                    top: 32.4359vw;
+                    left: 26.5128vw;
+                }
+                &:nth-child(3) {
+                    padding-right: 0;
+                    width: 17.9487vw;
+                    top: 63.9744vw;
+                    left: 55.3846vw;
+                }
+                &:nth-child(4) {
+                    padding-right: 0;
+                    width: 17.9487vw;;
+                    top: 74.4872vw;
+                    left: 8.5641vw;
+                }
+            }
+        }
+    }
+}

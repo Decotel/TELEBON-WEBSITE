@@ -1,0 +1,176 @@
+.body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: fit-content;
+	position: relative;
+	overflow: hidden;
+	margin-top: 5vw;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: fit-content;
+	gap: 3.3333vw;
+	.text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		h3 {
+			font-size: 1.7708vw;
+			font-weight: 700;
+			line-height: 2.0833vw;
+			text-align: center;
+			color: #2a2c32;
+		}
+	}
+	.map {
+		width: 83.3333vw;
+		height: 38.0208vw;
+		background: url('../../../../assets/icons/aboutus/assistant/AssistantBackground.png')
+			no-repeat;
+		background-size: cover;
+		border-radius: 0.625vw;
+		position: relative;
+		.point {
+			border: 1px solid #90909080;
+			background: #2a2c32;
+			height: 2.7604vw;
+			width: 20.46875vw;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.8854vw 1.8229vw 0.8854vw 0;
+			border-radius: 5.2083vw;
+			position: absolute;
+			top: 7.2396vw;
+			left: 18.4896vw;
+			svg {
+				width: 3.6458vw;
+				height: 3.6458vw;
+				margin-left: -0.5128vw;
+			}
+			p {
+				font-size: 0.8333vw;
+				font-weight: 600;
+				line-height: 0.9896vw;
+				text-align: left;
+				color: #ffffff;
+			}
+			&:nth-child(2) {
+				padding-right: 1.6667vw;
+				width: 15.15625vw;
+				top: 11.40625vw;
+				left: 24.921875vw;
+			}
+			&:nth-child(3) {
+				padding-right: 1.71875vw;
+				width: 15vw;
+				top: 18.151vw;
+				left: 51.6667vw;
+			}
+			&:nth-child(4) {
+				padding-right: 2.03125vw;
+				width: 12.8646vw;
+				top: 25.7552vw;
+				left: 35vw;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: fit-content;
+		position: relative;
+		overflow: hidden;
+		margin-top: 12.3077vw;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: fit-content;
+		gap: 8.2051vw;
+		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			h3 {
+				font-size: 6.1538vw;
+				font-weight: 700;
+				line-height: 7.1795vw;
+				text-align: center;
+				color: #2a2c32;
+			}
+		}
+		.map {
+			width: 89.7436vw;
+			height: 113.3333vw;
+			background: url('../../../../assets/icons/aboutus/assistant/AssistantBackgroundMobile.png')
+				no-repeat;
+			background-size: cover;
+			border-radius: 3.0769vw;
+			position: relative;
+			.point {
+				border: none;
+				background: transparent;
+				height: 12.3077vw;
+				width: 12.3077vw;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0;
+				border-radius: 0;
+				position: absolute;
+				top: 13.8462vw;
+				left: 8.0769vw;
+				svg {
+					width: 12.3077vw;
+					height: 12.3077vw;
+				}
+				p {
+					font-size: 0.8333vw;
+					font-weight: 600;
+					line-height: 0.9896vw;
+					text-align: left;
+					color: #ffffff;
+				}
+				&:nth-child(2) {
+					padding-right: 0;
+					width: 12.3077vw;
+					top: 35.8974vw;
+					left: 60.7692vw;
+				}
+				&:nth-child(3) {
+					padding-right: 0;
+					width: 12.3077vw;
+					top: 46.4103vw;
+					left: 1.7949vw;
+				}
+				&:nth-child(4) {
+					padding-right: 0;
+					width: 12.3077vw;
+					top: 67.4359vw;
+					left: 26.9231vw;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,139 @@
+.body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: fit-content;
+	position: relative;
+	overflow: hidden;
+	gap: 5vw;
+}
+
+.up {
+	h3 {
+		font-size: 1.7708vw;
+		line-height: 2.0833vw;
+		font-weight: 700;
+		color: #2a2c32;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: fit-content;
+	margin: 0.833vw 0;
+	gap: 1.5625vw;
+	.card {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		width: 22.0104vw;
+		height: 18.2135vw;
+		gap: 1.667vw;
+		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1.0417vw;
+			width: 19.9302vw;
+			p {
+				font-size: 1.0417vw;
+				font-weight: 700;
+				line-height: 1.3021vw;
+				text-align: center;
+				color: #2a2c32;
+			}
+			span {
+				font-size: 0.833vw;
+				font-weight: 400;
+				line-height: 1.3021vw;
+				text-align: center;
+				color: #2a2c32;
+			}
+		}
+		img {
+			width: 22.0135vw;
+			height: 9.1667vw;
+			user-select: none;
+			pointer-events: none;
+			padding: 0 4.1667vw 1.875vw;
+			border-bottom: 0.0521vw solid #90909080;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: fit-content;
+		position: relative;
+		overflow: hidden;
+		gap: 12.8205vw;
+	}
+	.up {
+		h3 {
+			font-size: 6.1538vw;
+			line-height: 7.1795vw;
+		}
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: fit-content;
+		margin: 0 0 12.3077vw;
+		gap: 12.3077vw;
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			width: 100vw;
+			height: 82.4564vw;
+			gap: 4.1026vw;
+			.text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 2.5641vw;
+				width: 89.7436vw;
+				p {
+					font-size: 5.1282vw;
+					font-weight: 700;
+					line-height: 6.4103vw;
+					text-align: center;
+					color: #2a2c32;
+				}
+
+				span {
+					font-size: 4.1026vw;
+					font-weight: 400;
+					line-height: 6.4103vw;
+					text-align: center;
+					color: #2a2c32;
+				}
+			}
+			img {
+				width: 89.7436vw;
+				height: 47.1385vw;
+				user-select: none;
+				pointer-events: none;
+				padding: 0 4.1026vw 4.3589vw;
+				border-bottom: 0.2564vw solid #90909080;
+			}
+		}
+	}
+}

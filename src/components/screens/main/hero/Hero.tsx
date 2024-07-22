@@ -1,63 +1,160 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import styles from './Hero.module.scss'
 import cn from 'classnames'
+import { EIcons, Icon as IconInstance } from '../../../../assets/icons/icon'
 import Image from 'next/image'
-import HeroPhoneImage from '../../../../assets/icons/HeroPhoneImage.png'
-import CommonButton from '@/ui/button/CommonButton'
+import { useFormik } from 'formik'
+import Link from 'next/link'
+import useMatchMedia from '@/hooks/useMatchMedia'
+import Phone from '../../../../assets/icons/main/hero/HeroPhone.png'
+import PhoneMobile from '../../../../assets/icons/main/hero/HeroPhoneMobile.png'
+import Sponsors from '../../../../assets/icons/main/hero/Sponsors.png'
+import SponsorsMobile from '../../../../assets/icons/main/hero/SponsorsMobile.png'
+import { motion } from 'framer-motion'
+import AppleIcon from '../../../../assets/icons/AppleIcon.png'
 
-interface HeroProps {
-	nextBlockRef: React.RefObject<HTMLDivElement>
-}
+const Hero: FC = () => {
+	const isMobile = useMatchMedia('768')
+	const [platformLink, setPlatformLink] = useState('')
+	const [isOpenDownload, setIsOpenDownload] = useState<boolean>(true)
 
-const Hero: FC<HeroProps> = ({ nextBlockRef }) => {
-	// const scrollToComponent = () => {
-	// 	if (nextBlockRef.current) {
-	// 		const windowHeight = window.innerHeight
-	// 		const { top, height } = nextBlockRef.current.getBoundingClientRect()
-	// 		const scrollPosition =
-	// 			top + window.scrollY - (windowHeight / 2 - height / 2)
-	// 		window.scrollTo({ top: scrollPosition, behavior: 'smooth' })
-	// 	}
-	// }
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const storedState = sessionStorage.getItem('isOpenDownload')
+			if (storedState !== null && storedState !== 'undefined') {
+				setIsOpenDownload(JSON.parse(storedState))
+			}
+		}
+	}, [])
+
+	useEffect(() => {
+		const userAgent = navigator.userAgent || navigator.vendor
+
+		if (/android/i.test(userAgent)) {
+			setPlatformLink('/')
+		} else if (/iPad|iPhone|iPod/i.test(userAgent)) {
+			setPlatformLink('https://apps.apple.com/ru/app/telebon/id6502614961')
+		} else {
+			setPlatformLink('/')
+		}
+	}, [])
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			sessionStorage.setItem('isOpenDownload', JSON.stringify(isOpenDownload))
+		}
+	}, [isOpenDownload])
+
 	return (
 		<div
-			className={cn(styles.fuck, 'wrapper')}
+			className={cn(styles.body, 'wrapper')}
 			itemScope
-			itemType="http://schema.org/SoftwareApplication"
+			itemType="http://schema.org/LocalBusiness"
 		>
-			<div className={styles.main_container}>
-				<div className={cn(styles.left)}>
-					<div className={styles.head}>
-						<h1 itemProp="name">
-							Новый сервис с <span>возможностью записи клиентов</span> в
-							Telegram
-						</h1>
-						<div className={styles.additionalText}>
-							<p itemProp="description">
-								Увеличьте количество записей и автоматизируйте работу с
-								клиентской базой
-							</p>
+			<div className={styles.gradient}></div>
+			<div className={styles.background}></div>
+			{isMobile && isOpenDownload ? (
+				<div className={styles.download_link}>
+					<div className={styles.row}>
+						<div onClick={() => setIsOpenDownload(false)}>
+							<IconInstance name={EIcons.x} />
+						</div>
+						<Image src={AppleIcon} alt={''} />
+						<div className={styles.text}>
+							<p>Telebon</p>
+							<span>Mobile app</span>
 						</div>
 					</div>
-					<noindex>
-						<CommonButton
-							href="https://lk.telebon.ru/registration"
-							color={'primary'}
-							size={'s'}
+					<Link href={platformLink} target={'_blank'}>
+						<button>Открыть</button>
+					</Link>
+				</div>
+			) : null}
+			<div className={styles.container}>
+				<div style={{ height: isMobile ? '30.7692vw' : '6.9792vw' }}></div>
+				<div className={styles.row}>
+					<div className={styles.column}>
+						<div className={styles.text}>
+							<h1>Простая запись клиентов для профессионалов</h1>
+							{isMobile ? (
+								<p>
+									Система для бронирования, учета
+									<br /> финансов и клиентов.
+									<span>
+										{' '}
+										Нам доверяют
+										<br />
+										более 3000 бьюти специалистов.
+									</span>
+								</p>
+							) : (
+								<p>
+									Система для бронирования, учета
+									<br /> финансов и клиентов.
+									<span>
+										{' '}
+										Нам доверяют
+										<br />
+										более 3000 бьюти специалистов.
+									</span>
+								</p>
+							)}
+						</div>
+						<Link
+							href={'https://lk.telebon.ru/registration'}
 							target={'_blank'}
+							style={{
+								display: 'flex',
+								justifyContent: isMobile ? 'center' : 'flex-start',
+							}}
 						>
-							Попробовать
-						</CommonButton>
-					</noindex>
-				</div>
-				<div className={styles.right}>
-					<div>
-						<Image src={HeroPhoneImage} alt={'Телеграм бот'} />
+							{isMobile ? (
+								<button>Начать</button>
+							) : (
+								<button>Попробовать сейчас</button>
+							)}
+						</Link>
 					</div>
-					{/*<div className={styles.phone_image} onClick={scrollToComponent}>*/}
-					{/*	<IconInstance name={EIcons.callimage} />*/}
-					{/*</div>*/}
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
+						}}
+					>
+						{isMobile ? (
+							<Image src={PhoneMobile} alt={''} />
+						) : (
+							<Image
+								src={Phone}
+								alt={'Мобильное приложение Телебон (Telebon)'}
+							/>
+						)}
+					</motion.div>
 				</div>
+				<motion.div
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.5 }}
+					variants={{
+						visible: { opacity: 1, y: 0 },
+						hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
+					}}
+					className={styles.sponsors}
+				>
+					{isMobile ? (
+						<Image src={SponsorsMobile} alt={''} />
+					) : (
+						<Image
+							src={Sponsors}
+							alt={'Партнёры системы записи клиентов Телебон (Telebon)'}
+						/>
+					)}
+				</motion.div>
 			</div>
 		</div>
 	)
