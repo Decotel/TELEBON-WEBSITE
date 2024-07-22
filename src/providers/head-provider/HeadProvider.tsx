@@ -56,7 +56,7 @@ const HeadProvider: FC<IType> = ({ children }) => {
 				<meta name="msapplication-navbutton-color" content={'#181B1E'} />
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
-					content={'#181B1E'}
+					content={'#ffffff'}
 				/>
 			</Head>
 			{children}
