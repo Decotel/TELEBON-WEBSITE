@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	console.log('1', paths)
 
-	return { paths, fallback: true } //поменять потом на false
+	return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
