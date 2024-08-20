@@ -4,11 +4,9 @@ import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 import styles from './Layout.module.scss'
 import { useRouter } from 'next/router'
-import { fetchPosts } from '../../lib/api'
 
 const Layout: FC<IType> = ({ children }) => {
 	const [is404Page, setIs404Page] = useState(false)
-	const [postPaths, setPostPaths] = useState<string[]>([])
 	const router = useRouter()
 
 	useEffect(() => {

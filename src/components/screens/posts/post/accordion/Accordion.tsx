@@ -5,7 +5,7 @@ import useMatchMedia from '@/hooks/useMatchMedia'
 import { motion } from 'framer-motion'
 import { EIcons, Icon } from '../../../../../assets/icons/icon'
 import Link from 'next/link'
-import { CardFAQ, formatDescription } from '@/screens/posts/post/home/Home'
+import { formatDescription } from '@/screens/posts/post/home/Home'
 import { ComponentPageFaq } from '@/screens/posts/interfaces'
 
 interface AccordionProps {
