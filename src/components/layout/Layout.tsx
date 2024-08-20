@@ -9,7 +9,6 @@ import { fetchPosts } from '../../lib/api'
 const Layout: FC<IType> = ({ children }) => {
 	const [is404Page, setIs404Page] = useState(false)
 	const [postPaths, setPostPaths] = useState<string[]>([])
-	const [loading, setLoading] = useState(true)
 	const router = useRouter()
 
 	useEffect(() => {
@@ -32,16 +31,14 @@ const Layout: FC<IType> = ({ children }) => {
 			}
 		}
 
-		if (!loading) {
-			handleRouteChange(router.pathname)
-		}
+		handleRouteChange(router.pathname)
 
 		router.events.on('routeChangeComplete', handleRouteChange)
 
 		return () => {
 			router.events.off('routeChangeComplete', handleRouteChange)
 		}
-	}, [router.pathname, loading])
+	}, [router.pathname])
 
 	return (
 		<div className={styles.container}>
