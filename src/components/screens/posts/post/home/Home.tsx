@@ -13,6 +13,8 @@ import {
 	PostResponse,
 } from '@/screens/posts/interfaces'
 import Card from '@/screens/posts/post/card/Card'
+import Header from '@/components/layout/header/Header'
+import Footer from '@/components/layout/footer/Footer'
 
 interface HomeProps {
 	post: PostResponse
@@ -97,19 +99,23 @@ const Home: React.FC<HomeProps> = ({ post }) => {
 	}, [post])
 
 	return (
-		<Meta
-			title={post.post.data.attributes.title}
-			description={post.post.data.attributes.description}
-			image="logo_preview.png"
-		>
-			{isLoading ? (
-				<div style={{ height: '100vw' }}></div>
-			) : (
-				<div className={styles.wrapper}>
-					{post.post.data.attributes.pages.map(renderPage)}
-				</div>
-			)}
-		</Meta>
+		<>
+			<Header />
+			<Meta
+				title={post.post.data.attributes.title}
+				description={post.post.data.attributes.description}
+				image="logo_preview.png"
+			>
+				{isLoading ? (
+					<div style={{ height: '100vw' }}></div>
+				) : (
+					<div className={styles.wrapper}>
+						{post.post.data.attributes.pages.map(renderPage)}
+					</div>
+				)}
+			</Meta>
+			<Footer />
+		</>
 	)
 }
 

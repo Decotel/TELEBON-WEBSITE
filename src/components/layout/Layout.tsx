@@ -12,20 +12,7 @@ const Layout: FC<IType> = ({ children }) => {
 	const [loading, setLoading] = useState(true)
 	const router = useRouter()
 
-	const getPostPaths = async () => {
-		const posts = await fetchPosts()
-		const paths = posts.map(
-			(post: { attributes: { url: string } }) => `/blog/${post.attributes.url}`,
-		)
-		setPostPaths(paths)
-		setLoading(false)
-
-		console.log('All added paths:', paths)
-	}
-
 	useEffect(() => {
-		getPostPaths()
-
 		const handleRouteChange = (url: string) => {
 			const validUrls = [
 				'/price',
@@ -37,7 +24,6 @@ const Layout: FC<IType> = ({ children }) => {
 				'/blog',
 				'/posts',
 				'/admin',
-				...postPaths,
 			]
 			if (url === '/404' || !validUrls.includes(url)) {
 				setIs404Page(true)
