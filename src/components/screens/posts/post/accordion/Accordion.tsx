@@ -101,7 +101,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							className={styles.accordionContent}
 							ref={el => (contentRefs.current[index] = el)}
 						>
-							<div>{formatDescription(item.Answer)}</div>
+							{formatDescription(item.Answer)}
 						</motion.div>
 					</motion.div>
 				))}
