@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useLayoutEffect, useRef, useState } from 'react'
 import styles from './Accordion.module.scss'
 import cn from 'classnames'
 import useMatchMedia from '@/hooks/useMatchMedia'
@@ -26,7 +26,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		)
 	}
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const resizeObservers: ResizeObserver[] = contentRefs.current
 			.map((ref, index) => {
 				if (ref) {
