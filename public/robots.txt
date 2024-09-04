@@ -4,6 +4,7 @@ Disallow: /api/
 Allow: /public/
 Allow: /aboutus
 Allow: /price
+Allow: /blog/
 Disallow: /node_modules/
 Disallow: /baza-znaniy
 Disallow: /info
