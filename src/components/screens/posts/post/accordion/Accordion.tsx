@@ -125,14 +125,23 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 						<motion.div
 							initial={{ height: 0, padding: '0' }}
 							animate={{
-								height: activeIndices.includes(index) ? 'auto' : 0,
+								height: activeIndices.includes(index) ? heights[index] : 0, // используем измеренную высоту
 								padding: activeIndices.includes(index)
 									? '3.125vw 0 1.0417vw'
 									: '0',
 							}}
-							transition={{ duration: 0.5 }}
+							transition={{ duration: 0.5, ease: 'easeInOut' }}
 							className={styles.accordionContent}
-							ref={el => (contentRefs.current[index] = el)}
+							ref={el => {
+								if (el && !heights[index]) {
+									setHeights(prev => {
+										const newHeights = [...prev]
+										newHeights[index] = el.scrollHeight
+										return newHeights
+									})
+								}
+								contentRefs.current[index] = el
+							}}
 						>
 							{formatDescription(item.Answer)}
 						</motion.div>
