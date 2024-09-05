@@ -118,9 +118,12 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							</motion.div>
 						</div>
 						<motion.div
-							initial={{ maxHeight: 0 }}
+							initial={{ maxHeight: 0, padding: '0 0 0 0' }}
 							animate={{
 								maxHeight: activeIndices.includes(index) ? heights[index] : 0,
+								padding: activeIndices.includes(index)
+									? '3.125vw 0 1.0417vw'
+									: '0 0 0 0',
 							}}
 							transition={{ duration: 0.5 }}
 							className={styles.accordionContent}
