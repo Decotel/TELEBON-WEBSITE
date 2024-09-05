@@ -31,38 +31,10 @@ export interface TextNode {
 	bold?: boolean
 }
 
-// export interface ParagraphNode {
-// 	children: TextNode[]
-// 	type: 'paragraph'
-// }
-
-// export const formatDescription = (content: ParagraphNode[]): JSX.Element => {
-// 	return (
-// 		<>
-// 			{content.map((paragraph, pIndex) => (
-// 				<p key={pIndex}>
-// 					{paragraph.children.map((child, cIndex) => {
-// 						const parts = child.text.split('\n')
-// 						return parts.map((part, partIndex) => (
-// 							<React.Fragment key={`${pIndex}-${cIndex}-${partIndex}`}>
-// 								{child.bold ? (
-// 									<span style={{ fontWeight: 'bold' }}>{part}</span>
-// 								) : (
-// 									part
-// 								)}
-// 								{partIndex < parts.length - 1 && <br />}
-// 							</React.Fragment>
-// 						))
-// 					})}
-// 				</p>
-// 			))}
-// 		</>
-// 	)
-// }
-
 interface ChildNode {
 	text: string
 	bold?: boolean
+	children?: ChildNode[]
 }
 
 interface ParagraphNode {
@@ -99,8 +71,14 @@ export const formatDescription = (
 					const ListTag = paragraph.format === 'ordered' ? 'ol' : 'ul'
 					return (
 						<ListTag key={pIndex}>
-							{paragraph.children.map((child, cIndex) => (
-								<li key={cIndex}>{child.text}</li>
+							{paragraph.children.map((listItem, cIndex) => (
+								<li key={cIndex}>
+									{listItem.children?.map((child, childIndex) => (
+										<React.Fragment key={childIndex}>
+											{child.text}
+										</React.Fragment>
+									))}
+								</li>
 							))}
 						</ListTag>
 					)
