@@ -88,7 +88,9 @@
 	}
 	.accordionContent {
 		overflow: hidden;
-		padding: 3.125vw 0 1.0417vw;
+		// padding: 3.125vw 0 1.0417vw;
+		padding: 0;
+
 		p {
 			font-size: 0.8333vw;
 			font-weight: 400;
