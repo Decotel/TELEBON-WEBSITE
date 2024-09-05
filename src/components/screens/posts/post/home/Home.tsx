@@ -75,7 +75,7 @@ export const formatDescription = (
 	content: string | ParagraphNode[],
 ): JSX.Element => {
 	// Если это строка, возвращаем её как обычный абзац
-	console.log(content)
+	console.log('content', content)
 	if (typeof content === 'string') {
 		const parts = content.split('\n') // Разбиваем строку на части по переносу строки
 		return (
