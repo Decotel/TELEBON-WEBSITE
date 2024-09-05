@@ -88,7 +88,8 @@ export const formatDescription = (
 				return (
 					<p key={pIndex}>
 						{paragraph.children.map((child, cIndex) => {
-							const parts = child.text.split('\n')
+							const text = child.text || ''
+							const parts = text.split('\n')
 							return parts.map((part, partIndex) => (
 								<React.Fragment key={`${pIndex}-${cIndex}-${partIndex}`}>
 									{child.bold ? (
