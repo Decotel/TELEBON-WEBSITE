@@ -53,16 +53,18 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		const updateHeights = () => {
 			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
-					const paddingTop = parseFloat(getComputedStyle(ref).paddingTop) || 0
-					const paddingBottom =
-						parseFloat(getComputedStyle(ref).paddingBottom) || 0
-					const contentHeight = ref.scrollHeight
+					setTimeout(() => {
+						const paddingTop = parseFloat(getComputedStyle(ref).paddingTop) || 0
+						const paddingBottom =
+							parseFloat(getComputedStyle(ref).paddingBottom) || 0
+						const contentHeight = ref.scrollHeight
 
-					setHeights(prevHeights => {
-						const newHeights = [...prevHeights]
-						newHeights[index] = contentHeight + paddingTop + paddingBottom
-						return newHeights
-					})
+						setHeights(prevHeights => {
+							const newHeights = [...prevHeights]
+							newHeights[index] = contentHeight + paddingTop + paddingBottom
+							return newHeights
+						})
+					}, 50)
 				}
 			})
 		}
@@ -133,14 +135,16 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							transition={{ duration: 0.5, ease: 'easeInOut' }}
 							className={styles.accordionContent}
 							ref={el => {
-								if (el && !heights[index]) {
-									setHeights(prev => {
-										const newHeights = [...prev]
-										newHeights[index] = el.scrollHeight
-										return newHeights
-									})
-								}
 								contentRefs.current[index] = el
+								if (el && !heights[index]) {
+									setTimeout(() => {
+										setHeights(prev => {
+											const newHeights = [...prev]
+											newHeights[index] = el.scrollHeight
+											return newHeights
+										})
+									}, 50)
+								}
 							}}
 						>
 							{formatDescription(item.Answer)}
