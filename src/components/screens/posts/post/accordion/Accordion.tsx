@@ -26,26 +26,50 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		)
 	}
 
+	// useLayoutEffect(() => {
+	// 	const resizeObservers: ResizeObserver[] = contentRefs.current
+	// 		.map((ref, index) => {
+	// 			if (ref) {
+	// 				const observer = new ResizeObserver(() => {
+	// 					setHeights(prevHeights => {
+	// 						const newHeights = [...prevHeights]
+	// 						newHeights[index] = ref.scrollHeight
+	// 						return newHeights
+	// 					})
+	// 				})
+	// 				observer.observe(ref)
+	// 				return observer
+	// 			}
+	// 			return null
+	// 		})
+	// 		.filter((observer): observer is ResizeObserver => observer !== null)
+
+	// 	return () => {
+	// 		resizeObservers.forEach(observer => observer.disconnect())
+	// 	}
+	// }, [data])
+
 	useLayoutEffect(() => {
-		const resizeObservers: ResizeObserver[] = contentRefs.current
-			.map((ref, index) => {
+		const updateHeights = () => {
+			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
-					const observer = new ResizeObserver(() => {
-						setHeights(prevHeights => {
-							const newHeights = [...prevHeights]
-							newHeights[index] = ref.scrollHeight
-							return newHeights
-						})
+					setHeights(prevHeights => {
+						const newHeights = [...prevHeights]
+						newHeights[index] = ref.scrollHeight
+						return newHeights
 					})
-					observer.observe(ref)
-					return observer
 				}
-				return null
 			})
-			.filter((observer): observer is ResizeObserver => observer !== null)
+		}
+
+		// Пересчитываем высоту при первой загрузке
+		updateHeights()
+
+		// Пересчитываем высоту при изменении размера окна
+		window.addEventListener('resize', updateHeights)
 
 		return () => {
-			resizeObservers.forEach(observer => observer.disconnect())
+			window.removeEventListener('resize', updateHeights)
 		}
 	}, [data])
 
@@ -94,10 +118,11 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							</motion.div>
 						</div>
 						<motion.div
-							initial="hidden"
-							animate={activeIndices.includes(index) ? 'visible' : 'hidden'}
+							initial={{ maxHeight: 0 }}
+							animate={{
+								maxHeight: activeIndices.includes(index) ? heights[index] : 0,
+							}}
 							transition={{ duration: 0.5 }}
-							variants={heightVariants[index]}
 							className={styles.accordionContent}
 							ref={el => (contentRefs.current[index] = el)}
 						>
