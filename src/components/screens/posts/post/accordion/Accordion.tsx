@@ -53,18 +53,25 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		const updateHeights = () => {
 			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
-					setTimeout(() => {
-						const paddingTop = parseFloat(getComputedStyle(ref).paddingTop) || 0
-						const paddingBottom =
-							parseFloat(getComputedStyle(ref).paddingBottom) || 0
-						const contentHeight = ref.scrollHeight
+					const style = window.getComputedStyle(ref)
+					// Получаем не только высоту, но и padding
+					const paddingTop = parseFloat(style.paddingTop) || 0
+					const paddingBottom = parseFloat(style.paddingBottom) || 0
+					const borderTop = parseFloat(style.borderTopWidth) || 0
+					const borderBottom = parseFloat(style.borderBottomWidth) || 0
 
-						setHeights(prevHeights => {
-							const newHeights = [...prevHeights]
-							newHeights[index] = contentHeight + paddingTop + paddingBottom
-							return newHeights
-						})
-					}, 50)
+					const contentHeight = ref.scrollHeight
+
+					setHeights(prevHeights => {
+						const newHeights = [...prevHeights]
+						newHeights[index] =
+							contentHeight +
+							paddingTop +
+							paddingBottom +
+							borderTop +
+							borderBottom
+						return newHeights
+					})
 				}
 			})
 		}
@@ -137,13 +144,22 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							ref={el => {
 								contentRefs.current[index] = el
 								if (el && !heights[index]) {
-									setTimeout(() => {
-										setHeights(prev => {
-											const newHeights = [...prev]
-											newHeights[index] = el.scrollHeight
-											return newHeights
-										})
-									}, 50)
+									const style = window.getComputedStyle(el)
+									const paddingTop = parseFloat(style.paddingTop) || 0
+									const paddingBottom = parseFloat(style.paddingBottom) || 0
+									const borderTop = parseFloat(style.borderTopWidth) || 0
+									const borderBottom = parseFloat(style.borderBottomWidth) || 0
+
+									setHeights(prev => {
+										const newHeights = [...prev]
+										newHeights[index] =
+											el.scrollHeight +
+											paddingTop +
+											paddingBottom +
+											borderTop +
+											borderBottom
+										return newHeights
+									})
 								}
 							}}
 						>
