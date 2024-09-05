@@ -53,9 +53,14 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		const updateHeights = () => {
 			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
+					const paddingTop = parseFloat(getComputedStyle(ref).paddingTop) || 0
+					const paddingBottom =
+						parseFloat(getComputedStyle(ref).paddingBottom) || 0
+					const contentHeight = ref.scrollHeight
+
 					setHeights(prevHeights => {
 						const newHeights = [...prevHeights]
-						newHeights[index] = ref.scrollHeight
+						newHeights[index] = contentHeight + paddingTop + paddingBottom
 						return newHeights
 					})
 				}
