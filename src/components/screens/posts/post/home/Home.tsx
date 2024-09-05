@@ -31,31 +31,99 @@ export interface TextNode {
 	bold?: boolean
 }
 
-export interface ParagraphNode {
-	children: TextNode[]
-	type: 'paragraph'
+// export interface ParagraphNode {
+// 	children: TextNode[]
+// 	type: 'paragraph'
+// }
+
+// export const formatDescription = (content: ParagraphNode[]): JSX.Element => {
+// 	return (
+// 		<>
+// 			{content.map((paragraph, pIndex) => (
+// 				<p key={pIndex}>
+// 					{paragraph.children.map((child, cIndex) => {
+// 						const parts = child.text.split('\n')
+// 						return parts.map((part, partIndex) => (
+// 							<React.Fragment key={`${pIndex}-${cIndex}-${partIndex}`}>
+// 								{child.bold ? (
+// 									<span style={{ fontWeight: 'bold' }}>{part}</span>
+// 								) : (
+// 									part
+// 								)}
+// 								{partIndex < parts.length - 1 && <br />}
+// 							</React.Fragment>
+// 						))
+// 					})}
+// 				</p>
+// 			))}
+// 		</>
+// 	)
+// }
+
+interface ChildNode {
+	text: string
+	bold?: boolean
 }
 
-export const formatDescription = (content: ParagraphNode[]): JSX.Element => {
+interface ParagraphNode {
+	children: ChildNode[]
+	type?: string // Можно добавить тип "list" для списков
+	format?: string // Можно добавить формат "ordered" для упорядоченных списков
+}
+
+export const formatDescription = (
+	content: string | ParagraphNode[],
+): JSX.Element => {
+	// Если это строка, возвращаем её как обычный абзац
+	if (typeof content === 'string') {
+		const parts = content.split('\n') // Разбиваем строку на части по переносу строки
+		return (
+			<>
+				{parts.map((part, index) => (
+					<React.Fragment key={index}>
+						<p>{part}</p>
+						{index < parts.length - 1 && <br />}
+					</React.Fragment>
+				))}
+			</>
+		)
+	}
+
+	// Если это массив, обрабатываем как параграфы (список абзацев)
 	return (
 		<>
-			{content.map((paragraph, pIndex) => (
-				<p key={pIndex}>
-					{paragraph.children.map((child, cIndex) => {
-						const parts = child.text.split('\n')
-						return parts.map((part, partIndex) => (
-							<React.Fragment key={`${pIndex}-${cIndex}-${partIndex}`}>
-								{child.bold ? (
-									<span style={{ fontWeight: 'bold' }}>{part}</span>
-								) : (
-									part
-								)}
-								{partIndex < parts.length - 1 && <br />}
-							</React.Fragment>
-						))
-					})}
-				</p>
-			))}
+			{content.map((paragraph, pIndex) => {
+				// Если параграф является списком
+				if (paragraph.type === 'list') {
+					const ListTag = paragraph.format === 'ordered' ? 'ol' : 'ul'
+					return (
+						<ListTag key={pIndex}>
+							{paragraph.children.map((child, cIndex) => (
+								<li key={cIndex}>{child.text}</li>
+							))}
+						</ListTag>
+					)
+				}
+
+				// Обычный параграф
+				return (
+					<p key={pIndex}>
+						{paragraph.children.map((child, cIndex) => {
+							const parts = child.text.split('\n')
+							return parts.map((part, partIndex) => (
+								<React.Fragment key={`${pIndex}-${cIndex}-${partIndex}`}>
+									{child.bold ? (
+										<span style={{ fontWeight: 'bold' }}>{part}</span>
+									) : (
+										part
+									)}
+									{partIndex < parts.length - 1 && <br />}
+								</React.Fragment>
+							))
+						})}
+					</p>
+				)
+			})}
 		</>
 	)
 }
