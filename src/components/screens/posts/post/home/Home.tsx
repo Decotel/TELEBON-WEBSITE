@@ -35,6 +35,8 @@ interface ChildNode {
 	text: string
 	bold?: boolean
 	children?: ChildNode[]
+	type?: string
+	url?: string
 }
 
 export interface ParagraphNode {
@@ -91,6 +93,24 @@ export const formatDescription = (
 				return (
 					<p key={pIndex}>
 						{paragraph.children.map((child, cIndex) => {
+							// Если это ссылка
+							if (child.type === 'link' && child.url) {
+								return (
+									<a
+										key={cIndex}
+										href={child.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										style={{ color: 'blue', textDecoration: 'underline' }}
+									>
+										{child?.children?.map((childItem, cIndex) => (
+											<span key={cIndex}>{childItem?.text || ''}</span>
+										))}
+									</a>
+								)
+							}
+
+							// Обычный текст с форматированием
 							const text = child.text || ''
 							const parts = text.split('\n')
 							return parts.map((part, partIndex) => (
