@@ -36,6 +36,16 @@ export const getPostById = async (id: string): Promise<PostResponse> => {
 										}
 									}
 								}
+								sideImage {
+									data {
+										attributes {
+											url
+											alternativeText
+											width
+											height
+										}
+									}
+								}
 							}
 							... on ComponentPageCard {
 								title

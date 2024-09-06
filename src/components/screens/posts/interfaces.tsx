@@ -19,6 +19,7 @@ export interface ComponentPageHero {
 	description: ParagraphNode[]
 	background: ImageData
 	phone: ImageData
+	sideImage?: ImageData
 }
 
 export interface ComponentPageCard {

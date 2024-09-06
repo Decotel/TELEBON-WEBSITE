@@ -108,7 +108,8 @@ const Hero: FC<HeroProps> = ({ data }) => {
 							)}
 						</Link>
 					</div>
-					{data.phone == null ? (
+
+					{data?.sideImage == null ? (
 						<div style={{ width: '23.8542vw' }}></div>
 					) : (
 						<motion.div
@@ -120,16 +121,17 @@ const Hero: FC<HeroProps> = ({ data }) => {
 								visible: { opacity: 1, y: 0 },
 								hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
 							}}
+							style={{ width: '23.8542vw' }}
 						>
 							<Image
 								src={
 									process.env.NEXT_PUBLIC_API_URL +
-									data.phone.data.attributes.url
+									data.sideImage.data.attributes.url
 								}
-								alt={data.phone.data.attributes.alternativeText || ''}
+								alt={data.sideImage.data.attributes.alternativeText || ''}
 								priority
-								width={data.phone.data.attributes.width}
-								height={data.phone.data.attributes.height}
+								width={data.sideImage.data.attributes.width}
+								height={data.sideImage.data.attributes.height}
 							/>
 						</motion.div>
 					)}

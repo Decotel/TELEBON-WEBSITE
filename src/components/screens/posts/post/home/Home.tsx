@@ -37,7 +37,7 @@ interface ChildNode {
 	children?: ChildNode[]
 }
 
-interface ParagraphNode {
+export interface ParagraphNode {
 	children: ChildNode[]
 	type?: string // Можно добавить тип "list" для списков
 	format?: string // Можно добавить формат "ordered" для упорядоченных списков
