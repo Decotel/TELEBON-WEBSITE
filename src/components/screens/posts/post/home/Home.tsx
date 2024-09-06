@@ -70,7 +70,10 @@ export const formatDescription = (
 				if (paragraph.type === 'list') {
 					const ListTag = paragraph.format === 'ordered' ? 'ol' : 'ul'
 					return (
-						<ListTag key={pIndex} style={{ listStyle: 'devanagari' }}>
+						<ListTag
+							key={pIndex}
+							style={{ listStyle: 'devanagari', paddingLeft: '24px' }}
+						>
 							{paragraph.children.map((listItem, cIndex) => (
 								<li key={cIndex} style={{ padding: 'initial' }}>
 									{listItem.children?.map((child, childIndex) => (
