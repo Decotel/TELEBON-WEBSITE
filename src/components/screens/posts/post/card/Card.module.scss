@@ -66,6 +66,14 @@
 			height: fit-content;
 			user-select: none;
 			pointer-events: none;
+			max-height: 576px;
+		}
+		.emptyImg {
+			width: 25.9375vw;
+			max-height: 576px;
+			height: 100%;
+			border-radius: 12px;
+			background: linear-gradient(180deg, #0ba3ad 0%, #2a2c32 77%);
 		}
 	}
 }
