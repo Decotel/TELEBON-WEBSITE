@@ -21,7 +21,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
 	const isMobile = useMatchMedia('768')
 	const [platformLink, setPlatformLink] = useState('')
 	const [isOpenDownload, setIsOpenDownload] = useState<boolean>(true)
-
+	console.log(data)
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const storedState = sessionStorage.getItem('isOpenDownload')
@@ -109,7 +109,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
 						</Link>
 					</div>
 
-					{data?.sideImage == null ? (
+					{!data?.sideImage || data?.sideImage?.data == null ? (
 						<div style={{ width: '23.8542vw' }}></div>
 					) : (
 						<motion.div
