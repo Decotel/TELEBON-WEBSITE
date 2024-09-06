@@ -101,7 +101,7 @@ export const formatDescription = (
 										href={child.url}
 										target="_blank"
 										rel="noopener noreferrer"
-										style={{ color: 'blue', textDecoration: 'underline' }}
+										style={{ color: '#2a2c32', textDecoration: 'underline' }}
 									>
 										{child?.children?.map((childItem, cIndex) => (
 											<span key={cIndex}>{childItem?.text || ''}</span>
