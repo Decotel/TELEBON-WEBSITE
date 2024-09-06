@@ -54,10 +54,13 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
 					const contentHeight = ref.scrollHeight
-					console.log(contentHeight)
+
+					const paddingTop = (3.125 / 100) * window.innerWidth
+					const paddingBottom = (1.0417 / 100) * window.innerWidth
+
 					setHeights(prevHeights => {
 						const newHeights = [...prevHeights]
-						newHeights[index] = contentHeight
+						newHeights[index] = contentHeight + paddingTop + paddingBottom
 						return newHeights
 					})
 				}
@@ -132,9 +135,15 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							ref={el => {
 								contentRefs.current[index] = el
 								if (el && !heights[index]) {
+									const contentHeight = el.scrollHeight
+
+									const paddingTop = (3.125 / 100) * window.innerWidth
+									const paddingBottom = (1.0417 / 100) * window.innerWidth
+
 									setHeights(prev => {
 										const newHeights = [...prev]
-										newHeights[index] = el.scrollHeight
+										newHeights[index] =
+											contentHeight + paddingTop + paddingBottom
 										return newHeights
 									})
 								}
