@@ -53,23 +53,11 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		const updateHeights = () => {
 			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
-					const style = window.getComputedStyle(ref)
-					// Получаем не только высоту, но и padding
-					const paddingTop = parseFloat(style.paddingTop) || 0
-					const paddingBottom = parseFloat(style.paddingBottom) || 0
-					const borderTop = parseFloat(style.borderTopWidth) || 0
-					const borderBottom = parseFloat(style.borderBottomWidth) || 0
-
 					const contentHeight = ref.scrollHeight
-
+					console.log(contentHeight)
 					setHeights(prevHeights => {
 						const newHeights = [...prevHeights]
-						newHeights[index] =
-							contentHeight +
-							paddingTop +
-							paddingBottom +
-							borderTop +
-							borderBottom
+						newHeights[index] = contentHeight
 						return newHeights
 					})
 				}
@@ -134,7 +122,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 						<motion.div
 							initial={{ height: 0, padding: '0' }}
 							animate={{
-								height: activeIndices.includes(index) ? heights[index] : 0, // используем измеренную высоту
+								height: activeIndices.includes(index) ? heights[index] : 0,
 								padding: activeIndices.includes(index)
 									? '3.125vw 0 1.0417vw'
 									: '0',
@@ -144,20 +132,9 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							ref={el => {
 								contentRefs.current[index] = el
 								if (el && !heights[index]) {
-									const style = window.getComputedStyle(el)
-									const paddingTop = parseFloat(style.paddingTop) || 0
-									const paddingBottom = parseFloat(style.paddingBottom) || 0
-									const borderTop = parseFloat(style.borderTopWidth) || 0
-									const borderBottom = parseFloat(style.borderBottomWidth) || 0
-
 									setHeights(prev => {
 										const newHeights = [...prev]
-										newHeights[index] =
-											el.scrollHeight +
-											paddingTop +
-											paddingBottom +
-											borderTop +
-											borderBottom
+										newHeights[index] = el.scrollHeight
 										return newHeights
 									})
 								}
