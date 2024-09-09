@@ -62,7 +62,9 @@
 		}
 
 		img {
-			width: 25.9375vw;
+			// width: 25.9375vw;
+			max-width: 25.9375vw;
+			width: auto;
 			height: fit-content;
 			user-select: none;
 			pointer-events: none;
@@ -115,8 +117,8 @@
 				}
 			}
 			img {
-				width: 89.7436vw;
-				height: fit-content;
+				// width: 89.7436vw;
+				max-width: 89.7436vw;
 			}
 		}
 		.right {

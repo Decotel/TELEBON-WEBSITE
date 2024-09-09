@@ -70,7 +70,8 @@
 }
 
 .container .card img {
-  width: 25.9375vw;
+  max-width: 25.9375vw;
+  width: auto;
   height: fit-content;
   user-select: none;
   pointer-events: none;
@@ -124,8 +125,7 @@
     line-height: 6.5641vw;
   }
   .container .card img {
-    width: 89.7436vw;
-    height: fit-content;
+    max-width: 89.7436vw;
   }
   .container .right {
     flex-direction: column-reverse;
