@@ -35,16 +35,20 @@ const Card: FC<DescriptionProps> = ({ data }) => {
 								hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
 							}}
 						>
-							<Image
-								src={
-									process.env.NEXT_PUBLIC_API_URL +
-									data.image.data.attributes.url
-								}
-								alt={data.image.data.attributes.alternativeText}
-								loading="lazy"
-								width={data.image.data.attributes.width}
-								height={data.image.data.attributes.height}
-							/>
+							{data.image?.data ? (
+								<Image
+									src={
+										process.env.NEXT_PUBLIC_API_URL +
+										data.image.data.attributes.url
+									}
+									alt={data.image.data.attributes.alternativeText}
+									loading="lazy"
+									width={data.image.data.attributes.width}
+									height={data.image.data.attributes.height}
+								/>
+							) : (
+								<div className={styles.emptyImg}></div>
+							)}
 						</motion.div>
 					) : null}
 					<motion.div
@@ -72,16 +76,20 @@ const Card: FC<DescriptionProps> = ({ data }) => {
 								hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
 							}}
 						>
-							<Image
-								src={
-									process.env.NEXT_PUBLIC_API_URL +
-									data.image.data.attributes.url
-								}
-								alt={data.image.data.attributes.alternativeText}
-								loading="lazy"
-								width={data.image.data.attributes.width}
-								height={data.image.data.attributes.height}
-							/>
+							{data.image?.data ? (
+								<Image
+									src={
+										process.env.NEXT_PUBLIC_API_URL +
+										data.image.data.attributes.url
+									}
+									alt={data.image.data.attributes.alternativeText}
+									loading="lazy"
+									width={data.image.data.attributes.width}
+									height={data.image.data.attributes.height}
+								/>
+							) : (
+								<div className={styles.emptyImg}></div>
+							)}
 						</motion.div>
 					) : null}
 				</div>

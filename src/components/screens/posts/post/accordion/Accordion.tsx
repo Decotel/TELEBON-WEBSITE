@@ -26,26 +26,55 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 		)
 	}
 
+	// useLayoutEffect(() => {
+	// 	const resizeObservers: ResizeObserver[] = contentRefs.current
+	// 		.map((ref, index) => {
+	// 			if (ref) {
+	// 				const observer = new ResizeObserver(() => {
+	// 					setHeights(prevHeights => {
+	// 						const newHeights = [...prevHeights]
+	// 						newHeights[index] = ref.scrollHeight
+	// 						return newHeights
+	// 					})
+	// 				})
+	// 				observer.observe(ref)
+	// 				return observer
+	// 			}
+	// 			return null
+	// 		})
+	// 		.filter((observer): observer is ResizeObserver => observer !== null)
+
+	// 	return () => {
+	// 		resizeObservers.forEach(observer => observer.disconnect())
+	// 	}
+	// }, [data])
+
 	useLayoutEffect(() => {
-		const resizeObservers: ResizeObserver[] = contentRefs.current
-			.map((ref, index) => {
+		const updateHeights = () => {
+			contentRefs.current.forEach((ref, index) => {
 				if (ref) {
-					const observer = new ResizeObserver(() => {
-						setHeights(prevHeights => {
-							const newHeights = [...prevHeights]
-							newHeights[index] = ref.scrollHeight
-							return newHeights
-						})
+					const contentHeight = ref.scrollHeight
+
+					const paddingTop = (3.125 / 100) * window.innerWidth
+					const paddingBottom = (1.0417 / 100) * window.innerWidth
+
+					setHeights(prevHeights => {
+						const newHeights = [...prevHeights]
+						newHeights[index] = contentHeight + paddingTop + paddingBottom
+						return newHeights
 					})
-					observer.observe(ref)
-					return observer
 				}
-				return null
 			})
-			.filter((observer): observer is ResizeObserver => observer !== null)
+		}
+
+		// Пересчитываем высоту при первой загрузке
+		updateHeights()
+
+		// Пересчитываем высоту при изменении размера окна
+		window.addEventListener('resize', updateHeights)
 
 		return () => {
-			resizeObservers.forEach(observer => observer.disconnect())
+			window.removeEventListener('resize', updateHeights)
 		}
 	}, [data])
 
@@ -94,12 +123,31 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 							</motion.div>
 						</div>
 						<motion.div
-							initial="hidden"
-							animate={activeIndices.includes(index) ? 'visible' : 'hidden'}
-							transition={{ duration: 0.5 }}
-							variants={heightVariants[index]}
+							initial={{ height: 0, padding: '0' }}
+							animate={{
+								height: activeIndices.includes(index) ? heights[index] : 0,
+								padding: activeIndices.includes(index)
+									? '3.125vw 0 1.0417vw'
+									: '0',
+							}}
+							transition={{ duration: 0.5, ease: 'easeInOut' }}
 							className={styles.accordionContent}
-							ref={el => (contentRefs.current[index] = el)}
+							ref={el => {
+								contentRefs.current[index] = el
+								if (el && !heights[index]) {
+									const contentHeight = el.scrollHeight
+
+									const paddingTop = (3.125 / 100) * window.innerWidth
+									const paddingBottom = (1.0417 / 100) * window.innerWidth
+
+									setHeights(prev => {
+										const newHeights = [...prev]
+										newHeights[index] =
+											contentHeight + paddingTop + paddingBottom
+										return newHeights
+									})
+								}
+							}}
 						>
 							{formatDescription(item.Answer)}
 						</motion.div>

@@ -21,7 +21,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
 	const isMobile = useMatchMedia('768')
 	const [platformLink, setPlatformLink] = useState('')
 	const [isOpenDownload, setIsOpenDownload] = useState<boolean>(true)
-
+	console.log(data)
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const storedState = sessionStorage.getItem('isOpenDownload')
@@ -56,16 +56,40 @@ const Hero: FC<HeroProps> = ({ data }) => {
 			itemType="http://schema.org/LocalBusiness"
 		>
 			<div className={styles.gradient}></div>
-			<div
-				className={styles.background}
-				style={{
-					backgroundImage: data.background.data.attributes.url
-						? `url(${process.env.NEXT_PUBLIC_API_URL}${data.background.data.attributes.url})`
-						: `url(${Preview})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
-			></div>
+			{isMobile ? (
+				<div
+					className={styles.background}
+					style={{
+						backgroundImage:
+							data.background_mobile?.data &&
+							data.background_mobile?.data.attributes.url
+								? `url(/_next/image?url=${encodeURIComponent(
+										process.env.NEXT_PUBLIC_API_URL +
+											data.background_mobile.data.attributes.url,
+									)}&w=3840&q=75)`
+								: `url(${Preview})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						backgroundRepeat: 'no-repeat',
+					}}
+				></div>
+			) : (
+				<div
+					className={styles.background}
+					style={{
+						backgroundImage: data.background.data.attributes.url
+							? `url(/_next/image?url=${encodeURIComponent(
+									process.env.NEXT_PUBLIC_API_URL +
+										data.background.data.attributes.url,
+								)}&w=3840&q=75)`
+							: `url(${Preview})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						backgroundRepeat: 'no-repeat',
+					}}
+				></div>
+			)}
+
 			{isMobile && isOpenDownload ? (
 				<div className={styles.download_link}>
 					<div className={styles.row}>
@@ -108,7 +132,8 @@ const Hero: FC<HeroProps> = ({ data }) => {
 							)}
 						</Link>
 					</div>
-					{data.phone == null ? (
+
+					{!data?.sideImage || data?.sideImage?.data == null ? (
 						<div style={{ width: '23.8542vw' }}></div>
 					) : (
 						<motion.div
@@ -120,16 +145,20 @@ const Hero: FC<HeroProps> = ({ data }) => {
 								visible: { opacity: 1, y: 0 },
 								hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
 							}}
+							style={{
+								width: isMobile ? 'auto' : '23.8542vw',
+								paddingTop: '1.25vw',
+							}}
 						>
 							<Image
 								src={
 									process.env.NEXT_PUBLIC_API_URL +
-									data.phone.data.attributes.url
+									data.sideImage.data.attributes.url
 								}
-								alt={data.phone.data.attributes.alternativeText || ''}
+								alt={data.sideImage.data.attributes.alternativeText || ''}
 								priority
-								width={data.phone.data.attributes.width}
-								height={data.phone.data.attributes.height}
+								width={data.sideImage.data.attributes.width}
+								height={data.sideImage.data.attributes.height}
 							/>
 						</motion.div>
 					)}

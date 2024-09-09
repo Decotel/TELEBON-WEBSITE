@@ -62,10 +62,21 @@
 		}
 
 		img {
-			width: 25.9375vw;
+			// width: 25.9375vw;
+			max-width: 25.9375vw;
+			width: auto;
 			height: fit-content;
 			user-select: none;
 			pointer-events: none;
+			max-height: 576px;
+			border-radius: 12px;
+		}
+		.emptyImg {
+			width: 25.9375vw;
+			max-height: 576px;
+			height: 100%;
+			border-radius: 12px;
+			background: linear-gradient(180deg, #0ba3ad 0%, #2a2c32 77%);
 		}
 	}
 }
@@ -106,8 +117,8 @@
 				}
 			}
 			img {
-				width: 89.7436vw;
-				height: fit-content;
+				// width: 89.7436vw;
+				max-width: 89.7436vw;
 			}
 		}
 		.right {

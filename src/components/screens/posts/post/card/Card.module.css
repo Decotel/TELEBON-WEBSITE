@@ -1,0 +1,133 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: fit-content;
+  gap: 3.33vw;
+}
+
+.container button {
+  background: #2a2c32;
+  color: #ffffff;
+  padding: 1.0417vw 2.1875vw;
+  font-size: 0.833vw;
+  font-weight: 600;
+  line-height: 1.1458vw;
+  text-align: center;
+  width: fit-content;
+  border-radius: 0.4167vw;
+}
+
+.container .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.33vw 5.0781vw;
+  width: 69.2708vw;
+  height: fit-content;
+}
+
+.container .card .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.25vw;
+  width: 20.833vw;
+}
+
+.container .card .text h2 {
+  font-size: 1.7708vw;
+  font-weight: 700;
+  line-height: 2.0833vw;
+  text-align: left;
+  color: #2a2c32;
+}
+
+.container .card .text p {
+  font-size: 0.833vw;
+  font-weight: 400;
+  line-height: 1.33vw;
+  text-align: left;
+  color: #2a2c32;
+}
+
+.container .card .text span {
+  font-weight: 700;
+}
+
+.container .card img {
+  max-width: 25.9375vw;
+  width: auto;
+  height: fit-content;
+  user-select: none;
+  pointer-events: none;
+  max-height: 576px;
+  border-radius: 12px;
+}
+
+.container .card .emptyImg {
+  width: 25.9375vw;
+  max-height: 576px;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #0ba3ad 0%, #2a2c32 77%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 6.1538vw;
+  }
+  .container button {
+    background: #2a2c32;
+    color: #ffffff;
+    padding: 3.5897vw 17.3077vw;
+    font-size: 4.1026vw;
+    font-weight: 600;
+    line-height: 5.641vw;
+    text-align: center;
+    width: fit-content;
+    border-radius: 2.0513vw;
+    align-self: center;
+  }
+  .container .card {
+    flex-direction: column;
+    width: 100vw;
+    gap: 12.3077vw;
+    padding: 6.1538vw 5.1282vw;
+  }
+  .container .card .text {
+    gap: 6.1538vw;
+    width: 89.7436vw;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .container .card .text h2 {
+    font-size: 6.1538vw;
+    line-height: 7.1795vw;
+  }
+  .container .card .text p {
+    font-size: 4.1026vw;
+    line-height: 6.5641vw;
+  }
+  .container .card img {
+    max-width: 89.7436vw;
+  }
+  .container .right {
+    flex-direction: column-reverse;
+  }
+}

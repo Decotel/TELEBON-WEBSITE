@@ -91,10 +91,10 @@
 		}
 		img {
 			width: 23.8542vw;
-			height: 34.0104vw;
-			padding-top: 1.25vw;
+			height: auto;
 			pointer-events: none;
 			user-select: none;
+			border-radius: 12px;
 		}
 	}
 
@@ -231,6 +231,7 @@
 					flex-direction: column;
 					gap: 4.1026vw;
 					padding-top: 2.083vw;
+					font-size: 4.1026vw;
 					h1 {
 						font-size: 9.2308vw;
 						font-weight: 700;
@@ -268,8 +269,8 @@
 
 			img {
 				width: 70.7692vw;
-				height: 100.5128vw;
-				margin-left: 7vw;
+				height: auto;
+				margin: 0 auto;
 			}
 		}
 
