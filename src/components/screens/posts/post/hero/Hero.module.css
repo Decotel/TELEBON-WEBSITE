@@ -266,7 +266,7 @@
   .container .row img {
     width: 70.7692vw;
     height: auto;
-    margin-left: 7vw;
+    margin: 0 auto;
   }
   .container .sponsors {
     width: 100%;

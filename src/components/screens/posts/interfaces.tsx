@@ -18,6 +18,7 @@ export interface ComponentPageHero {
 	title: string
 	description: ParagraphNode[]
 	background: ImageData
+	background_mobile: ImageData
 	phone: ImageData
 	sideImage?: ImageData
 }

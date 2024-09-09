@@ -56,20 +56,40 @@ const Hero: FC<HeroProps> = ({ data }) => {
 			itemType="http://schema.org/LocalBusiness"
 		>
 			<div className={styles.gradient}></div>
-			<div
-				className={styles.background}
-				style={{
-					backgroundImage: data.background.data.attributes.url
-						? `url(/_next/image?url=${encodeURIComponent(
-								process.env.NEXT_PUBLIC_API_URL +
-									data.background.data.attributes.url,
-							)}&w=3840&q=75)`
-						: `url(${Preview})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					backgroundRepeat: 'no-repeat',
-				}}
-			></div>
+			{isMobile ? (
+				<div
+					className={styles.background}
+					style={{
+						backgroundImage:
+							data.background_mobile?.data &&
+							data.background_mobile?.data.attributes.url
+								? `url(/_next/image?url=${encodeURIComponent(
+										process.env.NEXT_PUBLIC_API_URL +
+											data.background_mobile.data.attributes.url,
+									)}&w=3840&q=75)`
+								: `url(${Preview})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						backgroundRepeat: 'no-repeat',
+					}}
+				></div>
+			) : (
+				<div
+					className={styles.background}
+					style={{
+						backgroundImage: data.background.data.attributes.url
+							? `url(/_next/image?url=${encodeURIComponent(
+									process.env.NEXT_PUBLIC_API_URL +
+										data.background.data.attributes.url,
+								)}&w=3840&q=75)`
+							: `url(${Preview})`,
+						backgroundSize: 'cover',
+						backgroundPosition: 'center',
+						backgroundRepeat: 'no-repeat',
+					}}
+				></div>
+			)}
+
 			{isMobile && isOpenDownload ? (
 				<div className={styles.download_link}>
 					<div className={styles.row}>

@@ -26,6 +26,16 @@ export const getPostById = async (id: string): Promise<PostResponse> => {
 										}
 									}
 								}
+								background_mobile {
+									data {
+										attributes {
+											url
+											alternativeText
+											width
+											height
+										}
+									}
+								}
 								phone {
 									data {
 										attributes {
