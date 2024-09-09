@@ -89,7 +89,7 @@ const Price: FC<PriceProps> = ({ data }) => {
 							<br />
 							Бесплатный пробный период 14 дней.
 							<br />
-							<span>*Подключение Telegram бота, бесплатно до 01.09.2024</span>
+							<span>*Подключение Telegram бота, бесплатно до 01.12.2024</span>
 						</p>
 					</div>
 				</div>
