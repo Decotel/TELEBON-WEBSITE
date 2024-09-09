@@ -67,6 +67,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
 						: `url(${Preview})`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat',
 				}}
 			></div>
 			{isMobile && isOpenDownload ? (
@@ -124,7 +125,10 @@ const Hero: FC<HeroProps> = ({ data }) => {
 								visible: { opacity: 1, y: 0 },
 								hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
 							}}
-							style={{ width: isMobile ? 'auto' : '23.8542vw' }}
+							style={{
+								width: isMobile ? 'auto' : '23.8542vw',
+								paddingTop: '1.25vw',
+							}}
 						>
 							<Image
 								src={
