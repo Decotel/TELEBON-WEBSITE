@@ -98,6 +98,7 @@
   padding-top: 1.25vw;
   pointer-events: none;
   user-select: none;
+  border-radius: 12px;
 }
 
 .container .sponsors {

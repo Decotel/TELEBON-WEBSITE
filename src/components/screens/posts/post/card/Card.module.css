@@ -75,6 +75,7 @@
   user-select: none;
   pointer-events: none;
   max-height: 576px;
+  border-radius: 12px;
 }
 
 .container .card .emptyImg {

@@ -60,7 +60,10 @@ const Hero: FC<HeroProps> = ({ data }) => {
 				className={styles.background}
 				style={{
 					backgroundImage: data.background.data.attributes.url
-						? `url(${process.env.NEXT_PUBLIC_API_URL}${data.background.data.attributes.url})`
+						? `url(/_next/image?url=${encodeURIComponent(
+								process.env.NEXT_PUBLIC_API_URL +
+									data.background.data.attributes.url,
+							)}&w=3840&q=75)`
 						: `url(${Preview})`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
