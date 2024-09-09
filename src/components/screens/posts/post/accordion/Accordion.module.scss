@@ -91,7 +91,8 @@
 		// padding: 3.125vw 0 1.0417vw;
 		padding: 0;
 
-		p {
+		p,
+		li {
 			font-size: 0.8333vw;
 			font-weight: 400;
 			line-height: 1.3021vw;
@@ -189,7 +190,8 @@
 		}
 		.accordionContent {
 			padding: 3.125vw 2.5vw 1.0417vw;
-			p {
+			p,
+			li {
 				font-size: 4.1026vw;
 				font-weight: 400;
 				line-height: 5.641vw;
