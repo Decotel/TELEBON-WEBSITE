@@ -126,6 +126,8 @@
   }
   .container .card img {
     max-width: 89.7436vw;
+    object-fit: cover;
+    width: 100%;
   }
   .container .right {
     flex-direction: column-reverse;
