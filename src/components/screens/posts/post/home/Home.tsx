@@ -178,7 +178,16 @@ const Home: React.FC<HomeProps> = ({ post }) => {
 				image="logo_preview.png"
 			>
 				{isLoading ? (
-					<div style={{ height: '100vw' }}></div>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							height: '100vh',
+						}}
+					>
+						<div className={styles.loader}></div>
+					</div>
 				) : (
 					<div className={styles.wrapper}>
 						{post.post.data.attributes.pages.map(renderPage)}
