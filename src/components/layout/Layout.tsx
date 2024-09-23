@@ -21,6 +21,7 @@ const Layout: FC<IType> = ({ children }) => {
 				'/blog',
 				'/posts',
 				'/admin',
+				'/for-whom',
 			]
 			if (url === '/404' || !validUrls.includes(url)) {
 				setIs404Page(true)

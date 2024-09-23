@@ -70,3 +70,9 @@ export interface PostResponse {
 		data: PostData
 	}
 }
+
+export interface PostResponseForWhom {
+	forWhom: {
+		data: PostData
+	}
+}
