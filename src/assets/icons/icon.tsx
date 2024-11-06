@@ -32,6 +32,7 @@ import { MapPoint } from './aboutus/map/MapPoint'
 import { ListMark } from './aboutus/list/ListMark'
 import { AssistantPlus } from './aboutus/hero/AssistantPlus'
 import { Scissors } from './price/all/Scissors'
+import { FooterRuStoreIcon } from './main/footeri/FooterRuStoreIcon'
 
 export enum EIcons {
 	walletoutline,
@@ -68,6 +69,7 @@ export enum EIcons {
 	listmark,
 	assistantplus,
 	scissors,
+	footerrustoreicon,
 }
 
 const ICONS: Record<EIcons, any> = {
@@ -92,6 +94,7 @@ const ICONS: Record<EIcons, any> = {
 	[EIcons.footergoogleplay]: FooterGooglePlay,
 	[EIcons.footerphone]: FooterPhone,
 	[EIcons.footerrustore]: FooterRuStore,
+	[EIcons.footerrustoreicon]: FooterRuStoreIcon,
 	[EIcons.footerwhatsup]: FooterWhatsUp,
 	[EIcons.footerwhatsupicon]: FooterWhatsUpIcon,
 	[EIcons.footervkicon]: FooterVKIcon,
