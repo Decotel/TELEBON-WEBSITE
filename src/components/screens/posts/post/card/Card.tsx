@@ -102,6 +102,7 @@ const Card: FC<DescriptionProps> = ({ data }) => {
 							justifyContent: isMobile ? 'center' : 'flex-start',
 						}}
 					>
+
 						<button aria-labelledby="Попробовать сейчас">
 							Попробовать сейчас
 						</button>
