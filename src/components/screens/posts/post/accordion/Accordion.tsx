@@ -154,7 +154,7 @@ const Accordion: FC<AccordionProps> = ({ data }) => {
 					</motion.div>
 				))}
 				<div className={styles.buttons}>
-					<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+					<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 						<button className={styles.black} aria-labelledby="Регистрация">
 							Регистрация
 						</button>

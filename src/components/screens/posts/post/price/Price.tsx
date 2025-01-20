@@ -64,7 +64,7 @@ const Price: FC<PriceProps> = ({ data }) => {
 						>
 							<p className={styles.price}>300 ₽</p>
 						</motion.div>
-						<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+						<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 							<motion.div
 								initial="hidden"
 								whileInView="visible"
@@ -89,7 +89,7 @@ const Price: FC<PriceProps> = ({ data }) => {
 							<br />
 							Бесплатный пробный период 14 дней.
 							<br />
-							<span>*Подключение Telegram бота, бесплатно до 01.12.2024</span>
+							<span>*Подключение Telegram бота, бесплатно до 31.03.2025</span>
 						</p>
 					</div>
 				</div>

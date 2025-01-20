@@ -107,7 +107,7 @@ const Footer: FC = () => {
 							<p>
 								Промокод бонус:{' '}
 								<Link
-									href={'https://lk.telebon.ru/registration'}
+									href={'https://lk.telebon.ru/auth'}
 									target={'_blank'}
 								>
 									START

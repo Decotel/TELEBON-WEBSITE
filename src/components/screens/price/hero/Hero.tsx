@@ -99,7 +99,7 @@ const Hero: FC = () => {
 							</h3>
 							{isMobile ? <p>в месяц</p> : <p>в месяц, за 1 пользователя</p>}
 							<Link
-								href={'https://lk.telebon.ru/registration'}
+								href={'https://lk.telebon.ru/auth'}
 								target={'_blank'}
 							>
 								<button aria-labelledby="Попробовать">Попробовать</button>

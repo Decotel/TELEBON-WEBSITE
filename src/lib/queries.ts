@@ -1,6 +1,7 @@
 import { gql } from 'graphql-request'
 import { graphQLClient } from './graphql-client'
 import { PostResponse } from '@/screens/posts/interfaces'
+import { PostResponseBaza } from '@/screens/baza/interfaces'
 
 export const getPostById = async (id: string): Promise<PostResponse> => {
 	const query = gql`
@@ -205,3 +206,52 @@ export const getPostByIdForWhom = async (id: string): Promise<PostResponse> => {
 	const variables = { id }
 	return await graphQLClient.request<PostResponse>(query, variables)
 }
+
+export const getBazaById = async (id: string): Promise<PostResponse> => {
+	const query = gql`
+    query getBaza($id: ID!) {
+      baza(id: $id) {
+        data {
+          id
+          attributes {
+            url
+            title
+            description
+            header
+            pages {
+              __typename
+              ... on ComponentBazaText {
+                Text
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+	const variables = { id };
+	return await graphQLClient.request<PostResponse>(query, variables);
+};
+
+export const getBazasQuery = gql`
+  query getBaza {
+    bazas {
+      data {
+        id
+        attributes {
+          url
+          title
+          description
+          header
+          pages {
+            __typename
+            ... on ComponentBazaText {
+              Text
+            }
+          }
+        }
+      }
+    }
+  }
+`;

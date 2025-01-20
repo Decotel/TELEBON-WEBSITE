@@ -116,7 +116,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
 							{formatDescription(data.description)}
 						</div>
 						<Link
-							href={'https://lk.telebon.ru/registration'}
+							href={'https://lk.telebon.ru/auth'}
 							target={'_blank'}
 							style={{
 								display: 'flex',

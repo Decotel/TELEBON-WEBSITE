@@ -99,7 +99,7 @@ const Hero: FC = () => {
 							)}
 						</div>
 						<Link
-							href={'https://lk.telebon.ru/registration'}
+							href={'https://lk.telebon.ru/auth'}
 							target={'_blank'}
 							style={{
 								display: 'flex',

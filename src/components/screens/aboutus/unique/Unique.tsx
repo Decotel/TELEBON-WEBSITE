@@ -90,7 +90,7 @@ const Unique: FC = () => {
 					</div>
 				</motion.div>
 			</div>
-			<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+			<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 				<button aria-labelledby="Начать бесплатно">Начать бесплатно</button>
 			</Link>
 		</div>

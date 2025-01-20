@@ -1,4 +1,7 @@
 import axios from 'axios'
+import { graphQLClient } from './graphql-client'
+import { BazaResponse } from '@/screens/baza/interfaces'
+import { getBazasQuery } from './queries'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
 
@@ -53,3 +56,13 @@ export const fetchOnePostForWhom = async (
 		return null
 	}
 }
+
+export const fetchPostsBaza = async (): Promise<BazaResponse[]> => {
+	try {
+		const res = await graphQLClient.request<{ bazas: { data: BazaResponse[] } }>(getBazasQuery);
+		return res.bazas.data;
+	} catch (error) {
+		console.error('Error fetching baza posts:', error);
+		return [];
+	}
+};

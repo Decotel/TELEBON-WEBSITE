@@ -281,7 +281,7 @@ const Header: FC = () => {
 							) : null}
 							{/*<li className={cn(styles.auth, styles.reg)}>*/}
 							{/*	<Link*/}
-							{/*		href='https://lk.telebon.ru/registration'*/}
+							{/*		href='https://lk.telebon.ru/auth'*/}
 							{/*		target={'_blank'}*/}
 							{/*	>*/}
 							{/*		<div className={styles.icon_button}>*/}
@@ -292,7 +292,7 @@ const Header: FC = () => {
 							{/*</li>*/}
 							<li className={styles.auth}>
 								<Link
-									href="https://lk.telebon.ru/registration"
+									href="https://lk.telebon.ru/auth"
 									target={'_blank'}
 								>
 									<span>Начать</span>

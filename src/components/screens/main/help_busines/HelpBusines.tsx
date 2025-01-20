@@ -43,7 +43,7 @@ const HelpBusines: FC = () => {
 							Телебон помогает {isMobile ? null : <br />}вашему бизнесу
 							{isMobile ? null : <br />} расти
 						</h3>
-						<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+						<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 							<button aria-labelledby="Начать бесплатно">
 								Начать бесплатно
 							</button>

@@ -128,7 +128,7 @@ const List: FC = () => {
 							<IconInstance name={EIcons.listmark} />
 							<p>Аналитика и отчёты</p>
 						</motion.div>
-						<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+						<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 							{isMobile ? (
 								<button aria-labelledby="Попробовать">Попробовать</button>
 							) : (

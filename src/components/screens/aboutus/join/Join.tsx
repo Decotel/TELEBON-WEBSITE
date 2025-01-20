@@ -40,7 +40,7 @@ const Join: FC = () => {
 							сфере услуг в России.
 						</p>
 						<Link
-							href={'https://lk.telebon.ru/registration'}
+							href={'https://lk.telebon.ru/auth'}
 							target={'_blank'}
 							style={{ alignSelf: isMobile ? 'center' : 'flex-start' }}
 						>

@@ -1,0 +1,19 @@
+.wrapper {
+  @apply flex flex-col;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: #ffffff;
+  height: 100vh;
+  gap: 1.0417vw;
+  align-items: center;
+}
+
+.up {
+  height: 6.9792vw;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #2a2c32;
+}

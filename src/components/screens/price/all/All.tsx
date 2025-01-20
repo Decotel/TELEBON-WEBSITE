@@ -84,12 +84,12 @@ const All: FC = () => {
 							))}
 					</div>
 				))}
-				<Link href={'https://lk.telebon.ru/registration'} target={'_blank'}>
+				<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 					<button>Начать бесплатно</button>
 				</Link>
 				<p>
 					* Подключение и хостинг Телеграм ботов за 0 руб на 2 года, доступно
-					для новых пользователей до 01.12.2024 г.
+					для новых пользователей до 31.03.2025 г.
 				</p>
 			</div>
 		</div>
