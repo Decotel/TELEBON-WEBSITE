@@ -35,7 +35,7 @@ const Card: FC<DescriptionProps> = ({ data }) => {
 								hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
 							}}
 						>
-							{data.image?.data ? (
+							{data?.image && data.image?.data ? (
 								<Image
 									src={
 										process.env.NEXT_PUBLIC_API_URL +
@@ -76,7 +76,7 @@ const Card: FC<DescriptionProps> = ({ data }) => {
 								hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
 							}}
 						>
-							{data.image?.data ? (
+							{data?.image && data?.image?.data ? (
 								<Image
 									src={
 										process.env.NEXT_PUBLIC_API_URL +
