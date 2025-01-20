@@ -1,22 +1,22 @@
-import KnowledgeBase, { KnowledgeBasePost } from '@/screens/baza/list/KnowledgeBase'
+import KnowledgeBase from '@/screens/baza/list/KnowledgeBase'
 import { GetStaticProps } from 'next'
 import { fetchPostsBaza } from '../src/lib/api'
 
 interface PostsPageProps {
-  posts: KnowledgeBasePost[]
+	posts: any[]
 }
 
 export default function PostsPage({ posts }: PostsPageProps) {
-  return <KnowledgeBase posts={posts} />
+	return <KnowledgeBase />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await fetchPostsBaza()
-  console.log(posts)
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 10,
-  }
+	const posts = await fetchPostsBaza()
+	console.log(posts)
+	return {
+		props: {
+			posts,
+		},
+		revalidate: 10,
+	}
 }
