@@ -1,3 +1,5 @@
+import { ImageData, VideoData } from '@/screens/posts/interfaces'
+
 export interface PostResponseBaza {
 	data: {
 		baza: BazaData;
@@ -21,7 +23,20 @@ export interface BazaAttributes {
 	pages: Page[];
 }
 
-export type Page = ComponentBazaText;
+export type Page =
+	| ComponentBazaText
+	| ComponentBazaImage
+	| ComponentBazaVideo;
+
+export interface ComponentBazaImage {
+	__typename: 'ComponentBazaImage'
+	image: ImageData
+}
+
+export interface ComponentBazaVideo {
+	__typename: 'ComponentBazaVideo'
+	video: VideoData
+}
 
 export interface ComponentBazaText {
 	__typename: "ComponentBazaText";
@@ -44,10 +59,16 @@ export interface BazaAttributes {
 	title: string;
 	description: string;
 	header: string;
-	pages: ComponentBazaText[];
+	pages: Page[];
 }
 
 export interface BazaResponse {
 	id: string;
 	attributes: BazaAttributes;
+}
+
+export interface Post {
+	baza: {
+		data: BazaResponse;
+	}
 }

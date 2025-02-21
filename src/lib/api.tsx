@@ -59,10 +59,15 @@ export const fetchOnePostForWhom = async (
 
 export const fetchPostsBaza = async (): Promise<BazaResponse[]> => {
 	try {
-		const res = await graphQLClient.request<{ bazas: { data: BazaResponse[] } }>(getBazasQuery);
-		return res.bazas.data;
+		const res = await axios.get(`${API_URL}/api/bazas`)
+		if (res.data && Array.isArray(res.data.data)) {
+			return res.data.data
+		} else {
+			console.error('Expected an array but got:', res.data)
+			return []
+		}
 	} catch (error) {
-		console.error('Error fetching baza posts:', error);
-		return [];
+		console.error('Error fetching blog:', error)
+		return []
 	}
 };

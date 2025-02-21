@@ -130,7 +130,7 @@ const Footer: FC = () => {
 								>
 									<IconInstance name={EIcons.footerappstore} />
 								</Link>
-								<Link href={'/'} target={'_blank'}>
+								<Link href={'https://play.google.com/store/apps/details?id=com.telebon'} target={'_blank'}>
 									<IconInstance name={EIcons.footergoogleplay} />
 								</Link>
 								<Link

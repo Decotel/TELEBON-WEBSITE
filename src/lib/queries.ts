@@ -223,6 +223,29 @@ export const getBazaById = async (id: string): Promise<PostResponse> => {
               ... on ComponentBazaText {
                 Text
               }
+              ... on ComponentBazaImage {
+                image {
+									data {
+										attributes {
+											url
+											alternativeText
+											width
+											height
+										}
+									}
+								}
+              }
+              ... on ComponentBazaVideo {
+                video {
+									data {
+										attributes {
+											url
+											width
+											height
+										}
+									}
+								}
+              }
             }
           }
         }

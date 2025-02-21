@@ -1,9 +1,10 @@
-import KnowledgeBase, { KnowledgeBasePost } from '@/screens/baza/list/KnowledgeBase'
+import KnowledgeBase from '@/screens/baza/list/KnowledgeBase'
 import { GetStaticProps } from 'next'
 import { fetchPostsBaza } from '../src/lib/api'
+import { BazaResponse } from '@/screens/baza/interfaces'
 
 interface PostsPageProps {
-  posts: KnowledgeBasePost[]
+  posts: BazaResponse[]
 }
 
 export default function PostsPage({ posts }: PostsPageProps) {
@@ -12,7 +13,6 @@ export default function PostsPage({ posts }: PostsPageProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await fetchPostsBaza()
-  console.log(posts)
   return {
     props: {
       posts,

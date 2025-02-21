@@ -33,6 +33,7 @@ import { ListMark } from './aboutus/list/ListMark'
 import { AssistantPlus } from './aboutus/hero/AssistantPlus'
 import { Scissors } from './price/all/Scissors'
 import { FooterRuStoreIcon } from './main/footeri/FooterRuStoreIcon'
+import { ListArrowBase } from './ListArrowBase'
 
 export enum EIcons {
 	walletoutline,
@@ -70,6 +71,7 @@ export enum EIcons {
 	assistantplus,
 	scissors,
 	footerrustoreicon,
+	listarrowbase,
 }
 
 const ICONS: Record<EIcons, any> = {
@@ -108,6 +110,7 @@ const ICONS: Record<EIcons, any> = {
 	[EIcons.listmark]: ListMark,
 	[EIcons.assistantplus]: AssistantPlus,
 	[EIcons.scissors]: Scissors,
+	[EIcons.listarrowbase]: ListArrowBase,
 }
 
 interface IIconProps {

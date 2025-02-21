@@ -22,7 +22,9 @@ const Layout: FC<IType> = ({ children }) => {
 				'/posts',
 				'/admin',
 				'/for-whom',
-				'/baza',
+				'/knowledge_base',
+				'/knowledge_bases',
+				'/base'
 			]
 			if (url === '/404' || !validUrls.includes(url)) {
 				setIs404Page(true)

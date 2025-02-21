@@ -7,9 +7,21 @@ export interface ImageAttributes {
 	height: number
 }
 
+export interface VideoAttributes {
+	url: string
+	width: number
+	height: number
+}
+
 export interface ImageData {
 	data: {
 		attributes: ImageAttributes
+	}
+}
+
+export interface VideoData {
+	data: {
+		attributes: VideoAttributes
 	}
 }
 

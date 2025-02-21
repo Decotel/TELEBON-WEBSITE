@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .body{
+    margin: 1.04167vw auto;
+  }
+
+  @media (max-width: 768px) {
+    margin: 1.04167vw auto;
+  }
+
+  p {
+    font-size: 0.83333vw;
+    line-height: 1.6;
+    margin-bottom: 0.52083vw;
+    color: #4a4c52;
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+  }
+
+  a {
+    color: #007AFF;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul, ol {
+    margin: 0.83333vw 0;
+    padding-left: 1.25vw;
+
+    li {
+      margin-bottom: 0.41667vw;
+      line-height: 1.6;
+      color: #4a4c52;
+    }
+  }
+}
