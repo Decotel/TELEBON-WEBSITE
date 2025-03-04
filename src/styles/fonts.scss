@@ -61,3 +61,53 @@
 		url('../assets/fonts/poppins-black.ttf') format('truetype');
 	font-weight: 900;
 }
+@font-face {
+	font-family: 'CoFo Sans';
+	src:
+		local('CoFo Sans Regular'),
+		url('../assets/fonts/CoFoSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'CoFo Sans';
+	src:
+		local('CoFo Sans Medium'),
+		url('../assets/fonts/CoFoSans-Medium.woff2') format('woff2');
+	font-weight: 500;
+}
+@font-face {
+	font-family: 'CoFo Sans';
+	src:
+		local('CoFo Sans Bold'),
+		url('../assets/fonts/CoFoSans-Bold.woff2') format('woff2');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'RF Dewi Expanded';
+	src:
+		local('RF Dewi Expanded Regular'),
+		url('../assets/fonts/rf-dewi-expanded-regular.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'RF Dewi Expanded';
+	src:
+		local('RF Dewi Expanded SemiBold'),
+		url('../assets/fonts/rf-dewi-expanded-semibold.woff2') format('woff2');
+	font-weight: 600;
+}
+@font-face {
+	font-family: 'RF Dewi Expanded';
+	src:
+		local('RF Dewi Expanded Bold'),
+		url('../assets/fonts/rf-dewi-expanded-bold.woff2') format('woff2');
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'RF Dewi Expanded';
+	src:
+		local('RF Dewi Expanded Black'),
+		url('../assets/fonts/rf-dewi-expanded-ultrabold.woff2') format('woff2');
+	font-weight: 800;
+}

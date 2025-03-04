@@ -6,6 +6,9 @@ import Link from 'next/link'
 import ModalSupport from '@/ui/modal/ModalSupport/ModalSupport'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import LogoImageNewWhite from '../../../assets/icons/LogoImageNewWhite.svg'
+import MasterImg from '../../../assets/icons/main/hero/master.svg'
+import RustoreImg from '../../../assets/icons/rustore.webp'
+import LogoImageWhite from '../../../assets/icons/LogoImageWhite.svg'
 
 const Footer: FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -93,7 +96,7 @@ const Footer: FC = () => {
 	return (
 		<div className={styles.footer}>
 			<div className={styles.main_container}>
-				{isMobile ? null : (
+				{/* {isMobile ? null : (
 					<div className={styles.common}>
 						<IconInstance name={EIcons.footerlogomark} />
 						{isMobile ? (
@@ -106,10 +109,7 @@ const Footer: FC = () => {
 						) : (
 							<p>
 								Промокод бонус:{' '}
-								<Link
-									href={'https://lk.telebon.ru/auth'}
-									target={'_blank'}
-								>
+								<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 									START
 								</Link>
 							</p>
@@ -130,7 +130,12 @@ const Footer: FC = () => {
 								>
 									<IconInstance name={EIcons.footerappstore} />
 								</Link>
-								<Link href={'https://play.google.com/store/apps/details?id=com.telebon'} target={'_blank'}>
+								<Link
+									href={
+										'https://play.google.com/store/apps/details?id=com.telebon'
+									}
+									target={'_blank'}
+								>
 									<IconInstance name={EIcons.footergoogleplay} />
 								</Link>
 								<Link
@@ -142,74 +147,113 @@ const Footer: FC = () => {
 							</div>
 						)}
 					</div>
-				)}
-				{isMobile ? (
-					<div className={styles.links}>
-						<Image src={LogoImageNewWhite} alt="logotext" />
-						{/*<div className={styles.card}>*/}
-						{/*	<IconInstance name={EIcons.rightarrow} />*/}
-						{/*	<p>Возможности</p>*/}
-						{/*</div>*/}
-						<Link href={'/price'}>
-							<div className={styles.card}>
-								<IconInstance name={EIcons.rightarrow} />
-								<p>Тарифы</p>
-							</div>
-						</Link>
-						<Link href={'/aboutus'}>
-							<div className={styles.card}>
-								<IconInstance name={EIcons.rightarrow} />
-								<p>Почему Telebon</p>
-							</div>
-						</Link>
-						{/*<div className={styles.card}>*/}
-						{/*	<IconInstance name={EIcons.rightarrow} />*/}
-						{/*	<p>Бот для записи</p>*/}
-						{/*</div>*/}
-						<Link href={'/info/licence'} target={'_blank'}>
-							<div className={styles.card}>
-								<IconInstance name={EIcons.rightarrow} />
-								<p>Лицензионный договор</p>
-							</div>
-						</Link>
-						<Link href={'/info/agreement'} target={'_blank'}>
-							<div className={styles.card}>
-								<IconInstance name={EIcons.rightarrow} />
-								<p>Соглашение</p>
-							</div>
-						</Link>
-						<Link href={'/info/privacy-policy'} target={'_blank'}>
-							<div className={styles.card}>
-								<IconInstance name={EIcons.rightarrow} />
-								<p>Конфиденциальность</p>
-							</div>
-						</Link>
-						<div className={styles.contact}>
-							<p className={styles.title}>КОНТАКТЫ</p>
-							<div className={styles.main}>
-								<div className={styles.card} onClick={handlePhoneClick}>
-									<IconInstance name={EIcons.footerphone} />
-									<IconInstance name={EIcons.footerphonenumber} />
-								</div>
-								<div className={styles.card} onClick={handleEmailClick}>
-									<IconInstance name={EIcons.footermail} />
-									<IconInstance name={EIcons.footeremail} />
-								</div>
-								<Link href={'https://wa.me/79956780440'} target={'_blank'}>
-									<div className={styles.card}>
-										<IconInstance name={EIcons.footerwhatsupicon} />
-										{/*<IconInstance name={EIcons.footerwhatsup} />*/}
-										Написать в WhatsApp
-									</div>
+				)} */}
+
+				<div className={styles.footer__top}>
+					<div className={styles.storeWrap}>
+						<ul className={styles.storeList}>
+							<li className={styles.storeItem}>
+								<Link
+									href={'https://apps.apple.com/ru/app/telebon/id6502614961'}
+									target={'_blank'}
+								>
+									<Icon name={EIcons.appstore} />{' '}
 								</Link>
-							</div>
-						</div>
-						<div className={styles.line}></div>
+							</li>
+							<li className={styles.storeItem}>
+								<Link
+									href={
+										'https://play.google.com/store/apps/details?id=com.telebon'
+									}
+									target={'_blank'}
+								>
+									<Icon name={EIcons.googleplay} />{' '}
+								</Link>
+							</li>
+							<li className={styles.storeItem}>
+								<Link
+									href={'https://www.rustore.ru/catalog/app/com.telebon'}
+									target={'_blank'}
+								>
+									<Image src={RustoreImg} alt="Rustore" />
+								</Link>
+							</li>
+						</ul>
+						<Image className={styles.icon} src={MasterImg} alt="Нам доверяют" />
 					</div>
-				) : (
-					<div className={styles.links}>
-						<div className={styles.row}>
-							<div className={styles.contact}>
+					<div className={styles.columnWrap}>
+						<div className={styles.column}>
+							<h4 className={styles.columnTitle}>Компания</h4>
+							<ul className={styles.columnList}>
+								<li className={styles.columnItem}>
+									<Link href={'https://telebon.ru/aboutus'}>О нас</Link>
+								</li>
+								<li className={styles.columnItem}>
+									<Link href={'https://telebon.ru/info/agreement'}>
+										Документы
+									</Link>
+								</li>
+								<li className={styles.columnItem}>
+									<Link href={'https://telebon.ru/price'}>Цены</Link>
+								</li>
+								<li className={styles.columnItem}>
+									<Link href={'https://telebon.ru/'}>Контакты</Link>
+								</li>
+								<li className={styles.columnItem}>
+									<Link href={'https://telebon.ru/'}>База знаний</Link>
+								</li>
+							</ul>
+						</div>
+						<div className={styles.column}>
+							<h4 className={styles.columnTitle}>Возможности</h4>
+							<ul className={styles.columnList}>
+								<li className={styles.columnItem}>
+									<span>Электронный журнал</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Онлайн-запись</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Запись в Telegram</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Уведомления</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Аналитика и отчеты</span>
+								</li>
+							</ul>
+						</div>
+						<div className={styles.column}>
+							<h4 className={styles.columnTitle}>Для любого бизнеса</h4>
+							<ul className={styles.columnList}>
+								<li className={styles.columnItem}>
+									<span>Красота</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Медицина</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Спорт</span>
+								</li>
+								<li className={styles.columnItem}>
+									<span>Бытовые услуги</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div className={styles.feedback}>
+						<span className={styles.link} onClick={handlePhoneClick}>
+							8 812 507-63-33
+						</span>
+						<p>
+							Покажем систему в деле на ваших примерах и ответим на все вопросы.
+							Свяжемся в течение рабочего дня.
+						</p>
+						<button>Оставить заявку</button>
+					</div>
+					{/* <div className={styles.row}> */}
+					{/* <div className={styles.contact}>
 								<p className={styles.title}>КОНТАКТЫ</p>
 								<div className={styles.main}>
 									<div className={styles.card} onClick={handlePhoneClick}>
@@ -232,8 +276,8 @@ const Footer: FC = () => {
 										</div>
 									</Link>
 								</div>
-							</div>
-							<div
+							</div> */}
+					{/* <div
 								style={{
 									display: 'flex',
 									flexDirection: 'row',
@@ -250,8 +294,8 @@ const Footer: FC = () => {
 										<p>Почему Telebon</p>
 									</Link>
 									{/*<Link href={'/'}>*/}
-									{/*	<p>Бот для записи</p>*/}
-									{/*</Link>*/}
+					{/*	<p>Бот для записи</p>*/}
+					{/*</Link>
 								</div>
 								<div className={styles.column}>
 									<p className={styles.title}>ДОКУМЕНТЫ</p>
@@ -266,16 +310,15 @@ const Footer: FC = () => {
 										<p>Конфиденциальность</p>
 									</Link>
 									{/*<div className={styles.social}>*/}
-									{/*	<IconInstance name={EIcons.footertelegramicon} />*/}
-									{/*	<IconInstance name={EIcons.footervkicon} />*/}
-									{/*</div>*/}
+					{/*	<IconInstance name={EIcons.footertelegramicon} />*/}
+					{/*	<IconInstance name={EIcons.footervkicon} />*/}
+					{/*</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				)}
+							</div> */}
+					{/* </div> */}
+				</div>
 
-				<div className={styles.present}>
+				{/* <div className={styles.present}>
 					<div className={styles.box}>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
 							<p className={styles.title}>Презентация Telebon</p>
@@ -291,9 +334,16 @@ const Footer: FC = () => {
 							</button>
 						)}
 					</div>
-				</div>
-				<div className={styles.bottom}>
-					<p>© ООО Группа Компаний «Белый Медведь»</p>
+				</div> */}
+				<div className={styles.footer__bottom}>
+					<div>
+						<Link href="/">
+							<div className={styles.logo}>
+								<Image src={LogoImageWhite} alt="logotext" />
+							</div>
+						</Link>
+					</div>
+					{/* <p>© ООО Группа Компаний «Белый Медведь»</p>
 					{isMobile ? null : (
 						<div
 							style={{
@@ -303,8 +353,8 @@ const Footer: FC = () => {
 								background: '#647084',
 							}}
 						></div>
-					)}
-					<div
+					)} */}
+					{/* <div
 						style={{
 							display: 'flex',
 							flexDirection: 'row',
@@ -323,28 +373,32 @@ const Footer: FC = () => {
 							></div>
 						) : null}
 						<span>1154345004582</span>
-					</div>
+					</div> */}
 					<div
 						style={{
 							display: 'flex',
 							flexDirection: 'row',
-							gap: isMobile ? '4.1026vw' : '0.833vw',
-							maxWidth: isMobile ? '21.7949vw' : '4.4271vw',
+							gap: isMobile ? '4.1026vw' : '2.552vw',
+							maxWidth: isMobile ? 'none' : '4.4271vw',
 						}}
 					>
-						<Link
-							href={'https://vk.com/teleboncrm'}
-							target={'_blank'}
-							aria-label="vk"
-						>
-							<IconInstance name={EIcons.footervk} />
-						</Link>
 						<Link
 							href={'https://t.me/telebon_channel'}
 							target={'_blank'}
 							aria-label="telegram"
+							className={styles.socialLink}
 						>
-							<IconInstance name={EIcons.footertg} />
+							<IconInstance name={EIcons.telegramicon} />
+							<span>Telegram</span>
+						</Link>
+						<Link
+							href={'https://vk.com/teleboncrm'}
+							target={'_blank'}
+							aria-label="vk"
+							className={styles.socialLink}
+						>
+							<IconInstance name={EIcons.vkicon} />
+							<span>Вконтакте</span>
 						</Link>
 					</div>
 				</div>

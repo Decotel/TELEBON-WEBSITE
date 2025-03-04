@@ -111,7 +111,7 @@ const Header: FC = () => {
 
 	return (
 		<noindex>
-			<div className={isOpen ? styles.darken : undefined}>
+			<header className={isOpen ? styles.darken : undefined}>
 				{/*<div className={styles.shadows} style={{ pointerEvents: 'none' }}>*/}
 				{/*	{isMobile ? (*/}
 				{/*		<Image src={BackgroundShadowsMobile} alt={''} />*/}
@@ -126,13 +126,15 @@ const Header: FC = () => {
 					)}
 					variants={{
 						visible: {
-							background: 'transparent',
+							// background: 'transparent',
 							translateY: '0vw',
 							marginTop: '0',
 						},
 						hidden: {
-							background: isMobile ? 'transparent' : '#2A2C32',
-							translateY: isMobile ? '-14.3589vw' : '-1.9271vw',
+							// background: isMobile ? 'transparent' : '#2A2C32',
+							// translateY: isMobile ? '-14.3589vw' : '-1.9271vw',
+							translateY: '0vw',
+
 							marginTop: isMobile ? '-14.3589vw' : '0',
 						},
 					}}
@@ -146,19 +148,19 @@ const Header: FC = () => {
 					{/*>*/}
 					{/*	<div className={styles.indent}></div>*/}
 					{/*</motion.nav>*/}
-					{isMobile ? null : (
+					{/* {isMobile ? null : (
 						<div className={styles.up}>
 							{/*<Link href={'/'} target={'_blank'}>*/}
-							{/*	<div className={styles.help}>Помощь</div>*/}
-							{/*</Link>*/}
-							<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
+					{/*	<div className={styles.help}>Помощь</div>*/}
+					{/*</Link>*/}
+					{/* <Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
 								<div className={styles.help}>
 									Войти
 									<IconInstance name={EIcons.usericon} />
 								</div>
 							</Link>
-						</div>
-					)}
+						</div> */}
+					{/* )}  */}
 					<div className={styles.headerContent} ref={menuRef}>
 						<Link href="/">
 							<div className={styles.logo} onClick={() => setIsOpen(false)}>
@@ -170,9 +172,22 @@ const Header: FC = () => {
 								<Link href="/aboutus">
 									<div className={styles.item}>Почему Telebon</div>
 								</Link>
+								{/* <Link href="/#possibilities">
+									<div className={styles.item}>
+										<span>Возможности</span>
+										<IconInstance name={EIcons.arrowdown} />
+									</div>
+								</Link>
+								<Link href="/#possibilities">
+									<div className={styles.item}>
+										<span>Для кого</span>
+										<IconInstance name={EIcons.arrowdown} />
+									</div>
+								</Link> */}
 								<Link href="/price">
 									<div className={styles.item}>Стоимость</div>
 								</Link>
+
 								{/*<Link href="/">*/}
 								{/*	<div className={styles.item}>*/}
 								{/*		Возможности*/}
@@ -186,17 +201,19 @@ const Header: FC = () => {
 						</div>
 						<ul className={cn(isOpen && styles.active)}>
 							{isMobile ? (
-								<li
-									className={cn(styles.auth, styles.links)}
-									onClick={() => setIsOpen(!isOpen)}
-								>
-									<Link href="/aboutus">
-										<div className={styles.icon_button}>
-											<IconInstance name={EIcons.rightarrow} />
-											<span>Почему Telebon</span>
-										</div>
-									</Link>
-								</li>
+								<>
+									<li
+										className={cn(styles.auth, styles.links)}
+										onClick={() => setIsOpen(!isOpen)}
+									>
+										<Link href="/aboutus">
+											<div className={styles.icon_button}>
+												<IconInstance name={EIcons.rightarrow} />
+												<span>Почему Telebon</span>
+											</div>
+										</Link>
+									</li>
+								</>
 							) : null}
 							{isMobile ? (
 								<li
@@ -290,11 +307,16 @@ const Header: FC = () => {
 							{/*		</div>*/}
 							{/*	</Link>*/}
 							{/*</li>*/}
+
 							<li className={styles.auth}>
 								<Link
+									className={styles.authLink}
 									href="https://lk.telebon.ru/auth"
 									target={'_blank'}
 								>
+									<span>Войти</span>
+								</Link>
+								<Link href="https://lk.telebon.ru/auth" target={'_blank'}>
 									<span>Начать</span>
 								</Link>
 							</li>
@@ -310,7 +332,7 @@ const Header: FC = () => {
 						</button>
 					</div>
 				</motion.nav>
-			</div>
+			</header>
 		</noindex>
 	)
 }

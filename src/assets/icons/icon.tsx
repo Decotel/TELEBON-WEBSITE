@@ -34,6 +34,14 @@ import { AssistantPlus } from './aboutus/hero/AssistantPlus'
 import { Scissors } from './price/all/Scissors'
 import { FooterRuStoreIcon } from './main/footeri/FooterRuStoreIcon'
 import { ListArrowBase } from './ListArrowBase'
+import { ArrowDown } from './main/arrow/ArrowDown'
+import { CheckMark } from './main/icons/CheckMark'
+import { SuccessIcon } from './main/icons/SuccessIcon'
+import { RuStoreIcon } from './main/icons/RuStoreIcon'
+import { AppStoreFooterIcon } from './main/icons/AppStoreIcon'
+import { GooglePlayFooterIcon } from './main/icons/GooglePlayIcon'
+import { TelegramIcon } from './main/icons/TelegramIcon'
+import { VkIcon } from './main/icons/VkIcon'
 
 export enum EIcons {
 	walletoutline,
@@ -72,6 +80,14 @@ export enum EIcons {
 	scissors,
 	footerrustoreicon,
 	listarrowbase,
+	arrowdown,
+	checkMark,
+	successIcon,
+	appstore,
+	googleplay,
+	rustore,
+	telegramicon,
+	vkicon,
 }
 
 const ICONS: Record<EIcons, any> = {
@@ -111,6 +127,14 @@ const ICONS: Record<EIcons, any> = {
 	[EIcons.assistantplus]: AssistantPlus,
 	[EIcons.scissors]: Scissors,
 	[EIcons.listarrowbase]: ListArrowBase,
+	[EIcons.arrowdown]: ArrowDown,
+	[EIcons.checkMark]: CheckMark,
+	[EIcons.successIcon]: SuccessIcon,
+	[EIcons.appstore]: AppStoreFooterIcon,
+	[EIcons.googleplay]: GooglePlayFooterIcon,
+	[EIcons.rustore]: RuStoreIcon,
+	[EIcons.telegramicon]: TelegramIcon,
+	[EIcons.vkicon]: VkIcon,
 }
 
 interface IIconProps {

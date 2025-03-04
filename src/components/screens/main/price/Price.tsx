@@ -14,6 +14,60 @@ const Price: FC = () => {
 	return (
 		<div className={cn(styles.body, 'wrapper')}>
 			<div className={styles.container}>
+				<div className={styles.text}>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
+						}}
+					>
+						<h3>Стоимость для&nbsp;1&nbsp;сотрудника</h3>
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
+						}}
+					>
+						<p className={styles.price}>300 р/мес</p>
+					</motion.div>
+
+					<p className={styles.textBottom}>
+						<span>
+							+300 ₽ за каждого дополнительного пользователя в месяц.{' '}
+						</span>
+						<span>
+							Все функции включены.
+							<br />
+							Бесплатный пробный период 14 дней.
+						</span>
+					</p>
+					<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true }}
+							transition={{ duration: 0.5, delay: 0.5 }}
+							variants={{
+								visible: { opacity: 1 },
+								hidden: { opacity: 0 },
+							}}
+							className={styles.link}
+						>
+							<span aria-labelledby="Попробовать бесплатно">
+								Попробовать бесплатно
+							</span>
+						</motion.div>
+					</Link>
+				</div>
 				<div className={styles.card}>
 					<motion.div
 						initial="hidden"
@@ -35,59 +89,6 @@ const Price: FC = () => {
 							/>
 						)}
 					</motion.div>
-					<div className={styles.text}>
-						<motion.div
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: 0.3 }}
-							variants={{
-								visible: { opacity: 1, y: 0 },
-								hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
-							}}
-						>
-							<h3>Все функции включены</h3>
-						</motion.div>
-						<motion.div
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true }}
-							transition={{ duration: 0.5, delay: 0.3 }}
-							variants={{
-								visible: { opacity: 1, y: 0 },
-								hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
-							}}
-						>
-							<p className={styles.price}>300 ₽</p>
-						</motion.div>
-						<Link href={'https://lk.telebon.ru/auth'} target={'_blank'}>
-							<motion.div
-								initial="hidden"
-								whileInView="visible"
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.5 }}
-								variants={{
-									visible: { opacity: 1 },
-									hidden: { opacity: 0 },
-								}}
-							>
-								<button aria-labelledby="Попробовать сейчас">
-									Попробовать сейчас
-								</button>
-							</motion.div>
-						</Link>
-						<p>
-							+300 ₽ за каждого дополнительного
-							<br />
-							пользователя в месяц.
-							<br />
-							Все функции включены.
-							<br />
-							Бесплатный пробный период 14 дней.
-							<br />
-							<span>*Подключение Telegram бота, бесплатно до 31.03.2025</span>
-						</p>
-					</div>
 				</div>
 			</div>
 		</div>

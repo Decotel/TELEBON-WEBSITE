@@ -12,7 +12,7 @@ const Description: FC = () => {
 	const isMobile = useMatchMedia('768')
 
 	return (
-		<div className={cn(styles.body, 'wrapper')}>
+		<div className={cn(styles.body, 'wrapper')} id={'possibilities'}>
 			<div className={styles.container}>
 				<div className={styles.card}>
 					<motion.div
@@ -29,6 +29,7 @@ const Description: FC = () => {
 							src={DescriptionCard1}
 							alt={'Запись клиентов на маникюр онлайн'}
 							loading="lazy"
+							className={styles.cardImg}
 						/>
 					</motion.div>
 					<motion.div
@@ -42,12 +43,13 @@ const Description: FC = () => {
 						}}
 						className={styles.text}
 					>
-						<h2>Записывайте без лишних сложностей</h2>
-						<p>
-							Планируйте расписание и привлекайте клиентов через{' '}
-							<span>Онлайн-запись 24/7</span>, автоматизируйте рассылки и
-							сделайте свой бизнес более комфортным.
-						</p>
+						<div className={styles.textWrap}>
+							<h2>Электронный журнал который помогает</h2>
+							<p>
+								Легко записывать клиентов, управлять расписанием, контролировать
+								посещения.
+							</p>
+						</div>
 					</motion.div>
 				</div>
 				<div className={styles.card}>
@@ -62,12 +64,13 @@ const Description: FC = () => {
 						}}
 						className={styles.text}
 					>
-						<h2>Забудьте о рутине, сфокусируйтесь на клиентах</h2>
-						<p>
-							Не отвлекайтесь на мелочи, сосредоточьтесь на важном.{' '}
-							<span>Оптимизируйте процессы</span> и сфокусируйтесь на создании
-							впечатлений для ваших клиентов.
-						</p>
+						<div className={styles.textWrap}>
+							<h2>Расписание и рабочий график сотрудников</h2>
+							<p>
+								Удобно организованные в одном месте для эффективного
+								планирования и управления.
+							</p>
+						</div>
 					</motion.div>
 					<motion.div
 						initial="hidden"
@@ -83,6 +86,7 @@ const Description: FC = () => {
 							src={DescriptionCard2}
 							alt={'Запись клиентов для мастера маникюра'}
 							loading="lazy"
+							className={styles.cardImg}
 						/>
 					</motion.div>
 				</div>
@@ -101,6 +105,7 @@ const Description: FC = () => {
 							src={DescriptionCard3}
 							alt={'Аналитика бьюти бизнеса, как увеличить прибыль.'}
 							loading="lazy"
+							className={styles.cardImg}
 						/>
 					</motion.div>
 					<motion.div
@@ -114,12 +119,14 @@ const Description: FC = () => {
 						}}
 						className={styles.text}
 					>
-						<h2>Постройте бизнес, которым будете гордиться</h2>
-						<p>
-							Зарабатывайте больше и
-							<span> принимайте решения на основе данных.</span> Наша платформа
-							поможет вам на текущем этапе и подстроится под ваши будущие цели.
-						</p>
+						<div className={styles.textWrap}>
+							<h2>Клиентская база всегда под рукой</h2>
+							<p>
+								Полный контроль над клиентской базой в вашем смартфоне. Записи,
+								контакты и история посещений — все в одном месте, доступно в
+								пару касаний!
+							</p>
+						</div>
 					</motion.div>
 				</div>
 			</div>

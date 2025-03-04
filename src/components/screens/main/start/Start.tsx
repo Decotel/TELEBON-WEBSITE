@@ -3,98 +3,96 @@ import styles from './Start.module.scss'
 import cn from 'classnames'
 import Image from 'next/image'
 import useMatchMedia from '@/hooks/useMatchMedia'
-import Start1 from '../../../../assets/icons/main/starti/Start1.webp'
-import Start2 from '../../../../assets/icons/main/starti/Start2.webp'
-import Start3 from '../../../../assets/icons/main/starti/Start3.webp'
+import Start2 from '../../../../assets/icons/main/starti/StartSimpleSettings.webp'
+import Start3 from '../../../../assets/icons/main/starti/StartChat.webp'
 import { motion } from 'framer-motion'
+import { EIcons, Icon } from 'assets/icons/icon'
 
 const Start: FC = () => {
 	const isMobile = useMatchMedia('768')
 
 	return (
 		<div className={cn(styles.body, 'wrapper')}>
-			<div className={styles.up}>
-				<h3>Легко начать</h3>
-			</div>
 			<div className={styles.container}>
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.4 }}
-					variants={{
-						visible: { opacity: 1, y: 0 },
-						hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
-					}}
-					className={styles.card}
-				>
-					<Image
-						src={Start1}
-						alt={'Профиль салона и мастера в система учета клиентов'}
-						loading="lazy"
-					/>
-					<div className={styles.text}>
-						<p>1. Заполните профиль</p>
-						<span>
-							Начните бесплатно, без каких либо <br />
-							обязательств. Вы сможете начать работу {isMobile ? <br /> : null}
-							менее
-							{isMobile ? null : <br />} чем за 5 минут.
-						</span>
-					</div>
-				</motion.div>
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.45 }}
-					variants={{
-						visible: { opacity: 1, y: 0 },
-						hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
-					}}
-					className={styles.card}
-				>
-					<Image
-						src={Start2}
-						alt={'Ссылка на запись для клиентов'}
-						loading="lazy"
-					/>
-					<div className={styles.text}>
-						<p>2. Поделитесь ссылкой</p>
-						<span>
-							Сообщите своим клиентам о новой ссылке{isMobile ? <br /> : null}{' '}
-							для {isMobile ? null : <br />}записи, разместите ее в социальных{' '}
-							{isMobile ? <br /> : null}сетях. Бота {isMobile ? null : <br />}
-							онлайн-записи можно добавить {isMobile ? <br /> : null}в чат или
-							группу.
-						</span>
-					</div>
-				</motion.div>
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.5 }}
-					variants={{
-						visible: { opacity: 1, y: 0 },
-						hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
-					}}
-					className={styles.card}
-				>
-					<Image
-						src={Start3}
-						alt={'Модуль Онлайн-записи клиентов на услуги'}
-						loading="lazy"
-					/>
-					<div className={styles.text}>
-						<p>3. Начните получать записи</p>
-						<span>
-							Клиенты могут начать бронирование в {isMobile ? <br /> : null}тот
-							же {isMobile ? null : <br />}день, что избавляет от{' '}
-							{isMobile ? <br /> : null}бесконечного общения.
-						</span>
-					</div>
-				</motion.div>
+				<div className={styles.up}>
+					<h3>Легко начать</h3>
+				</div>
+				<div className={styles.cardWrap}>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.4 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
+						}}
+						className={styles.card}
+					>
+						<div className={styles.imgWrapFirst}>
+							<Icon name={EIcons.successIcon} />
+						</div>
+						<div className={styles.text}>
+							<p>Быстрая регистрация</p>
+							<span>
+								Зарегистрируйтесь за 5 шагов и откройте все возможности
+								приложения!
+							</span>
+						</div>
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.45 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
+						}}
+						className={styles.card}
+					>
+						<div className={styles.imgWrapSecond}>
+							<Image
+								src={Start2}
+								alt={'Ссылка на запись для клиентов'}
+								loading="lazy"
+							/>
+						</div>
+
+						<div className={styles.text}>
+							<p>Простая настройка</p>
+							<span>
+								Никаких сложностей, все интуитивно понятно и без лишних усилий.
+							</span>
+						</div>
+					</motion.div>
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.5 }}
+						variants={{
+							visible: { opacity: 1, y: 0 },
+							hidden: { opacity: 0, y: isMobile ? '25vw' : '10vw' },
+						}}
+						className={styles.card}
+					>
+						<div className={styles.imgWrapThird}>
+							<Image
+								src={Start3}
+								alt={'Модуль Онлайн-записи клиентов на услуги'}
+								loading="lazy"
+							/>
+						</div>
+
+						<div className={styles.text}>
+							<p>Чат поддержки</p>
+							<span className={styles.text3}>
+								С ответом за 5 минут — для любых технических вопросов.
+							</span>
+						</div>
+					</motion.div>
+				</div>
 			</div>
 		</div>
 	)

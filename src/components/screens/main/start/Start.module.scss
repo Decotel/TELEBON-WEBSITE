@@ -8,63 +8,133 @@
 	position: relative;
 	overflow: hidden;
 	gap: 5vw;
+	background-color: #151618;
 }
 
 .up {
 	h3 {
-		font-size: 1.7708vw;
-		line-height: 2.0833vw;
 		font-weight: 700;
-		color: #2a2c32;
+    font-size: 2.083333vw;
+    line-height: 2.5vw;
+    text-align: center;
+    color: #fff;
 	}
 }
 
 .container {
+	padding-top: 5.208333vw;
+	padding-bottom: 3.125vw;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
+	flex-direction: column;
+	// align-items: center;
+	// justify-content: center;
+	max-width: 62.5vw;
 	height: fit-content;
-	margin: 0.833vw 0;
-	gap: 1.5625vw;
+	
+	gap: 3.125vw;
+	@media (max-width: 1500px) {
+		max-width: 80vw;
+	}
+	@media (max-width: 768px) {
+		max-width: 90vw;
+	}
+	.cardWrap {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.25vw;
+		@media (max-width: 1500px) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (max-width: 768px) {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 3vw;
+		}
+	}
 	.card {
+		padding: 2.083333vw 1.041667vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
-		width: 22.0104vw;
-		height: 18.2135vw;
-		gap: 1.667vw;
+		width: 20vw;
+		gap: 1px;
+		// gap: 1.1802vw;
+		border-radius: 12px;
+		background-color: #36373F;
+		@media (max-width: 1500px) {
+			width: auto;
+			justify-content: space-between;
+		}
+		.imgWrapFirst {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			width: 100%;
+			height: 9.114583vw;
+			padding: 0 2.135416vw;
+			&::after {
+				content: '';
+				position: absolute;
+				top: 10%;
+				bottom: 10%;
+				left: 20%;
+				right: 20%;
+				border-radius: 50%;
+
+				// width: 100%;
+				background: radial-gradient(circle, rgba(3, 161, 173, 0.6) 100%, rgba(3, 161, 173, 0) 100%);
+  			filter: blur(50px); /* Размытие самого объекта */
+			}
+		}
+		.imgWrapSecond {
+			display: flex;
+			padding: 1.9vw 2.76041vw;
+		}
+		.imgWrapThird {
+			display: flex;
+			backdrop-filter: blur(100px)
+
+		}
 		.text {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			gap: 1.0417vw;
-			width: 19.9302vw;
+			gap: 0.625vw;
+			color: #fff;
+
 			p {
-				font-size: 1.0417vw;
-				font-weight: 700;
-				line-height: 1.3021vw;
+				font-size: 1.4583vw;
+				font-weight: 400;
+				line-height: 1.66667vw;
 				text-align: center;
-				color: #2a2c32;
+				color: #fff;
+				letter-spacing: -1px;
 			}
 			span {
+				display: inline-block;
 				font-size: 0.833vw;
 				font-weight: 400;
-				line-height: 1.3021vw;
+				line-height: 1.25vw;
 				text-align: center;
-				color: #2a2c32;
+				max-width: 12vw;
+				&.text3 {
+				max-width: 10vw;
+
+				}
 			}
 		}
 		img {
-			width: 22.0135vw;
-			height: 9.1667vw;
-			user-select: none;
-			pointer-events: none;
-			padding: 0 4.1667vw 1.875vw;
-			border-bottom: 0.0521vw solid #90909080;
+			// width: 22.0135vw;
+			// height: 9.1667vw;
+			// user-select: none;
+			// pointer-events: none;
+			// padding: 0 4.1667vw 1.875vw;
+			// border-bottom: 0.0521vw solid #90909080;
 		}
 	}
 }
@@ -94,28 +164,30 @@
 		width: 100%;
 		height: fit-content;
 		margin: 0 0 12.3077vw;
-		gap: 12.3077vw;
+		gap: 8.3077vw;
 		.card {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-			width: 100vw;
-			height: 82.4564vw;
+			padding: 4.083333vw;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: flex-start;
+			// align-items: center;
+			// width: 100vw;
+			// height: 82.4564vw;
 			gap: 4.1026vw;
+			.imgWrapFirst {
+				height: auto;
+			}
 			.text {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 				gap: 2.5641vw;
-				width: 89.7436vw;
 				p {
 					font-size: 5.1282vw;
 					font-weight: 700;
 					line-height: 6.4103vw;
 					text-align: center;
-					color: #2a2c32;
 				}
 
 				span {
@@ -123,17 +195,22 @@
 					font-weight: 400;
 					line-height: 6.4103vw;
 					text-align: center;
-					color: #2a2c32;
+					max-width: none;
+					&.text3 {
+						max-width: none;
+
+		
+						}
 				}
 			}
-			img {
-				width: 89.7436vw;
-				height: 47.1385vw;
-				user-select: none;
-				pointer-events: none;
-				padding: 0 4.1026vw 4.3589vw;
-				border-bottom: 0.2564vw solid #90909080;
-			}
+			// img {
+			// 	width: 89.7436vw;
+			// 	height: 47.1385vw;
+			// 	user-select: none;
+			// 	pointer-events: none;
+			// 	padding: 0 4.1026vw 4.3589vw;
+			// 	border-bottom: 0.2564vw solid #90909080;
+			// }
 		}
 	}
 }

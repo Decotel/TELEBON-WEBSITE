@@ -8,14 +8,38 @@ import useMatchMedia from '@/hooks/useMatchMedia'
 import Phone from '../../../../assets/icons/main/hero/HeroPhone.webp'
 import PhoneMobile from '../../../../assets/icons/main/hero/HeroPhoneMobile.webp'
 import Sponsors from '../../../../assets/icons/main/hero/Sponsors.webp'
+import Sponsors1 from '../../../../assets/icons/main/hero/sponsor_1.svg'
+import Sponsors2 from '../../../../assets/icons/main/hero/sponsor_2.svg'
+import Sponsors3 from '../../../../assets/icons/main/hero/sponsor_3.svg'
+import Sponsors4 from '../../../../assets/icons/main/hero/sponsor_4.svg'
+import Sponsors5 from '../../../../assets/icons/main/hero/sponsor_5.svg'
+import Sponsors6 from '../../../../assets/icons/main/hero/sponsor_6.svg'
+import MasterImg from '../../../../assets/icons/main/hero/master.svg'
+
 import SponsorsMobile from '../../../../assets/icons/main/hero/SponsorsMobile.webp'
 import { motion } from 'framer-motion'
 import AppleIcon from '../../../../assets/icons/AppleIcon.png'
+import { useRouter } from 'next/router'
 
 const Hero: FC = () => {
 	const isMobile = useMatchMedia('768')
 	const [platformLink, setPlatformLink] = useState('')
 	const [isOpenDownload, setIsOpenDownload] = useState<boolean>(true)
+	const [email, setEmail] = useState('')
+	const router = useRouter()
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setEmail(e.target.value)
+	}
+	const goToWebSite = () => {
+		const trimmedEmail = email.trim()
+
+		if (trimmedEmail) {
+			localStorage.setItem('user_email', trimmedEmail)
+			router.push('https://lk.telebon.ru')
+		} else {
+			alert('Введите корректный email')
+		}
+	}
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -74,30 +98,29 @@ const Hero: FC = () => {
 				<div className={styles.row}>
 					<div className={styles.column}>
 						<div className={styles.text}>
-							<h1>Простая запись клиентов для профессионалов</h1>
-							{isMobile ? (
-								<p>
-									Система для бронирования, учета
-									<br /> финансов и клиентов.
-									<span>
-										{' '}
-										Нам доверяют
-										<br />
-										более 3000 бьюти специалистов.
-									</span>
-								</p>
-							) : (
-								<p>
-									Система для бронирования, учета финансов и клиентов.
-									<span>
-										{' '}
-										Нам доверяют
-										<br />
-										более 3000 бьюти специалистов.
-									</span>
-								</p>
-							)}
+							<h1>Приложение для записи клиентов.</h1>
+
+							<p>
+								Автоматизация всех бизнес процессов для частных мастеров и
+								салонов в сфере услуг.
+							</p>
 						</div>
+						{/* <div className={styles.inputEmailWrap}>
+							<input
+								className={styles.inputEmail}
+								placeholder="Введите вашу почту"
+								type="email"
+								value={email}
+								onChange={handleInputChange}
+							/>
+							<button
+								onClick={goToWebSite}
+								className={styles.buttonEmail}
+								disabled={!email}
+							>
+								Начать
+							</button>
+						</div> */}
 						<Link
 							href={'https://lk.telebon.ru/auth'}
 							target={'_blank'}
@@ -105,6 +128,7 @@ const Hero: FC = () => {
 								display: 'flex',
 								justifyContent: isMobile ? 'center' : 'flex-start',
 							}}
+							className={styles.button}
 						>
 							{isMobile ? (
 								<button aria-labelledby="Начать">Начать</button>
@@ -124,6 +148,7 @@ const Hero: FC = () => {
 							visible: { opacity: 1, y: 0 },
 							hidden: { opacity: 0, y: isMobile ? '40vw' : '10vw' },
 						}}
+						className={styles.phoneMobileWrap}
 					>
 						{isMobile ? (
 							<Image src={PhoneMobile} alt={''} priority />
@@ -147,14 +172,63 @@ const Hero: FC = () => {
 					}}
 					className={styles.sponsors}
 				>
-					{isMobile ? (
+					<ul className={styles.sponsorsList}>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors1} alt={'Moscow Beauty'} />
+						</li>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors2} alt={'Громче! школа музыки'} />
+						</li>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors3} alt={'Nailpro'} />
+						</li>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors4} alt={'Man Man'} />
+						</li>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors5} alt={'Нешкола барабанов'} />
+						</li>
+						<li className={styles.sponsorsItem}>
+							<Image src={Sponsors6} alt={'Modern'} />
+						</li>
+					</ul>
+					{/* {isMobile ? (
 						<Image src={SponsorsMobile} alt={''} />
 					) : (
 						<Image
 							src={Sponsors}
 							alt={'Партнёры системы записи клиентов Телебон (Telebon)'}
 						/>
-					)}
+					)} */}
+				</motion.div>
+			</div>
+			<div className={styles.masterWrap}>
+				<motion.div
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.5 }}
+					variants={{
+						visible: { opacity: 1, y: 0 },
+						hidden: { opacity: 0, y: isMobile ? '30vw' : '10vw' },
+					}}
+					className={styles.master}
+				>
+					<div className={styles.masterContent}>
+						<div className={styles.masterContentLeft}>
+							<h2>Всё что нужно для работы мастера</h2>
+							<p>
+								<span>Развивайте ваш Бренд, </span>
+								<span className={styles.bold}>управляйте расписанием,</span>
+								<span className={styles.bold}> сотрудниками и клиентами.</span>
+								<span>Поднимайте каждый день ваш бизнес на новый уровень.</span>
+							</p>
+						</div>
+						<div className={styles.masterContentRight}>
+							<Image src={MasterImg} alt="Нам доверяют" />
+							<p>Нам доверяют более 500+ салонов и частных мастеров</p>
+						</div>
+					</div>
 				</motion.div>
 			</div>
 		</div>

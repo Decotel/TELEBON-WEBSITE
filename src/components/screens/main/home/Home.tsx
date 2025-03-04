@@ -13,6 +13,8 @@ import Start from '@/screens/main/start/Start'
 import HelpBusines from '@/screens/main/help_busines/HelpBusines'
 import Accordion from '@/screens/main/accordion/Accordion'
 import Icon from '../../../../assets/icons/AppleIcon.png'
+import Acceleration from '../acceleration/Acceleration'
+import OnlineRecording from '../online-recording/OnlineRecording'
 
 const Home: FC = () => {
 	return (
@@ -24,14 +26,17 @@ const Home: FC = () => {
 			<div className={styles.wrapper}>
 				<Hero />
 				<Description />
-				<Price />
-				<Nums />
-				<Feedback />
-				<Functions />
-				<ForYou />
+				<Acceleration />
+				<OnlineRecording />
+				{/* <Nums /> */}
+				{/* <Feedback /> */}
+				{/* <Functions /> */}
+				{/* <ForYou /> */}
 				<Start />
-				<HelpBusines />
-				<Accordion />
+				{/* <HelpBusines /> */}
+				<Price />
+
+				{/* <Accordion /> */}
 			</div>
 		</Meta>
 	)

@@ -1,86 +1,125 @@
 .body {
+	padding-top: 3.5416667vw;
+	padding-bottom: 5.208333vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
 	height: fit-content;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
+	background-color: #151618;
 }
 
 .container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
+	// flex-direction: column;
+	// align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	height: fit-content;
+	background: url('../../../../assets/icons/main/price/PriceBackground.webp') no-repeat;
+	background-size: cover;
+	max-height: 22.08333vw;
+	max-width: 62.5vw;
+	border-radius: 12px;
+	@media (max-width: 1500px) {
+		max-width: 80vw;
+	}
+	@media (max-width: 768px) {
+		max-width: 90vw;
+		flex-direction: column-reverse;
+		max-height: none;
+	}
+	.text {
+		padding: 2.08333vw 3.125vw;
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		justify-content: space-between;
+		gap: 0.833vw;
+		width: 30.4167vw;
+		// height: 28.6458vw;
+		button {
+			background: #ffffff;
+			color: #2a2c32;
+			padding: 1.0417vw 2.1875vw;
+			font-size: 0.833vw;
+			font-weight: 600;
+			line-height: 1.1458vw;
+			text-align: center;
+			width: fit-content;
+			border-radius: 0.4167vw;
+		}
+		h3 {
+			font-size: 1.7708vw;
+			font-weight: 400;
+			line-height: 2vw;
+			color: #ffffff;
+			letter-spacing: -0.32px;
 
+		}
+		p {
+			font-size: 0.833vw;
+			font-weight: 400;
+			line-height: 1.33vw;
+			// text-align: center;
+			color: #ffffff;
+		}
+		.price {
+			font-family: 'RF Dewi Expanded';
+			font-size: 2.08333vw;
+			font-weight: 600;
+			line-height: 3.125vw;
+			color: #ffffff;
+			text-align: left;
+
+		}
+		.textBottom {
+			display: flex;
+			flex-direction: column;
+			gap: 1vw;
+			max-width: 12.08333vw;
+		}
+		span {
+			font-size: 0.72916vw;
+			font-weight: 400;
+			line-height: 0.91875vw;
+			color: #ffffff;
+			letter-spacing: -0.32px;
+
+		}
+		.link {
+			margin-top: 0.83333vw;
+			padding: 0.83333vw 1.66667vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 8px;
+			background-color: #fff;
+			max-width: 12.34375vw;
+			span {
+				font-size: 0.83333vw;
+				letter-spacing: -0.32px;
+				line-height: 1.145833vw;
+				font-weight: 500;
+				color: #151618;
+			}
+		}
+	}
 	.card {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-end;
-		width: 83.33vw;
-		height: 31.25vw;
-		background: url('../../../../assets/icons/main/price/PriceBackground.webp')
-			no-repeat;
-		background-size: cover;
-		padding: 2.6042vw 8.4375vw 0 8.4375vw;
-		margin-top: 5.6771vw;
-
-		.text {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 2.0833vw;
-			width: 30.4167vw;
-			height: 28.6458vw;
-			button {
-				background: #ffffff;
-				color: #2a2c32;
-				padding: 1.0417vw 2.1875vw;
-				font-size: 0.833vw;
-				font-weight: 600;
-				line-height: 1.1458vw;
-				text-align: center;
-				width: fit-content;
-				border-radius: 0.4167vw;
-			}
-			h3 {
-				font-size: 1.7708vw;
-				font-weight: 700;
-				line-height: 2.0833vw;
-				text-align: center;
-				color: #ffffff;
-			}
-			p {
-				font-size: 0.833vw;
-				font-weight: 400;
-				line-height: 1.33vw;
-				text-align: center;
-				color: #ffffff;
-			}
-			.price {
-				font-size: 3.0208vw;
-				font-weight: 700;
-				line-height: 3.33vw;
-				text-align: center;
-				color: #f9c9c4;
-			}
-			span {
-				font-size: 0.625vw;
-				font-weight: 400;
-				line-height: 1.0417vw;
-				text-align: center;
-				color: #a9abb1;
-			}
-		}
+			
+		padding: 0 6.25vw 0 6.25vw;
+		// margin-top: 5.6771vw;
+		
 
 		img {
-			width: 28.75vw;
-			height: 31.25vw;
+			max-width: 21.97916vw;
+			// height: 31.25vw;
 			user-select: none;
 			pointer-events: none;
 		}
@@ -90,60 +129,78 @@
 @media (max-width: 768px) {
 	.container {
 		width: 100%;
+		.text {
+			padding: 5vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 4.1026vw;
+			width: 100%;
+			height: fit-content;
+			button {
+				background: #ffffff;
+				color: #2a2c32;
+				padding: 3.5897vw 10.6282vw;
+				font-size: 4.1026vw;
+				font-weight: 600;
+				line-height: 5.641vw;
+				text-align: center;
+				width: fit-content;
+				border-radius: 2.0513vw;
+				margin-top: 4.1026vw;
+			}
+			h3 {
+				text-align: center;
+				font-size: 6.1538vw;
+				line-height: 7.1795vw;
+			}
+			p {
+				font-size: 4.1026vw;
+				line-height: 6.5641vw;
+				margin-top: 6.1538vw;
+			}
+			.price {
+				font-size: 9.2308vw;
+				line-height: 11.2821vw;
+				margin-top: 0;
+			}
+			span {
+				text-align: center;
+
+				font-size: 4.1026vw;
+        line-height: 6.4103vw;
+			}
+			.textBottom {
+				max-width: none;
+			}
+			.link {
+				margin-top: 2.83333vw;
+				padding: 3vw 5vw;
+				max-width: none;
+				span {
+					font-size: 4.1026vw;
+        line-height: 6.4103vw;
+				}
+			}
+		}
 		.card {
 			flex-direction: column;
 			align-items: center;
-			width: 100vw;
-			height: 227.6923vw;
-			background: url('../../../../assets/icons/main/price/PriceBackgroundMobile.webp')
-				no-repeat;
-			background-size: cover;
-			padding: 0 0 18.8462vw;
-			margin-top: 22.8718vw;
+			// width: 100vw;
+			// height: 227.6923vw;
+			// background: url('../../../../assets/icons/main/price/PriceBackgroundMobile.webp')
+			// 	no-repeat;
+			// background-size: cover;
+			padding: 5vw;
+			// margin-top: 22.8718vw;
 			gap: 16.2821vw;
-			.text {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				gap: 4.1026vw;
-				width: 100vw;
-				height: fit-content;
-				button {
-					background: #ffffff;
-					color: #2a2c32;
-					padding: 3.5897vw 10.6282vw;
-					font-size: 4.1026vw;
-					font-weight: 600;
-					line-height: 5.641vw;
-					text-align: center;
-					width: fit-content;
-					border-radius: 2.0513vw;
-					margin-top: 4.1026vw;
-				}
-				h3 {
-					font-size: 6.1538vw;
-					line-height: 7.1795vw;
-				}
-				p {
-					font-size: 4.1026vw;
-					line-height: 6.5641vw;
-					margin-top: 6.1538vw;
-				}
-				.price {
-					font-size: 9.2308vw;
-					line-height: 11.2821vw;
-					margin-top: 0;
-				}
-				span {
-					font-size: 3.0769vw;
-					line-height: 5.1282vw;
-				}
-			}
+			
 			img {
-				align-self: center;
-				width: 80.9744vw;
-				height: 104.5385vw;
+				max-width: 100%;
+				// align-self: center;
+				// width: 80.9744vw;
+				// height: 104.5385vw;
 			}
 		}
 	}
