@@ -250,7 +250,9 @@ const Footer: FC = () => {
 							Покажем систему в деле на ваших примерах и ответим на все вопросы.
 							Свяжемся в течение рабочего дня.
 						</p>
-						<button>Оставить заявку</button>
+						<button onClick={() => setIsModalOpen(true)}>
+							Оставить заявку
+						</button>
 					</div>
 					{/* <div className={styles.row}> */}
 					{/* <div className={styles.contact}>
